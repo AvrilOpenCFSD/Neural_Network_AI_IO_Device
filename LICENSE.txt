@@ -5,10 +5,7 @@ Avril - Neural Network Artifical Intelligence Input Output Device.
 -
 
 Redistribution and use in source and binary forms, with or without
-modification, are not permitted. All provisions require expressed 
-written consent from Jasper Assembly Pty Ltd., via 
-"Jasper.Assembly@icloud.com". Outcomes of expressed consent provided must
-ensure the following conditions are met:
+modification, are permitted.
 
 1. Redistributions of source code must retain the above copyright notice, this
 list of conditions and the following disclaimer.
