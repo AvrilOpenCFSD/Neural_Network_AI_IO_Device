@@ -154,13 +154,29 @@
     <None Include="cpp.hint" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Algorithms.h" />
+    <ClInclude Include="Data.h" />
+    <ClInclude Include="Execute.h" />
     <ClInclude Include="framework.h" />
+    <ClInclude Include="Framework_NNAI.h" />
+    <ClInclude Include="Input.h" />
+    <ClInclude Include="MetaData.h" />
+    <ClInclude Include="NeuralNetworks.h" />
     <ClInclude Include="Neural_Network_AI.h" />
+    <ClInclude Include="Output.h" />
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Algorithms.cpp" />
+    <ClCompile Include="Data.cpp" />
     <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="Execute.cpp" />
+    <ClCompile Include="Framework_NNAI.cpp" />
+    <ClCompile Include="Input.cpp" />
+    <ClCompile Include="MetaData.cpp" />
+    <ClCompile Include="NeuralNetworks.cpp" />
     <ClCompile Include="Neural_Network_AI.cpp" />
+    <ClCompile Include="Output.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

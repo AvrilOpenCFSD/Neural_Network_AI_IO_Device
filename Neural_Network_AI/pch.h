@@ -9,5 +9,16 @@
 
 // add headers that you want to pre-compile here
 #include "framework.h"
+#include <iostream>
+#include <vector>
+#include "Framework_NNAI.h"
+#include "NeuralNetworks.h"
+#include "Algorithms.h"
+#include "Data.h"
+#include "Input.h"
+#include "Output.h"
+#include "Execute.h"
+#include "MetaData.h"
+
 
 #endif //PCH_H

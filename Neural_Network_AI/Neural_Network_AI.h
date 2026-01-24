@@ -10,13 +10,17 @@
 #define NEURALNETWORKAI_API __declspec(dllimport)
 #endif
 
-// This class is exported from the dll
-class NEURALNETWORKAI_API CNeuralNetworkAI {
-public:
-	CNeuralNetworkAI(void);
-	// TODO: add your methods here.
-};
+namespace Avril_NNAI
+{
+	// This class is exported from the dll
+	class NEURALNETWORKAI_API CNeuralNetworkAI {
+	public:
+		CNeuralNetworkAI(void);
+		// TODO: add your methods here.
+		static void* InitialiseThisNeuralNetworkAI();
+	};
 
-extern NEURALNETWORKAI_API int nNeuralNetworkAI;
+	extern NEURALNETWORKAI_API int nNeuralNetworkAI;
 
-NEURALNETWORKAI_API int fnNeuralNetworkAI(void);
+	NEURALNETWORKAI_API int fnNeuralNetworkAI(void);
+}
