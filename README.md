@@ -1,5 +1,36 @@
 # Avril - Neural Network AI IO Device
-
+````
+/*
+*  Class Tree.
+* -------------
+* 
+*			Neural_Network_AI
+*					|
+*	 _______________|
+*	 |				|
+*	pch		Framework_NNAI
+*					|
+*					|
+*					|
+*			NeuralNetworks
+*					|
+*			   _____|______________________________________________________________________________________________________________________________________________________________________________________________
+*			   |                    |															 |																												  |
+* 			Global				Algorithms														Data																											Execute
+*									|															 |
+*									|________________________________________					 |____________________________________________________________________________
+*									|										|					 |									  |										 |		
+*								SolutionLogic							NeuralPath				Input								Output									Node (dynamic)
+*									|										|					 |									  |										 |				
+*									L------------	Algorithms_Praise_0		 ___|__________			 L------------	Input_Praise_0		  L------------	Output_Praise_0			 |___________________________________________________________
+*									L------------	Algorithms_Praise_1		 |			  |			 L------------	Input_Praise_1		  L------------	Output_Praise_1			 |					|					|					|
+*									L------------	Algorithms_Praise_2		Linear					 L------------	Intput_Praise_1		  L------------	Output_Praise_1			MetaData		NeuralPathSubSet	InputPraiseSubSet	OuputPraiseSubSet
+*																																																
+*																																																
+*																																																
+* 																																															
+*/
+````
 ## Interface for Windows.
  - https://github.com/AvrilOpenCFSD/Neural_Network_AI_IO_Device/tree/master/Develop_Neural_Network_AI
 
