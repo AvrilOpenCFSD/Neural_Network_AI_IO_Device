@@ -18,10 +18,7 @@ Version: 24H2
 Version 17.13.4.
  
 ## Dependencies.
-### .Net.
-Version: .Net 8.0
-
-## Tutorial: Neural networks
+### Tutorial: Neural networks
  - https://developers.google.com/machine-learning/crash-course/neural-networks
    
 ## TestBench in C++ Console.
