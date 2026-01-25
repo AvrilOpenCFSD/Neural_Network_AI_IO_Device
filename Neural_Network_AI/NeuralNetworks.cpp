@@ -3,13 +3,13 @@
 class Avril_NNAI::Algorithms* ptr_Algorithms = NULL;
 class Avril_NNAI::Data* ptr_Data = NULL;
 class Avril_NNAI::Execute* ptr_Execute = NULL;
-class Avril_NNAI::MetaData* ptr_MetaData = NULL;
+class Avril_NNAI::Global* ptr_Global = NULL;
 
 Avril_NNAI::NeuralNetworks::NeuralNetworks()
 {
-    Set_MetaData(new class Avril_NNAI::MetaData());
-    while (Get_MetaData() == NULL) {}
-    std::cout << "Created => Avril_NNAI::MetaData()" << std::endl;
+    Set_Global(new class Avril_NNAI::Global());
+    while (Get_Global() == NULL) {}
+    std::cout << "Created => Avril_NNAI::Global()" << std::endl;
 
     Set_Algorithms(new class Avril_NNAI::Algorithms());
     while (Get_Algorithms() == NULL) {}
@@ -50,7 +50,7 @@ Avril_NNAI::Execute* Avril_NNAI::NeuralNetworks::Get_Execute()
     return ptr_Execute;
 }
 
-Avril_NNAI::MetaData* Avril_NNAI::NeuralNetworks::Get_MetaData()
+Avril_NNAI::Global* Avril_NNAI::NeuralNetworks::Get_Global()
 {
     return ptr_Global;
 }
@@ -67,7 +67,7 @@ void Avril_NNAI::NeuralNetworks::Set_Execute(Avril_NNAI::Execute* execute)
 {
     ptr_Execute = execute;
 }
-void Avril_NNAI::NeuralNetworks::Set_MetaData(Avril_NNAI::MetaData* global)
+void Avril_NNAI::NeuralNetworks::Set_Global(Avril_NNAI::Global* global)
 {
     ptr_Global = global;
 }

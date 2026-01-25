@@ -16,13 +16,16 @@
 #include "NeuralNetworks.h"
 #include "Global.cpp"
 #include "Algorithms.h"
+#include "SolutionLogic.h"
+#include "SolutionLogic_Praise_0.h"
 #include "NeuralPath.h"
 #include "Linear.h"
 #include "Data.h"
 #include "Input.h"
+#include "Input_Praise_0.h"
 #include "Node.h"
 #include "Output.h"
+#include "Output_Praise_0.h"
 #include "Execute.h"
-#include "MetaData.h"
 
 #endif //PCH_H

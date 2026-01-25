@@ -24,25 +24,6 @@ Avril_NNAI::Framework_NNAI::~Framework_NNAI()
 	delete ptr_NeuralNetworks;
 }
 
-void Avril_NNAI::Framework_NNAI::Initialise_Program(Avril_NNAI::Framework_NNAI* obj)
-{
-	std::cout << "entered => Avril_FSD::Framework_Server::Initialise_Program()" << std::endl;
-
-	obj->Get_Neural_Networks()->Get_Algorithms()->Initialise(ptr_NeuralNetworks->Get_Global()->Get_NumCores());
-	std::cout << "Created => INIT Server" << std::endl;
-
-	obj->Get_Neural_Networks()->Get_Data()->Initialise(ptr_NeuralNetworks->Get_Global()->Get_NumCores());
-
-	obj->Get_Neural_Networks()->Get_Execute()->Initialise_Libraries();
-	std::cout << "Created => INIT Libraries" << std::endl;
-
-	obj->Get_Neural_Networks()->Get_Data()->Initialise_GameInstance();
-	std::cout << "Created => Game Instance" << std::endl;
-
-	obj->Get_Neural_Networks()->Get_Execute()->Initialise_Threads(obj);
-	std::cout << "Created => Thread(s)" << std::endl;
-}
-
 class Avril_NNAI::NeuralNetworks* Avril_NNAI::Framework_NNAI::Get_Neural_Networks()
 {
 	return ptr_NeuralNetworks;

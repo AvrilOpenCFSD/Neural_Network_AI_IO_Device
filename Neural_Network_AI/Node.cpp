@@ -1,25 +1,18 @@
 #include "pch.h"
 #include "Node.h"
 
-class Avril_NNAI::MetaData* ptr_MetaData = NULL;
 INT64 _numberOfNodeInputs;
-std::vector<class Avril_NNAI::Input*> ptr_Node_Inputs;
-std::vector<class Avril_NNAI::NeuralPath*> ptr_NeuralPathOfInput;
-class Avril_NNAI::Output* ptr_Node_Output = NULL;
+std::vector<class Object*>* ptr_Input_SubSet;
+std::vector<class Object*>* ptr_NeuralPathOfInput_SubSet;
+class Object* ptr_Node_Output_SubSet = NULL;
 
 Avril_NNAI::Node::Node()
 {
-	ptr_MetaData = new class Avril_NNAI::MetaData();
-	while (ptr_MetaData == NULL) {}
-
 	_numberOfNodeInputs = 0;
 
-	ptr_Node_Inputs.clear();
+	ptr_Input_SubSet->clear();
 
-	ptr_NeuralPathOfInput.clear();
-
-	ptr_Node_Output = new class Avril_NNAI::Output();
-	while (ptr_Node_Output == NULL) {}
+	ptr_NeuralPathOfInput_SubSet->clear();
 }
 
 Avril_NNAI::Node::~Node()
@@ -27,34 +20,40 @@ Avril_NNAI::Node::~Node()
 	//delete ;
 }
 
-Avril_NNAI::Input* Avril_NNAI::Node::Get_Node_Input(INT64 node)
+class Object* Avril_NNAI::Node::Get_Input_SubSet(INT64 nodeID)
 {
-	return ptr_Node_Inputs.at(node);
+	return ptr_Input_SubSet->at(nodeID);
 }
 
-Avril_NNAI::NeuralPath* Avril_NNAI::Node::Get_Node_NeuralPathOfInput(INT64 node)
+class Object* Avril_NNAI::Node::Get_NeuralPathOfInput_SubSet(INT64 nodeID)
 {
-	return ptr_NeuralPathOfInput.at(node);
+	return ptr_NeuralPathOfInput_SubSet->at(nodeID);
 }
 
-Avril_NNAI::Output* Avril_NNAI::Node::Get_Node_Output()
+Object* Avril_NNAI::Node::Get_Output_SubSet()
 {
-	return ptr_Node_Output;
+	return nullptr;
 }
 
-void Avril_NNAI::Node::Set_Node_Input(INT64 node, Avril_NNAI::Input* input)
+
+INT64 Avril_NNAI::Node::Get_NumberOfNodeInputs()
 {
-	ptr_Node_Inputs.at(node) = input;
+	return _numberOfNodeInputs;
 }
 
-void Avril_NNAI::Node::Set_Node_NeuralPathOfInput(INT64 node, Avril_NNAI::NeuralPath* neuralPath)
+void Avril_NNAI::Node::Set_Input_SubSet(INT64 nodeID, Avril_NNAI::Input* input)
 {
-	ptr_NeuralPathOfInput.at(node) = neuralPath;
+	ptr_Input_SubSet->at(nodeID) = (Object*)input;
 }
 
-void Avril_NNAI::Node::Set_Node_Output(Avril_NNAI::Output* output)
+void Avril_NNAI::Node::Set_NeuralPathOfInput_SubSet(INT64 nodeID, Avril_NNAI::NeuralPath* neuralPath)
 {
-	ptr_Node_Output = output;
+	ptr_NeuralPathOfInput_SubSet->at(nodeID) = (Object*)neuralPath;
+}
+
+void Avril_NNAI::Node::Set_Output_SubSet(class Avril_NNAI::Output* output)
+{
+	ptr_Node_Output_SubSet = (Object*)output;
 }
 
 void Avril_NNAI::Node::Set_NumberOfNodeInputs(INT64 numberOfNodeInputs)
@@ -62,9 +61,9 @@ void Avril_NNAI::Node::Set_NumberOfNodeInputs(INT64 numberOfNodeInputs)
 	_numberOfNodeInputs = numberOfNodeInputs;
 	if ((_numberOfNodeInputs > INT64(0)) && (_numberOfNodeInputs < INT64(9223372036854775807)))
 	{
-		ptr_Node_Inputs.resize(_numberOfNodeInputs);
+		ptr_Input_SubSet->resize(_numberOfNodeInputs);
 		//todo
-		ptr_NeuralPathOfInput.resize(_numberOfNodeInputs);
+		ptr_NeuralPathOfInput_SubSet->resize(_numberOfNodeInputs);
 		//todo
 	}
 	

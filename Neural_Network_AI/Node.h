@@ -7,13 +7,14 @@ namespace Avril_NNAI
 		Node();
 		virtual ~Node();
 
-		class Avril_NNAI::Input* Get_Node_Input(INT64 node);
-		class Avril_NNAI::NeuralPath* Get_Node_NeuralPathOfInput(INT64 node);
-		class Avril_NNAI::Output* Get_Node_Output();
+		class Object* Get_Input_SubSet(INT64 nodeID);
+		class Object* Get_Output_SubSet();
+		class Object* Get_NeuralPathOfInput_SubSet(INT64 nodeID);
+		INT64 Get_NumberOfNodeInputs();
 
-		void Set_Node_Input(INT64 node, class Avril_NNAI::Input* input);
-		void Set_Node_NeuralPathOfInput(INT64 node, class Avril_NNAI::NeuralPath* neuralPath);
-		void Set_Node_Output(class Avril_NNAI::Output* output);
+		void Set_Input_SubSet(INT64 nodeID, class Avril_NNAI::Input* input);
+		void Set_Output_SubSet(class Avril_NNAI::Output* output);
+		void Set_NeuralPathOfInput_SubSet(INT64 nodeID, class Avril_NNAI::NeuralPath* neuralPath);
 		void Set_NumberOfNodeInputs(INT64 numberOfNodeInputs);
 
 	private:

@@ -42,9 +42,6 @@
     <ClInclude Include="Execute.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="MetaData.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Input.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -61,6 +58,18 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Global.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Input_Praise_0.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SolutionLogic.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SolutionLogic_Praise_0.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Output_Praise_0.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -89,9 +98,6 @@
     <ClCompile Include="Execute.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MetaData.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Input.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -108,6 +114,18 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Global.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Input_Praise_0.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SolutionLogic.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SolutionLogic_Praise_0.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Output_Praise_0.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
