@@ -1,4 +1,4 @@
-# Avril - Neural Network AI IO Device
+# Pseudocode: Avril - Neural Network AI IO Device
 ````
 /*
 *  Class Tree.
@@ -31,11 +31,6 @@
 * 																																															
 */
 ````
-## Interface for Windows.
- - https://github.com/AvrilOpenCFSD/Neural_Network_AI_IO_Device/tree/master/Develop_Neural_Network_AI
-
-## Build, Train, Save, Merge an AI Neural Network.
- - https://github.com/AvrilOpenCFSD/Neural_Network_AI_IO_Device/tree/master/Neural_Network_AI
 
 ### C++
 
@@ -53,4 +48,4 @@ Version 17.13.4.
  - https://developers.google.com/machine-learning/crash-course/neural-networks
    
 ## TestBench in C++ Console.
- - https://github.com/AvrilOpenCFSD/Neural_Network_AI_IO_Device/tree/master/TESTBENCH_Neural_Network_AI_IO_Device
+ - 
