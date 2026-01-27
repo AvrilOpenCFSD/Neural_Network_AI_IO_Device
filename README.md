@@ -1,4 +1,4 @@
-# Pseudocode: Avril - Neural Network AI IO Device
+# AVRIL - Neural Network Artificial Intelligence.
 ````
 /*
 *  Class Tree.
@@ -32,7 +32,7 @@
 */
 ````
 
-### C++
+### C#
 
 ### Using Windows 11 Home.
 Edition: Windows 11 Home OEM System Builder
@@ -46,6 +46,7 @@ Version 17.13.4.
 ## Dependencies.
 ### Tutorial: Neural networks
  - https://developers.google.com/machine-learning/crash-course/neural-networks
-   
-## TestBench in C++ Console.
- - 
+
+## Pseudocode in C++.
+ - https://github.com/AvrilOpenCFSD/Neural_Network_AI_IO_Device/tree/master/Neural_Network_AI
+
