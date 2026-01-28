@@ -38,28 +38,77 @@ namespace Avril_NNAI
             _Layer0_Node[0] = newEmpty;
         }
 
-        public void Create_Nodes(Avril_NNAI.Framework_NNAI obj, ulong numberOfPraiseInputValues)
+        private void Create_Layer4_Nodes(ulong numberOfNodes, Avril_NNAI.Node newEmpty_Node)
         {
-            if ((numberOfPraiseInputValues > 0) && (numberOfPraiseInputValues <= 9223372036854775807))
+            _Layer4_Nodes = new Avril_NNAI.Node[numberOfNodes];
+            for (ulong index = 0; index < numberOfNodes; index++)
             {
-                var newEmpty_Node_For_Layer4 = new Avril_NNAI.Node();
-                while (newEmpty_Node_For_Layer4 == null) { }
-                newEmpty_Node_For_Layer4.Set_NumberOfInputs(numberOfPraiseInputValues);
-                newEmpty_Node_For_Layer4.Create_REGISTERED_Inputs(new double[numberOfPraiseInputValues]);
-                for (ulong index = 0; index < numberOfPraiseInputValues; index++)
-                {
-                    newEmpty_Node_For_Layer4.Set_REGISTERED_Inputs(index, 0.0);
-                }
-                var newLinearPathway = new Avril_NNAI.Linear();
-                newLinearPathway.Set_Number_Of_Inputs_For_Algorithm(obj, newEmpty_Node_For_Layer4.Get_NumberOfInputs());
-
-                newEmpty_Node_For_Layer4.Create_Array_NeuralPathOfInput_SubSet(new Avril_NNAI.Linear[newEmpty_Node_For_Layer4.Get_NumberOfInputs()]);
-                for (ulong index = 0; index < newEmpty_Node_For_Layer4.Get_NumberOfInputs(); index++)
-                {
-                    // assigne bias and weight default values.
-                }
-                //ToDo
+                _Layer4_Nodes[index] = newEmpty_Node;
             }
+        }
+
+        public void Create_Nodes(Avril_NNAI.Framework_NNAI obj, ulong numberOfPraiseInputValues)
+        {   // layer 4.
+            var newEmpty_Node_For_Layer4 = new Avril_NNAI.Node();
+            while (newEmpty_Node_For_Layer4 == null) { }
+
+            ulong numberOfNodesForLayer_4 = numberOfPraiseInputValues;
+            if (obj.Get_Neural_Networks().Get_Data().Get_MachineAI().Get_MetaData().Get_NumberOfPraiseInputValues() < 5)
+            {
+                numberOfNodesForLayer_4 = 5;
+            }
+            else
+            {
+                numberOfNodesForLayer_4 = numberOfPraiseInputValues;
+            }
+            newEmpty_Node_For_Layer4.Set_NumberOfInputs(numberOfNodesForLayer_4);
+
+            newEmpty_Node_For_Layer4.Create_REGISTERED_Inputs(new double[numberOfPraiseInputValues]);
+            for (ulong index = 0; index < numberOfPraiseInputValues; index++)
+            {
+                newEmpty_Node_For_Layer4.Set_REGISTERED_Inputs(index, 0.0);
+            }
+
+            var newLinearPathway = new Avril_NNAI.Linear();
+            newLinearPathway.Set_Number_Of_Inputs_For_Algorithm(obj, newEmpty_Node_For_Layer4.Get_NumberOfInputs());
+            for (ulong index = 0; index < newEmpty_Node_For_Layer4.Get_NumberOfInputs(); index++)
+            {
+
+            }
+
+            newEmpty_Node_For_Layer4.Create_NeuralPathOfInput_SubSet(new Avril_NNAI.Linear[newEmpty_Node_For_Layer4.Get_NumberOfInputs()]);
+            for (ulong index = 0; index < newEmpty_Node_For_Layer4.Get_NumberOfInputs(); index++)
+            {
+                newEmpty_Node_For_Layer4.Set_NeuralPathOfInput_SubSet(index, newLinearPathway);
+            }
+
+            if (obj.Get_Neural_Networks().Get_Data().Get_MachineAI().Get_MetaData().Get_NumberOfPraiseInputValues() < 5)
+            {
+                obj.Get_Neural_Networks().Get_Data().Get_MachineAI().Get_MetaData().Create_Layer4_Nodes(5, newEmpty_Node_For_Layer4);
+            }
+            else
+            {
+                obj.Get_Neural_Networks().Get_Data().Get_MachineAI().Get_MetaData().Create_Layer4_Nodes(obj.Get_Neural_Networks().Get_Data().Get_MachineAI().Get_MetaData().Get_NumberOfPraiseInputValues(), newEmpty_Node_For_Layer4);
+            }
+
+            // layer 3.
+            var newEmpty_Node_For_Layer3 = new Avril_NNAI.Node();
+            while (newEmpty_Node_For_Layer3 == null) { }
+
+            ulong numberOfNodesForLayer_3 = (ulong)(numberOfPraiseInputValues * (double)(4 / 5));
+            if (obj.Get_Neural_Networks().Get_Data().Get_MachineAI().Get_MetaData().Get_NumberOfPraiseInputValues() < 5)
+            {
+                numberOfNodesForLayer_3 = 4;
+            }
+
+            newEmpty_Node_For_Layer3.Set_NumberOfInputs(numberOfNodesForLayer_4);
+            newEmpty_Node_For_Layer3.Create_REGISTERED_Inputs(new double[numberOfNodesForLayer_4]);
+            for (ulong index = 0; index < numberOfPraiseInputValues; index++)
+            {
+                newEmpty_Node_For_Layer3.Set_REGISTERED_Inputs(index, 0.0);
+            }
+            //ToDo
+            // assigne bias and weight default values.
         }
 
         public void Generate_Input_List(Avril_NNAI.Framework_NNAI obj)
@@ -76,6 +125,11 @@ namespace Avril_NNAI
             var subset_Input_Praise_2 = (Avril_NNAI.Input_Praise_2)obj.Get_Neural_Networks().Get_Data().Get_Input().Get_ItemOnListOfInputSubsets(praiseID);
             obj.Get_Neural_Networks().Get_Data().Get_MachineAI().Get_MetaData().Set_NumberOfPraiseInputValues(obj.Get_Neural_Networks().Get_Data().Get_MachineAI().Get_MetaData().Get_NumberOfPraiseInputValues() + subset_Input_Praise_2.Get_NumberOfInputValues());
 
+        }
+
+        private Avril_NNAI.Node[] Get_Layer4_Nodes()
+        {
+            return _Layer4_Nodes;
         }
 
         public ulong Get_NumberOfPraiseInputs()
