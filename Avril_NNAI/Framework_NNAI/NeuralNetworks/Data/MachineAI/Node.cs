@@ -38,9 +38,9 @@ namespace Avril_NNAI
             return _NumberOfInputs;
         }
 
-        public Avril_NNAI.Linear[] Get_NeuralPathOfInput_SubSet()
+        public Avril_NNAI.Linear Get_NeuralPathOfInput_SubSet(ulong nodeID)
         {
-            return _NeuralPathOfInput_SubSet;
+            return _NeuralPathOfInput_SubSet[nodeID];
         }
 
         public double Get_REGISTERED_Input(ulong praiseID)

@@ -3,6 +3,13 @@ namespace Avril_NNAI
 {
     public class Input_Praise_2
     {
+        enum PRAISE_2
+        {
+            Direction_X,
+            Direction_Y,
+            Direction_Z,
+            Period
+        }
         private byte _numberOfInputValues;
         private double _direction_X;
         private double _direction_y;

@@ -3,6 +3,10 @@ namespace Avril_NNAI
 {
     public class Input_Praise_0
     {
+        enum PRAISE_0
+        {
+            Ping
+        }
         private byte _numberOfInputValues;
         private long _Ping;
 

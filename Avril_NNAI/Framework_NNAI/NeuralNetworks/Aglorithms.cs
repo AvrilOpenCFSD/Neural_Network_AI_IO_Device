@@ -20,6 +20,8 @@ namespace Avril_NNAI
             obj.Get_Neural_Networks().Get_Data().Get_MachineAI().Get_MetaData().Set_NumberOfPraiseInputs(numberOfTotalInputs);
             obj.Get_Neural_Networks().Get_Data().Get_MachineAI().Get_MetaData().Generate_Input_List(obj);
             obj.Get_Neural_Networks().Get_Data().Get_MachineAI().Get_MetaData().Create_Nodes(obj, obj.Get_Neural_Networks().Get_Data().Get_MachineAI().Get_MetaData().Get_NumberOfPraiseInputValues());
+            //ToDo
+            obj.Get_Neural_Networks().Get_Data().Get_MachineAI().Get_MetaData().Initialise_Node_WEIGHT(obj);
         }
 
         public Avril_NNAI.NeuralPath Get_NeuralPath()

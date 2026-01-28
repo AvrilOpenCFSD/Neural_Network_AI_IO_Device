@@ -3,6 +3,11 @@ namespace Avril_NNAI
 {
     public class Input_Praise_1
     {
+        enum PRAISE_1
+        {
+            Mouse_X,
+            Mouse_Y
+        }
         private byte _numberOfInputValues;
         private double _mouseX;
         private double _mouseY;
