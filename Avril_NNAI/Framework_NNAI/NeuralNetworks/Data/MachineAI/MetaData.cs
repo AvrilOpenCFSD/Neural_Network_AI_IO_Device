@@ -256,7 +256,7 @@ namespace Avril_NNAI
             {
                 for (ulong index_B = 0; index_B < this.Get_NumberOfPraiseInputValues(); index_B++)
                 {
-                    var objNode = this.Get_Layer4_Nodes()[index_A].Get_NeuralPathOfInput_SubSet(index_B);
+                    Avril_NNAI.Linear objNode = this.Get_Layer4_Nodes()[index_A].Get_NeuralPathOfInput_SubSet(index_B);
                     objNode.Set_Number_Of_Inputs_For_Algorithm(obj, this.Get_NumberOfPraiseInputValues());
                     // assign weight and bias default values.
                 }
