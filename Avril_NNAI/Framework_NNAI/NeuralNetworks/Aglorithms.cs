@@ -17,8 +17,9 @@ namespace Avril_NNAI
 
         public void ConstructNeuralNetworkAI_Frame(Avril_NNAI.Framework_NNAI obj, ulong numberOfTotalInputs)
         {
-            obj.Get_Neural_Networks().Get_Data().Set_NumberOfTotalInputs(numberOfTotalInputs);
-            obj.Get_Neural_Networks().Get_Data().Create_Nodes(obj);
+            obj.Get_Neural_Networks().Get_Data().Get_MachineAI().Get_MetaData().Set_NumberOfPraiseInputs(numberOfTotalInputs);
+            obj.Get_Neural_Networks().Get_Data().Get_MachineAI().Get_MetaData().Generate_Input_List(obj);
+            obj.Get_Neural_Networks().Get_Data().Get_MachineAI().Get_MetaData().Create_Nodes(obj, obj.Get_Neural_Networks().Get_Data().Get_MachineAI().Get_MetaData().Get_NumberOfPraiseInputValues());
         }
 
         public Avril_NNAI.NeuralPath Get_NeuralPath()

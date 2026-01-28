@@ -16,17 +16,17 @@
 *			   |                    |																 |																												  |
 * 			Global				Algorithms															Data																											Execute
 *									|																 |
-*									|____________________________________________					 |____________________________________________________________________________
-*									|											|					 |									  |										 |		
-*								SolutionLogic								NeuralPath				Input								Output									Node (dynamic)
-*									|											|					 |									  |										 |				
-*									L------------	Algorithms_Praise_0		 ___|__________			 L------------	Input_Praise_0		  L------------	Output_Praise_0			 |_______________________________________________
-*									L------------	Algorithms_Praise_1		 |			  |			 L------------	Input_Praise_1		  L------------	Output_Praise_1			 |					        |					|
-*									L------------	Algorithms_Praise_2		Linear		//ToDo		 L------------	Intput_Praise_1		  L------------	Output_Praise_1			NeuralPathSubSet	InputPraiseSubSet	OuputPraiseSubSet
-*																																																
-*																																																
-*																																																
-* 																																															
+*									|____________________________________________					 |_______________________________________________________________________________
+*									|											|					 |									  |										    |		
+*								SolutionLogic								NeuralPath				Input								Output									MachineAI (Data File)
+*									|											|					 |									  |										    |				
+*									L------------	Algorithms_Praise_0		 ___|__________			 L------------	Input_Praise_0		  L------------	Output_Praise_0			    |________________________
+*									L------------	Algorithms_Praise_1		 |			  |			 L------------	Input_Praise_1		  L------------	Output_Praise_1			    |                       |
+*									L------------	Algorithms_Praise_2		Linear		//ToDo		 L------------	Intput_Praise_1		  L------------	Output_Praise_1		       Node                 MetaData
+*																																													|			
+*																																													|_______________________________________________
+*																																												    |					    |					|				
+* 																																												NeuralPathSubSet	InputPraiseSubSet	OuputPraiseSubSet			
 */
 using System;
 using System.Collections.Generic;
