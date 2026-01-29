@@ -1,4 +1,6 @@
 ﻿
+using System.Linq;
+
 namespace Avril_NNAI
 {
     public class Aglorithms
@@ -15,13 +17,19 @@ namespace Avril_NNAI
             while (Get_SolutionLogic() == null) { }
         }
 
-        public void ConstructNeuralNetworkAI_Frame(Avril_NNAI.Framework_NNAI obj, ulong numberOfTotalInputs)
+        public Avril_NNAI.MachineAI ConstructNeuralNetworkAI_Frame(Avril_NNAI.Framework_NNAI obj, string nameOfNNAI, ulong[] praiseID)
         {
-            obj.Get_Neural_Networks().Get_Data().Get_MachineAI().Get_MetaData().Set_NumberOfPraiseInputs(numberOfTotalInputs);
-            obj.Get_Neural_Networks().Get_Data().Get_MachineAI().Get_MetaData().Generate_Input_List(obj);
-            obj.Get_Neural_Networks().Get_Data().Get_MachineAI().Get_MetaData().Create_Nodes(obj, obj.Get_Neural_Networks().Get_Data().Get_MachineAI().Get_MetaData().Get_NumberOfPraiseInputValues());
+            Avril_NNAI.MachineAI _AvrilNNAI = new Avril_NNAI.MachineAI();
+            _AvrilNNAI.Set_NameOfNNAI(nameOfNNAI);
+            _AvrilNNAI.Get_MetaData().Set_NumberOfPraises((ulong)praiseID.LongLength);
+            _AvrilNNAI.Get_MetaData().Calculate_NumberOfPraiseInputValues(obj, _AvrilNNAI, praiseID);
+            _AvrilNNAI.Get_MetaData().Generate_REGISTERED_Inputs_List(obj, _AvrilNNAI, praiseID);
+            _AvrilNNAI.Get_MetaData().Create_Nodes(obj, _AvrilNNAI, _AvrilNNAI.Get_MetaData().Get_NumberOfPraiseInputValues());
             //ToDo
-            obj.Get_Neural_Networks().Get_Data().Get_MachineAI().Get_MetaData().Initialise_Node_WEIGHT(obj);
+            _AvrilNNAI.Get_MetaData().Initialise_Node_WEIGHT_and_BIAS(obj);
+
+            obj.Get_Neural_Networks().Get_Data().Save_New_Neural_Network(_AvrilNNAI);
+            return _AvrilNNAI;
         }
 
         public Avril_NNAI.NeuralPath Get_NeuralPath()

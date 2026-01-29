@@ -1,4 +1,6 @@
 ﻿
+using System;
+
 namespace Avril_NNAI
 {
     public class Input_Praise_0
@@ -8,7 +10,7 @@ namespace Avril_NNAI
             Ping
         }
         private byte _numberOfInputValues;
-        private long _Ping;
+        private double _Ping;
 
         public Input_Praise_0()
         {
@@ -16,7 +18,7 @@ namespace Avril_NNAI
             
         }
 
-        public long Get_Item_Of_Input_Praise(byte index)
+        public double Get_Item_Of_Input_Praise(byte index)
         {
             switch (index)
             {
@@ -27,7 +29,7 @@ namespace Avril_NNAI
             }
         }
 
-        public long Get_Ping()
+        public double Get_Ping()
         {
             return _Ping;
         }
@@ -35,6 +37,23 @@ namespace Avril_NNAI
         public ulong Get_NumberOfInputValues()
         {
             return _numberOfInputValues;
+        }
+
+        public void Set_Item_Of_Input_Praise(byte index, double value)
+        {
+            switch (index)
+            {
+                case 0:
+                    Set_Ping(value);
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void Set_Ping(double value)
+        {
+            _Ping = value;
         }
 
         private void Set_NumberOfInputValues(byte numberOfInputValues)

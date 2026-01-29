@@ -13,7 +13,7 @@ namespace Avril_NNAI
 
         public void Initialise(Avril_NNAI.Framework_NNAI obj)
         {
-            obj.Get_Neural_Networks().Get_Execute().Create_And_Run_UI(obj);
+            obj.Get_Neural_Networks().Get_Execute().Create_And_Run_UI();
         }
 
         public Avril_NNAI.NeuralNetworks Get_Neural_Networks()

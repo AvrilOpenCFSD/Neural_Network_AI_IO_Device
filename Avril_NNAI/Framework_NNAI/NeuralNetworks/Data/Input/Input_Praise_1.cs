@@ -46,6 +46,20 @@ namespace Avril_NNAI
         {
             return _numberOfInputValues;
         }
+        public void Set_Item_Of_Input_Praise(byte index, double value)
+        {
+            switch (index)
+            {
+                case 0:
+                    Set_MouseX(value);
+                    break;
+                case 1:
+                    Set_MouseY(value);
+                    break;
+                default:
+                    break;
+            }
+        }
 
         private void Set_MouseX(double mouseX)
         {
