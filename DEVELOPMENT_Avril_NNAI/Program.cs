@@ -30,14 +30,13 @@
 */
 namespace Avril_NNAI
 {
-    internal static class Program
+    public static class Program
     {
         static private Avril_NNAI.Framework_NNAI framework = null;
 
-        [STAThread]
         static void Main()
         {
-            System.Console.WriteLine("started progrma entry.");
+            System.Console.WriteLine("started program entry.");
             framework = new Avril_NNAI.Framework_NNAI();
             while (framework == null) { /* wait untill is created */ }
             System.Console.WriteLine("created framework.");

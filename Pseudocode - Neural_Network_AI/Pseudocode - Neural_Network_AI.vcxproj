@@ -127,7 +127,39 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Algorithms.cpp" />
+    <ClCompile Include="Data.cpp" />
+    <ClCompile Include="Execute.cpp" />
+    <ClCompile Include="Framework_NNAI.cpp" />
+    <ClCompile Include="Global.cpp" />
+    <ClCompile Include="Input.cpp" />
+    <ClCompile Include="Input_Praise_0.cpp" />
+    <ClCompile Include="Linear.cpp" />
+    <ClCompile Include="NeuralNetworks.cpp" />
+    <ClCompile Include="NeuralPath.cpp" />
+    <ClCompile Include="Node.cpp" />
+    <ClCompile Include="Output.cpp" />
+    <ClCompile Include="Output_Praise_0.cpp" />
     <ClCompile Include="Pseudocode - Neural_Network_AI.cpp" />
+    <ClCompile Include="SolutionLogic.cpp" />
+    <ClCompile Include="SolutionLogic_Praise_0.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Algorithms.h" />
+    <ClInclude Include="Data.h" />
+    <ClInclude Include="Execute.h" />
+    <ClInclude Include="Framework_NNAI.h" />
+    <ClInclude Include="Global.h" />
+    <ClInclude Include="Input.h" />
+    <ClInclude Include="Input_Praise_0.h" />
+    <ClInclude Include="Linear.h" />
+    <ClInclude Include="NeuralNetworks.h" />
+    <ClInclude Include="NeuralPath.h" />
+    <ClInclude Include="Node.h" />
+    <ClInclude Include="Output.h" />
+    <ClInclude Include="Output_Praise_0.h" />
+    <ClInclude Include="SolutionLogic.h" />
+    <ClInclude Include="SolutionLogic_Praise_0.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

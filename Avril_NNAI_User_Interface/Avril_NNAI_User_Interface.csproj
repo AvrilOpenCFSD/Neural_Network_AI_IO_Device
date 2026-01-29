@@ -52,6 +52,30 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Framework_NNAI.cs" />
+    <Compile Include="Framework_NNAI\NeuralNetworks.cs" />
+    <Compile Include="Framework_NNAI\NeuralNetworks\Aglorithms.cs" />
+    <Compile Include="Framework_NNAI\NeuralNetworks\Algorithms\NeuralPath.cs" />
+    <Compile Include="Framework_NNAI\NeuralNetworks\Algorithms\NeuralPath\Linear.cs" />
+    <Compile Include="Framework_NNAI\NeuralNetworks\Algorithms\SolutionLogic.cs" />
+    <Compile Include="Framework_NNAI\NeuralNetworks\Algorithms\SolutionLogic\Algorithm_Praise_0.cs" />
+    <Compile Include="Framework_NNAI\NeuralNetworks\Algorithms\SolutionLogic\Algorithm_Praise_1.cs" />
+    <Compile Include="Framework_NNAI\NeuralNetworks\Algorithms\SolutionLogic\Algorithm_Praise_2.cs" />
+    <Compile Include="Framework_NNAI\NeuralNetworks\Data.cs" />
+    <Compile Include="Framework_NNAI\NeuralNetworks\Data\Input.cs" />
+    <Compile Include="Framework_NNAI\NeuralNetworks\Data\Input\Input_Praise_0.cs" />
+    <Compile Include="Framework_NNAI\NeuralNetworks\Data\Input\Input_Praise_1.cs" />
+    <Compile Include="Framework_NNAI\NeuralNetworks\Data\Input\Input_Praise_2.cs" />
+    <Compile Include="Framework_NNAI\NeuralNetworks\Data\MachineAI.cs" />
+    <Compile Include="Framework_NNAI\NeuralNetworks\Data\MachineAI\MetaData.cs" />
+    <Compile Include="Framework_NNAI\NeuralNetworks\Data\MachineAI\Node.cs" />
+    <Compile Include="Framework_NNAI\NeuralNetworks\Data\MachineAI\Node_Control.cs" />
+    <Compile Include="Framework_NNAI\NeuralNetworks\Data\Output.cs" />
+    <Compile Include="Framework_NNAI\NeuralNetworks\Data\Output\Output_Praise_0.cs" />
+    <Compile Include="Framework_NNAI\NeuralNetworks\Data\Output\Output_Praise_1.cs" />
+    <Compile Include="Framework_NNAI\NeuralNetworks\Data\Output\Output_Praise_2.cs" />
+    <Compile Include="Framework_NNAI\NeuralNetworks\Execute.cs" />
+    <Compile Include="Framework_NNAI\NeuralNetworks\Global.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
