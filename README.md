@@ -1,4 +1,21 @@
 # AVRIL - Neural Network Artificial Intelligence.
+## FOLDERS
+### Pseudocode - Neural_Network_AI.
+#### C++ : Console
+#### Using Windows 11 Home.
+Edition: Windows 11 Home OEM System Builder
+Version: 24H2
+#### Using Microsoft Visual Studio Professional 2022.
+Version 17.13.4.
+
+### #DEVELOPMENT_Avril_NNAI.
+#### C# : Console
+#### Using Windows 11 Home.
+Edition: Windows 11 Home OEM System Builder
+Version: 24H2
+#### Using Microsoft Visual Studio Professional 2022.
+Version 17.13.4.
+
 ````
 /*
 *  Class Tree.
@@ -32,21 +49,27 @@
 */
 ````
 
-### C#
-
-### Using Windows 11 Home.
+### Avril_NNAI_User_Interface.
+#### C# - Forms App
+#### Using Windows 11 Home.
 Edition: Windows 11 Home OEM System Builder
-
 Version: 24H2
+#### Using Microsoft Visual Studio Professional 2022.
+Version 17.13.4.
 
-### Using Microsoft Visual Studio Professional 2022.
-
+### AvrilNNAI_OpenConcurrency_IO_Praise_Nth
+#### C# : Dynamic Link Library
+#### Using Windows 11 Home.
+Edition: Windows 11 Home OEM System Builder
+Version: 24H2
+#### Using Microsoft Visual Studio Professional 2022.
 Version 17.13.4.
  
 ## Dependencies.
 ### Tutorial: Neural networks
  - https://developers.google.com/machine-learning/crash-course/neural-networks
 
-## Pseudocode in C++.
+## Development History.
+### FOLDER: Pseudocode - Neural_Network_AI
  - https://github.com/AvrilOpenCFSD/Neural_Network_AI_IO_Device/tree/master/Neural_Network_AI
 
