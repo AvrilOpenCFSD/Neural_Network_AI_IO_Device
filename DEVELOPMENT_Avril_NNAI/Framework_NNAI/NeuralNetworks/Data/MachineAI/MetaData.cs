@@ -1,6 +1,7 @@
 ﻿
 using System;
 using System.ComponentModel;
+using System.Numerics;
 
 namespace Avril_NNAI
 {
@@ -50,6 +51,7 @@ namespace Avril_NNAI
             Set_NumberOfNodesInLayer(3, 3);
             Set_NumberOfNodesInLayer(2, 2);
             Set_NumberOfNodesInLayer(1, 1);
+            Set_NumberOfNodesInLayer(0, 0);
 
             Create_Layer4_Nodes(1, new Avril_NNAI.Node());
             while (Get_Layer4_Node(0) == null) { }
@@ -90,28 +92,81 @@ namespace Avril_NNAI
         // public.
         public void Create_Nodes(Avril_NNAI.Framework_NNAI obj, Avril_NNAI.MachineAI objNNAI, ulong numberOfPraiseInputValues)
         {
+            System.Console.WriteLine("entered Create_Nodes.");
             var newEmptyNode = new Avril_NNAI.Node();
             while (newEmptyNode == null) { }
 
             var newLinearPath = new Avril_NNAI.Linear();
             while (newLinearPath == null) { }
 
-            for (byte layerID = 6; layerID <= 0; layerID--)
+            ulong numberOfNodesInLayer = new ulong();
+            double temp = new double();
+            for (byte layerID = 6; (layerID < 7 && layerID >= 0); layerID--)
             {
+                numberOfNodesInLayer = 0;
+                temp = 0.0;
+                System.Console.WriteLine("layerID = " + layerID);
                 switch (layerID)
                 {
                     case (byte)NodeLayer.Layer_For_Inputs:
-                        objNNAI.Get_MetaData().Set_NumberOfNodesInLayer(layerID, Convert.ToUInt64(numberOfPraiseInputValues));
+                        numberOfNodesInLayer = numberOfPraiseInputValues;
+                        objNNAI.Get_MetaData().Set_NumberOfNodesInLayer(layerID, Convert.ToUInt64(numberOfNodesInLayer));
+                        System.Console.WriteLine("(layerID == 6) Set_NumberOfNodesInLayer = " + objNNAI.Get_MetaData().Get_NumberOfNodesInLayer(layerID));
+                        break;
+
+                    case (byte)NodeLayer.Layer_4:
+                        temp = (double)4 / (double)5;
+                        temp = ((double)numberOfPraiseInputValues * (double)temp);
+                        numberOfNodesInLayer = (ulong)Math.Round(temp);
+                        objNNAI.Get_MetaData().Set_NumberOfNodesInLayer(layerID, numberOfNodesInLayer);
+                        System.Console.WriteLine("(layerID == " + layerID + ") Set_NumberOfNodesInLayer = " + objNNAI.Get_MetaData().Get_NumberOfNodesInLayer(layerID) + " " + temp+ " " + numberOfNodesInLayer);
+
+                        break;
+
+                    case (byte)NodeLayer.Layer_3:
+                        temp = (double)3 / (double)5;
+                        temp = ((double)numberOfPraiseInputValues * (double)temp);
+                        numberOfNodesInLayer = (ulong)Math.Round(temp);
+                        objNNAI.Get_MetaData().Set_NumberOfNodesInLayer(layerID, numberOfNodesInLayer);
+                        System.Console.WriteLine("(layerID == " + layerID + ") Set_NumberOfNodesInLayer = " + objNNAI.Get_MetaData().Get_NumberOfNodesInLayer(layerID) + " " + temp + " " + numberOfNodesInLayer);
+                        break;
+
+                    case (byte)NodeLayer.Layer_2:
+                        temp = (double)2 / (double)5;
+                        temp = ((double)numberOfPraiseInputValues * (double)temp);
+                        numberOfNodesInLayer = (ulong)Math.Round(temp);
+                        objNNAI.Get_MetaData().Set_NumberOfNodesInLayer(layerID, numberOfNodesInLayer);
+                        System.Console.WriteLine("(layerID == " + layerID + ") Set_NumberOfNodesInLayer = " + objNNAI.Get_MetaData().Get_NumberOfNodesInLayer(layerID) + " " + temp + " " + numberOfNodesInLayer);
+                break;
+
+                    case (byte)NodeLayer.Layer_1:
+                        temp = (double)1 / (double)5;
+                        temp = ((double)numberOfPraiseInputValues * (double)temp);
+                        numberOfNodesInLayer = (ulong)Math.Round(temp);
+                        objNNAI.Get_MetaData().Set_NumberOfNodesInLayer(layerID, numberOfNodesInLayer);
+                        System.Console.WriteLine("(layerID == " + layerID + ") Set_NumberOfNodesInLayer = " + objNNAI.Get_MetaData().Get_NumberOfNodesInLayer(layerID) + " " + temp + " " + numberOfNodesInLayer);
+                        break;
+
+                    case (byte)NodeLayer.Layer_0:
+                        numberOfNodesInLayer = 1;
+                        objNNAI.Get_MetaData().Set_NumberOfNodesInLayer(layerID, Convert.ToUInt64(numberOfNodesInLayer));
+                        System.Console.WriteLine("(layerID == " + layerID + ") Set_NumberOfNodesInLayer = " + objNNAI.Get_MetaData().Get_NumberOfNodesInLayer(layerID) + " " + temp + " " + numberOfNodesInLayer);
+
                         break;
 
                     case (byte)NodeLayer.Layer_For_Outputs:
-                        objNNAI.Get_MetaData().Set_NumberOfNodesInLayer(layerID, Convert.ToUInt64(1));
+                        numberOfNodesInLayer = 0;
+                        objNNAI.Get_MetaData().Set_NumberOfNodesInLayer(layerID, Convert.ToUInt64(numberOfNodesInLayer));
+                        System.Console.WriteLine("(layerID == 0) Set_NumberOfNodesInLayer = " + objNNAI.Get_MetaData().Get_NumberOfNodesInLayer(layerID));
+
                         break;
 
                     default:
-                        if (numberOfPraiseInputValues > 5) objNNAI.Get_MetaData().Set_NumberOfNodesInLayer(layerID, Convert.ToUInt64(numberOfPraiseInputValues * (double)((ulong)(layerID - 1) / 5)));
                         break;
                 }
+            }
+            for (byte layerID = 6; (layerID < 7 && layerID >= 0); layerID--)
+            {
                 if (layerID <= 5)
                 {
                     newEmptyNode.Set_NumberOfInputs(objNNAI.Get_MetaData().Get_NumberOfNodesInLayer((ulong)(layerID + 1)));
@@ -126,8 +181,15 @@ namespace Avril_NNAI
                         newEmptyNode.Set_NeuralPathOfInput_SubSet(index, newLinearPath);
                     }
                 }
+            }
+            for (byte layerID = 6; (layerID < 7 && layerID >= 0); layerID--)
+            { 
                 switch (layerID)
                 {
+                    case (byte)NodeLayer.Layer_For_Inputs:
+                        // no nodes to create.
+                        break;
+
                     case (byte)NodeLayer.Layer_4:
                         objNNAI.Get_MetaData().Create_Layer4_Nodes(objNNAI.Get_MetaData().Get_NumberOfNodesInLayer(layerID), newEmptyNode);
                         break;
@@ -148,12 +210,18 @@ namespace Avril_NNAI
                         objNNAI.Get_MetaData().Create_Layer0_Node(newEmptyNode);
                         break;
 
+                    case (byte)NodeLayer.Layer_For_Outputs:
+                        // no nodes to create.
+                        break;
+
                     default:
                         break;
                 }
                 
             }
+            System.Console.WriteLine("exiting Create_Nodes.");
         }
+
         public void Calculate_NumberOfPraiseInputValues(Avril_NNAI.Framework_NNAI obj, Avril_NNAI.MachineAI objNNAI, ulong[] praiseID)
         {
             objNNAI.Get_MetaData().Set_NumberOfPraiseInputValues(0);
@@ -167,7 +235,7 @@ namespace Avril_NNAI
                         break;
 
                     case 1:
-                        var objValue_Praise1= (Avril_NNAI.Input_Praise_1)obj.Get_Neural_Networks().Get_Data().Get_Input().Get_ItemOnListOfInputSubsets(1);
+                        var objValue_Praise1 = (Avril_NNAI.Input_Praise_1)obj.Get_Neural_Networks().Get_Data().Get_Input().Get_ItemOnListOfInputSubsets(1);
                         objNNAI.Get_MetaData().Set_NumberOfPraiseInputValues(_NumberOfPraiseInputValues + objValue_Praise1.Get_NumberOfInputValues());
                         break;
 
