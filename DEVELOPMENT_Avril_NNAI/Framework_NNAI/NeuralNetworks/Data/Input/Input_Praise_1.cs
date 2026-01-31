@@ -37,7 +37,7 @@ namespace Avril_NNAI
         public Input_Praise_1()
         {
             Create_NumberOfInputValues(new byte());
-            Set_NumberOfInputValues(2);
+            Set_NumberOfInputValues(11);
 
             Create_Mouse_Screen_X(new double());
             Set_Mouse_Screen_X(0.0);

@@ -45,9 +45,11 @@ namespace Avril_NNAI
             System.Console.WriteLine("framework initialised.");
 
 // SIMULATION
-/*
-            ulong[] praiseIDs = { 1 };
+
+            ulong[] praiseIDs = new ulong[1];
+            praiseIDs[0] = 1;
             Avril_NNAI.MachineAI myNeuralNetwork = framework.Get_Neural_Networks().Get_Aglorithms().ConstructNeuralNetworkAI_Frame(framework, "Avril_NNAI_OpenCFSD_Praise_1_IO.nnai", praiseIDs);
+/*
             for (byte layerID = 6; layerID >= 0; layerID--)
             {
                 for (ulong nodeID = 0; nodeID < myNeuralNetwork.Get_MetaData().Get_NumberOfNodesInLayer(layerID); nodeID++)

@@ -221,17 +221,26 @@ namespace Avril_NNAI
 
         public void Initialise_Node_WEIGHT_and_BIAS(Avril_NNAI.Framework_NNAI obj, Avril_NNAI.MachineAI _AvrilNNAI)
         {
+            System.Console.WriteLine("entered Initialise_Node_WEIGHT_and_BIAS.");
             for (byte layerID = 6; layerID >= 0; layerID--)
             {
+                System.Console.WriteLine("ALPHA.");
                 for (ulong nodeID = 0; nodeID < _AvrilNNAI.Get_MetaData().Get_NumberOfNodesInLayer(layerID); nodeID++)
                 {
-                    for (ulong inputValuID = 0; inputValuID < _AvrilNNAI.Get_MetaData().Get_NumberOfNodesInLayer((ulong)(layerID + 1)); inputValuID++)
+                    System.Console.WriteLine("BRAVO.");
+                    if (layerID <= 5)
                     {
-                        _AvrilNNAI.Get_MetaData().Get_Node(layerID, nodeID).Get_NeuralPathOfInput_SubSet(inputValuID).Set_Weight(obj.Get_Neural_Networks().Get_Aglorithms().Get_NeuralPath().Generate_Initial_Random_Small_Value(-0.5, 0.5));
-                        _AvrilNNAI.Get_MetaData().Get_Node(layerID, nodeID).Get_NeuralPathOfInput_SubSet(inputValuID).Set_Bias(obj.Get_Neural_Networks().Get_Aglorithms().Get_NeuralPath().Generate_Initial_Random_Small_Value(-0.5, 0.5));
+                        System.Console.WriteLine("CHARLIE.");
+                        for (ulong inputValuID = 0; inputValuID < _AvrilNNAI.Get_MetaData().Get_NumberOfNodesInLayer((ulong)(layerID + 1)); inputValuID++)
+                        {
+                            System.Console.WriteLine("DELTA.");
+                            _AvrilNNAI.Get_MetaData().Get_Node(layerID, nodeID).Get_NeuralPathOfInput_SubSet(inputValuID).Set_Weight(obj.Get_Neural_Networks().Get_Aglorithms().Get_NeuralPath().Generate_Initial_Random_Small_Value(-0.5, 0.5));
+                            _AvrilNNAI.Get_MetaData().Get_Node(layerID, nodeID).Get_NeuralPathOfInput_SubSet(inputValuID).Set_Bias(obj.Get_Neural_Networks().Get_Aglorithms().Get_NeuralPath().Generate_Initial_Random_Small_Value(-0.5, 0.5));
+                        }
                     }
                 }
             }
+            System.Console.WriteLine("exiting Initialise_Node_WEIGHT_and_BIAS.");
         }
     
     // get.

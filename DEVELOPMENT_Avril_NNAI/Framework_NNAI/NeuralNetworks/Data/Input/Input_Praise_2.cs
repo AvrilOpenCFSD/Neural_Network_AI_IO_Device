@@ -46,7 +46,7 @@ namespace Avril_NNAI
 // constructor.
         public Input_Praise_2()
         {
-            Set_NumberOfInputValues(4);
+            Set_NumberOfInputValues(16);
         }
 
 // destructor.
