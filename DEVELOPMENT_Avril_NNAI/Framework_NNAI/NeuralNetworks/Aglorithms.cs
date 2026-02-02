@@ -45,7 +45,7 @@ namespace Avril_NNAI
             System.Console.WriteLine("ECHO.");
             _AvrilNNAI.Get_MetaData().Create_Nodes(obj, _AvrilNNAI, _AvrilNNAI.Get_MetaData().Get_NumberOfPraiseInputValues());
             System.Console.WriteLine("FOXTROT.");
-            _AvrilNNAI.Get_MetaData().Initialise_Node_WEIGHT_and_BIAS(obj, _AvrilNNAI);
+
             System.Console.WriteLine("GIGA.");
             obj.Get_Neural_Networks().Get_Data().Preserve_New_Neural_Network(_AvrilNNAI);
             System.Console.WriteLine("HEX.");

@@ -207,8 +207,10 @@ namespace Avril_NNAI
                     objNNAI.Get_MetaData().Get_Node(layerID, nodeID).Create_List_Of_NeuralPathOfNodeInputs(new Avril_NNAI.Linear[objNNAI.Get_MetaData().Get_Node(layerID, nodeID).Get_NumberOfInputs()]);
                     for (ulong inputID = 0; inputID < objNNAI.Get_MetaData().Get_Node(layerID, nodeID).Get_NumberOfInputs(); inputID++)
                     {
-                        System.Console.WriteLine("layerID = " + layerID + "  nodeID = " + nodeID + "  inputID = " + inputID);
                         objNNAI.Get_MetaData().Get_Node(layerID, nodeID).Set_NeuralPathOfInput_SubSet(inputID, newLinearPath);
+                        objNNAI.Get_MetaData().Get_Node(layerID, nodeID).Get_NeuralPathOfInput_SubSet(inputID).Set_Weight(obj.Get_Neural_Networks().Get_Aglorithms().Get_NeuralPath().Generate_Initial_Random_Small_Value(-0.5, 0.5));
+                        objNNAI.Get_MetaData().Get_Node(layerID, nodeID).Get_NeuralPathOfInput_SubSet(inputID).Set_Bias(obj.Get_Neural_Networks().Get_Aglorithms().Get_NeuralPath().Generate_Initial_Random_Small_Value(-0.5, 0.5));
+                        System.Console.WriteLine("layerID = " + layerID + "  nodeID = " + nodeID + "  inputID = " + inputID + "  bias = " + objNNAI.Get_MetaData().Get_Node(layerID, nodeID).Get_NeuralPathOfInput_SubSet(inputID).Get_Bias() + "  weight = " + objNNAI.Get_MetaData().Get_Node(layerID, nodeID).Get_NeuralPathOfInput_SubSet(inputID).Get_Weight());
                     }
                 }
             }
@@ -285,19 +287,7 @@ namespace Avril_NNAI
         {
             ulong numberOfInputs = 0;
             System.Console.WriteLine("entered Initialise_Node_WEIGHT_and_BIAS.");
-            for (byte layerID = 4; layerID < 5; layerID--)
-            {
-                for (ulong nodeID = 0; nodeID < _AvrilNNAI.Get_MetaData().Get_NumberOfNodesInHiddenLayer(layerID); nodeID++)
-                {
-                    numberOfInputs = _AvrilNNAI.Get_MetaData().Get_Node(layerID, nodeID).Get_NumberOfInputs();
-                    for (ulong inputValuID = 0; inputValuID < numberOfInputs; inputValuID++)
-                    {
-                        System.Console.WriteLine("layerID = " + layerID + "  nodeID = " + nodeID + "  inputValuID = " + inputValuID);
-                        _AvrilNNAI.Get_MetaData().Get_Node(layerID, nodeID).Get_NeuralPathOfInput_SubSet(inputValuID).Set_Weight(obj.Get_Neural_Networks().Get_Aglorithms().Get_NeuralPath().Generate_Initial_Random_Small_Value(-0.5, 0.5));
-                        _AvrilNNAI.Get_MetaData().Get_Node(layerID, nodeID).Get_NeuralPathOfInput_SubSet(inputValuID).Set_Bias(obj.Get_Neural_Networks().Get_Aglorithms().Get_NeuralPath().Generate_Initial_Random_Small_Value(-0.5, 0.5));
-                    }
-                }
-            }
+
             System.Console.WriteLine("exiting Initialise_Node_WEIGHT_and_BIAS.");
         }
 
