@@ -15,12 +15,13 @@ namespace Avril_NNAI
         public Node()
         {
             //System.Console.WriteLine("entered Node.");
-            Create_List_Of_NeuralPathOfNodeInputs(new Avril_NNAI.Linear[1]);
+            Create_List_Of_NeuralPathOfNodeInputs(new Avril_NNAI.Linear[2]);
             while (Get_List_Of_NeuralPathOfInput_SubSet() == null) { }
             Set_NeuralPathOfInput_SubSet(0, new Avril_NNAI.Linear());
+            Set_NeuralPathOfInput_SubSet(1, new Avril_NNAI.Linear());
 
             Create_NumberOfInputs(new ulong());
-            Set_NumberOfInputs(1);
+            Set_NumberOfInputs(2);
 
             Create_REGISTERED_Output(new double());
             Set_REGISTERED_Output(0.0);
