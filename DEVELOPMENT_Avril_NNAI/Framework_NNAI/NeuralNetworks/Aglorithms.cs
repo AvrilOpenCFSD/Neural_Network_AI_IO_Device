@@ -27,19 +27,17 @@ namespace Avril_NNAI
         }
 
 // public.
-        public Avril_NNAI.MachineAI ConstructNeuralNetworkAI_Frame(Avril_NNAI.Framework_NNAI obj, string nameOfNNAI, ulong[] praiseID)
+        public Avril_NNAI.MachineAI ConstructNeuralNetworkAI_Frame(Avril_NNAI.Framework_NNAI obj, string nameOfNNAI, ulong praiseID)
         {
             System.Console.WriteLine("entering ConstructNeuralNetworkAI_Frame.");
             Avril_NNAI.MachineAI _AvrilNNAI = new Avril_NNAI.MachineAI();
             while(_AvrilNNAI == null) { }
-            System.Console.WriteLine("ALPHA.");
-            _AvrilNNAI.Set_NameOfNNAI(nameOfNNAI);
-            System.Console.WriteLine("BRAVO.");
-            _AvrilNNAI.Get_MetaData().Set_NumberOfPraises((ulong)praiseID.LongLength);
-            System.Console.WriteLine("NumberOfPraises = " + _AvrilNNAI.Get_MetaData().Get_NumberOfPraises());
-            System.Console.WriteLine("CHARLIE.");
-            _AvrilNNAI.Get_MetaData().Calculate_NumberOfPraiseInputValues(obj, _AvrilNNAI, praiseID);
+            _AvrilNNAI.Get_MetaData().Set_NameOfNNAI(nameOfNNAI);
+            obj.Get_Neural_Networks().Get_Aglorithms().Get_NeuralPath().Calculate_NumberOfPraiseInputValues(obj, _AvrilNNAI, praiseID);
             System.Console.WriteLine("NumberOfPraiseInputValues = " + _AvrilNNAI.Get_MetaData().Get_NumberOfPraiseInputValues());
+            
+            
+            
             System.Console.WriteLine("DELTA.");
             _AvrilNNAI.Get_MetaData().Generate_REGISTERED_Inputs_List(obj, _AvrilNNAI, praiseID);
             System.Console.WriteLine("ECHO.");
