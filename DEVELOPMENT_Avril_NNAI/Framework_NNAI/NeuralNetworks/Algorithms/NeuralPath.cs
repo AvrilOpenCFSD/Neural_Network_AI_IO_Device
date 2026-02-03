@@ -5,6 +5,16 @@ namespace Avril_NNAI
 {
     public class NeuralPath
     {
+// definitionns.
+        private enum NodeLayer : byte
+        {
+            Layer_4 = 4,
+            Layer_3 = 3,
+            Layer_2 = 2,
+            Layer_1 = 1,
+            Layer_0 = 0,
+        }
+        
 // classes.
         private Avril_NNAI.Linear _New_Linear;
             
@@ -49,51 +59,36 @@ namespace Avril_NNAI
             }
 
             ulong numberOfNodesInLayer = new ulong();
-            double temp = new double();
-            for (byte outputID = 0; outputID < (byte)numberOfPraiseOutputValues; outputID++)
+            for (byte outputID = 0; outputID < numberOfPraiseOutputValues; outputID++)
             {
-                for (byte layerID = 4; layerID < 5; layerID--)
+                for (byte layerID = 4; layerID < (byte)5; layerID--)
                 {
                     numberOfNodesInLayer = 0;
-                    temp = 0.0;
                     switch (layerID)
                     {
-                        case (byte)Global.NodeLayer.Layer_4:
-                            temp = (double)4 / (double)5;
-                            temp = ((double)numberOfPraiseInputValues * (double)temp);
-                            numberOfNodesInLayer = (ulong)Math.Round(temp);
+                        case (byte)NodeLayer.Layer_4:
+                            numberOfNodesInLayer = (ulong)Math.Round((double)numberOfPraiseInputValues * (double)0.8);
                             break;
 
-                        case (byte)Global.NodeLayer.Layer_3:
-                            temp = (double)3 / (double)5;
-                            temp = ((double)numberOfPraiseInputValues * (double)temp);
-                            numberOfNodesInLayer = (ulong)Math.Round(temp);
+                        case (byte)NodeLayer.Layer_3:
+                            numberOfNodesInLayer = (ulong)Math.Round((double)numberOfPraiseInputValues * (double)0.6);
                             break;
 
-                        case (byte)Global.NodeLayer.Layer_2:
-                            temp = (double)2 / (double)5;
-                            temp = ((double)numberOfPraiseInputValues * (double)temp);
-                            numberOfNodesInLayer = (ulong)Math.Round(temp);
+                        case (byte)NodeLayer.Layer_2:
+                            numberOfNodesInLayer = (ulong)Math.Round((double)numberOfPraiseInputValues * (double)0.4);
                             break;
 
-                        case (byte)Global.NodeLayer.Layer_1:
-                            temp = (double)1 / (double)5;
-                            temp = ((double)numberOfPraiseInputValues * (double)temp);
-                            numberOfNodesInLayer = (ulong)Math.Round(temp);
+                        case (byte)NodeLayer.Layer_1:
+                            numberOfNodesInLayer = (ulong)Math.Round((double)numberOfPraiseInputValues * (double)0.2);
                             break;
 
-                        case (byte)Global.NodeLayer.Layer_0:
+                        case (byte)NodeLayer.Layer_0:
                             numberOfNodesInLayer = (ulong)1;
                             break;
-
-                        default:
-                            break;
                     }
-                    System.Console.WriteLine("temp = " + temp + "numberOfNodesInLayer = " + layerID);
+                    System.Console.WriteLine("numberOfNodesInLayer = " + layerID);
                     objNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Set_NumberOfNodesInHiddenLayer(layerID, numberOfNodesInLayer);
                     System.Console.WriteLine("outputID = " + outputID + "(layerID == " + layerID + ") Set_NumberOfNodesInLayer = " + objNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Get_NumberOfNodesInHiddenLayer(layerID));
-
-
                 }
 
                 var newEmptyNode = new Avril_NNAI.Node();
