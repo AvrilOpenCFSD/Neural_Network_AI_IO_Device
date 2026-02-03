@@ -89,8 +89,9 @@ namespace Avril_NNAI
                         default:
                             break;
                     }
+                    System.Console.WriteLine("temp = " + temp + "numberOfNodesInLayer = " + layerID);
                     objNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Set_NumberOfNodesInHiddenLayer(layerID, numberOfNodesInLayer);
-                    System.Console.WriteLine("(layerID == " + layerID + ") Set_NumberOfNodesInLayer = " + objNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Get_NumberOfNodesInHiddenLayer(layerID));
+                    System.Console.WriteLine("outputID = " + outputID + "(layerID == " + layerID + ") Set_NumberOfNodesInLayer = " + objNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Get_NumberOfNodesInHiddenLayer(layerID));
 
 
                 }
