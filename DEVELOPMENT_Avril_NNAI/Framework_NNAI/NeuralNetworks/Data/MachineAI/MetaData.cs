@@ -7,8 +7,10 @@ namespace Avril_NNAI
 
 // registers.
         private string _nameOfNNAI;
-        private byte _NumberOfPraiseInputValues;
-        private byte _NumberOfPraiseOutputValues;
+        private byte _NumberOfResetToConstantValues_INPUT;
+        private byte _NumberOfResetToConstantValues_OUTPUT;
+        private byte _NumberOfPraiseValues_INPUT;
+        private byte _NumberOfPraiseValues_OUTPUT;
         private ulong _PraiseID;
 
 // constructor.
@@ -25,8 +27,15 @@ namespace Avril_NNAI
             Create_NumberOfPraiseInputValues(new byte());
             Set_NumberOfPraiseInputValues(2);
 
+            Create_NumberOfResetToConstantValues_INPUT(new byte());
+            Set_NumberOfResetToConstantValues_INPUT(0);
+
             Create_NumberOfPraiseOutputValues(new byte());
             Set_NumberOfPraiseOutputValues(2);
+
+            Create_NumberOfResetToConstantValues_OUTPUT(new byte());
+            Set_NumberOfResetToConstantValues_OUTPUT(0);
+
         }
 
 // destructor.
@@ -41,13 +50,21 @@ namespace Avril_NNAI
         {
             return _nameOfNNAI;
         }
+        public byte Get_NumberOfResetToConstantValues_INPUT()
+        {
+            return _NumberOfResetToConstantValues_INPUT;
+        }
+        public byte Get_NumberOfResetToConstantValues_OUTPUT()
+        {
+            return _NumberOfResetToConstantValues_OUTPUT;
+        }
         public byte Get_NumberOfPraiseInputValues()
         {
-            return _NumberOfPraiseInputValues;
+            return _NumberOfPraiseValues_INPUT;
         }
         public byte Get_NumberOfPraiseOutputValues()
         {
-            return _NumberOfPraiseOutputValues;
+            return _NumberOfPraiseValues_OUTPUT;
         }
         public ulong Get_PraiseID()
         {
@@ -55,13 +72,21 @@ namespace Avril_NNAI
         }
 
     // set.
+        public void Set_NumberOfResetToConstantValues_INPUT(byte value)
+        {
+            _NumberOfResetToConstantValues_INPUT = value;
+        }
+        public void Set_NumberOfResetToConstantValues_OUTPUT(byte value)
+        {
+            _NumberOfResetToConstantValues_OUTPUT = value;
+        }
         public void Set_NumberOfPraiseInputValues(byte value)
         {
-            _NumberOfPraiseInputValues = value;
+            _NumberOfPraiseValues_INPUT = value;
         }
         public void Set_NumberOfPraiseOutputValues(byte value)
         {
-            _NumberOfPraiseOutputValues = value;
+            _NumberOfPraiseValues_OUTPUT = value;
         }
 
 // private.
@@ -69,13 +94,21 @@ namespace Avril_NNAI
         {
             _nameOfNNAI = value;
         }
+        private void Create_NumberOfResetToConstantValues_INPUT(byte value)
+        {
+            _NumberOfResetToConstantValues_INPUT = value;
+        }
+        private void Create_NumberOfResetToConstantValues_OUTPUT(byte value)
+        {
+            _NumberOfResetToConstantValues_OUTPUT = value;
+        }
         private void Create_NumberOfPraiseInputValues(byte value)
         {
-            _NumberOfPraiseInputValues = value;
+            _NumberOfPraiseValues_INPUT = value;
         }
         private void Create_NumberOfPraiseOutputValues(byte value)
         {
-            _NumberOfPraiseOutputValues = value;
+            _NumberOfPraiseValues_OUTPUT = value;
         }
 
         private void Create_PraiseID(ulong value)

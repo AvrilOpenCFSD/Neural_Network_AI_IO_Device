@@ -3,13 +3,16 @@ namespace Avril_NNAI
 {
     public class Input_Praise_0
     {
-// classes.
-
-// registers.
+// deinitions.
         private enum PRAISE_0 : byte
         {
             Ping
         }
+
+// classes.
+
+// registers.
+        private byte _NumberOfResetToConstantValues;
         private byte _numberOfInputValues;
         private double _Ping;
 
@@ -18,6 +21,9 @@ namespace Avril_NNAI
         {
             Create_NumberOfInputValues(new byte());
             Set_NumberOfInputValues(1);
+
+            Create_NumberOfResetToConstantValues(new byte());
+            Set_NumberOfResetToConstantValues(0);
 
             Create_Ping(new double());
             Set_Item_Of_Input_Praise(0, 0.0);
@@ -41,6 +47,10 @@ namespace Avril_NNAI
                     return 0;
             }
         }
+        public byte Get_NumberOfResetToConstantValues()
+        {
+            return _NumberOfResetToConstantValues;
+        }
         public byte Get_NumberOfInputValues()
         {
             return _numberOfInputValues;
@@ -60,6 +70,10 @@ namespace Avril_NNAI
         }
 
 // private.
+        private void Create_NumberOfResetToConstantValues(byte numberOfResetToConstantValues)
+        {
+            _NumberOfResetToConstantValues = numberOfResetToConstantValues;
+        }
         private void Create_NumberOfInputValues(byte numberOfInputValues)
         {
             _numberOfInputValues = numberOfInputValues;
@@ -76,6 +90,10 @@ namespace Avril_NNAI
         }
 
     // set.
+        private void Set_NumberOfResetToConstantValues(byte numberOfResetToConstantValues)
+        {
+            _NumberOfResetToConstantValues = numberOfResetToConstantValues;
+        }
         private void Set_NumberOfInputValues(byte numberOfInputValues)
         {
             _numberOfInputValues = numberOfInputValues;

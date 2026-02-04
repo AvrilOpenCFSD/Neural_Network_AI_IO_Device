@@ -3,9 +3,7 @@ namespace Avril_NNAI
 {
     public class Input_Praise_2
     {
-// classes.
-
-// registers.
+// definitions.
         private enum PRAISE_2 : byte
         {
             Direction_X,
@@ -25,6 +23,10 @@ namespace Avril_NNAI
             Capsule_Right_Y,
             Capsule_Right_Z
         }
+// classes.
+
+// registers.
+        private byte _NumberOfResetToConstantValues;
         private byte _numberOfInputValues;
         private double _direction_X;
         private double _direction_y;
@@ -46,7 +48,11 @@ namespace Avril_NNAI
 // constructor.
         public Input_Praise_2()
         {
+            Create_NumberOfInputValues(new byte());
             Set_NumberOfInputValues(16);
+
+            Create_NumberOfResetToConstantValues(new byte());
+            Set_NumberOfResetToConstantValues(3);
         }
 
 // destructor.
@@ -111,6 +117,10 @@ namespace Avril_NNAI
                 default:
                     return 0;
             }
+        }
+        public byte Get_NumberOfResetToConstantValues()
+        {
+            return _NumberOfResetToConstantValues;
         }
         public byte Get_NumberOfInputValues()
         {
@@ -191,6 +201,10 @@ namespace Avril_NNAI
         }
 
 // private.
+        private void Create_NumberOfResetToConstantValues(byte numberOfResetToConstantValues)
+        {
+            _NumberOfResetToConstantValues = numberOfResetToConstantValues;
+        }
         private void Create_NumberOfInputValues(byte numberOfInputValues)
         {
             _numberOfInputValues = numberOfInputValues;
@@ -338,6 +352,10 @@ namespace Avril_NNAI
         private void Set_Direction_Z(double value)
         {
             _direction_Z = value;
+        }
+        private void Set_NumberOfResetToConstantValues(byte numberOfResetToConstantValues)
+        {
+            _NumberOfResetToConstantValues = numberOfResetToConstantValues;
         }
         private void Set_NumberOfInputValues(byte numberOfInputValues)
         {

@@ -52,7 +52,12 @@ namespace Avril_NNAI
 
             ulong praiseID = new ulong();
             praiseID = 1;
-            Avril_NNAI.MachineAI myNeuralNetwork = framework.Get_Neural_Networks().Get_Aglorithms().ConstructNeuralNetworkAI_Frame(framework, "Avril_NNAI_OpenCFSD_Praise_1_IO.nnai", praiseID);
+            Avril_NNAI.MachineAI myNeuralNetwork = framework.Get_Neural_Networks().Get_Aglorithms().Create_Instance_Of_MachineAI(
+                framework,
+                framework.Get_Neural_Networks().Get_Data().Get_Item_Of_Neural_Network_Preservation_List(0),
+                "Avril_NNAI_OpenCFSD_Praise_1_IO.nnai", 
+                praiseID
+            );
 /*
             for (byte layerID = 6; layerID >= 0; layerID--)
             {

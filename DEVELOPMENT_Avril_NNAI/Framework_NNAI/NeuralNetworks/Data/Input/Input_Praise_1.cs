@@ -3,9 +3,7 @@ namespace Avril_NNAI
 {
     public class Input_Praise_1
     {
-// classes.
-
-// registers.
+// definitions.
         private enum PRAISE_1 : byte
         {
             Mouse_Screen_X,
@@ -20,6 +18,11 @@ namespace Avril_NNAI
             Capsule_Right_Y,
             Capsule_Right_Z,
         }
+        
+// classes.
+
+// registers.
+        private byte _NumberOfResetToConstantValues;
         private byte _numberOfInputValues;
         private double _Mouse_Screen_X;
         private double _Mouse_Screen_Y;
@@ -32,12 +35,15 @@ namespace Avril_NNAI
         private double _Capsule_Right_X;
         private double _Capsule_Right_Y;
         private double _Capsule_Right_Z;
-
+        
 // constructor.
         public Input_Praise_1()
         {
             Create_NumberOfInputValues(new byte());
             Set_NumberOfInputValues(11);
+
+            Create_NumberOfResetToConstantValues(new byte());
+            Set_NumberOfResetToConstantValues(3);
 
             Create_Mouse_Screen_X(new double());
             Set_Mouse_Screen_X(0.0);
@@ -121,6 +127,10 @@ namespace Avril_NNAI
                     return 0;
             }
         }
+        public byte Get_NumberOfResetToConstantValues()
+        {
+            return _NumberOfResetToConstantValues;
+        }
         public byte Get_NumberOfInputValues()
         {
             return _numberOfInputValues;
@@ -181,6 +191,10 @@ namespace Avril_NNAI
         }
 
 // private.
+        private void Create_NumberOfResetToConstantValues(byte numberOfResetToConstantValues)
+        {
+            _NumberOfResetToConstantValues = numberOfResetToConstantValues;
+        }
         private void Create_NumberOfInputValues(byte numberOfInputValues)
         {
             _numberOfInputValues = numberOfInputValues;
@@ -320,6 +334,10 @@ namespace Avril_NNAI
         private void Set_Mouse_Screen_Y(double mouseY)
         {
             _Mouse_Screen_Y = mouseY;
+        }
+        private void Set_NumberOfResetToConstantValues(byte numberOfResetToConstantValues)
+        {
+            _NumberOfResetToConstantValues = numberOfResetToConstantValues;
         }
         private void Set_NumberOfInputValues(byte numberOfInputValues)
         {
