@@ -35,17 +35,17 @@ Version 17.13.4.
 *			   |                    |																 |																												  |
 * 			Global				Algorithms															Data																											Execute
 *									|																 |
-*									|____________________________________________					 |_______________________________________________________________________________
-*									|											|					 |									  |										    |		
+*									|____________________________________________					 |____________________________________
+*									|											|					 |									  |										    
 *								SolutionLogic								NeuralPath				Input								Output									MachineAI (Data File)
 *									|											|					 |									  |										    |				
-*									L------------	Algorithms_Praise_0		 ___|__________			 L------------	Input_Praise_0		  L------------	Output_Praise_0			    |
-*									L------------	Algorithms_Praise_1		 |			  |			 L------------	Input_Praise_1		  L------------	Output_Praise_1			    |
-*									L------------	Algorithms_Praise_2		Linear		//ToDo		 L------------	Intput_Praise_1		  L------------	Output_Praise_1		    PraiseSet
+*									L------------	Algorithms_Praise_0		 ___|__________			 L------------	Input_Praise_0		  L------------	Output_Praise_0			    |______________________________________
+*									L------------	Algorithms_Praise_1		 |			  |			 L------------	Input_Praise_1		  L------------	Output_Praise_1			    |                  |                   |
+*									L------------	Algorithms_Praise_2		Linear		//ToDo		 L------------	Intput_Praise_1		  L------------	Output_Praise_1		    PraiseSet           Constant            MetaData 
 *																																												    |
-*																																												    |_______________________
-*																																												    |                       |
-*																																												   Node                 MetaData 
+*																																												    |
+*																																												    |                      
+*																																												   Node                 
 *																																												    |			
 *																																													|_______________________________________________
 *																																												    |					    |					|				
