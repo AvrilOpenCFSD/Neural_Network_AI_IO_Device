@@ -29,7 +29,8 @@ namespace Avril_NNAI
             while (Get_List_Of_Neural_Network_Preservation() == null) { }
             Set_NewMachineAI(0, Get_NewMachineAI());
             //System.Console.WriteLine("ECHO.");
-            _isFirstSave = true;
+            Create_IsFirstSave(new bool());
+            Set_IsFirstSave(true);
         }
 
 // destructor.
@@ -39,44 +40,27 @@ namespace Avril_NNAI
         }
 
 // public.
-        private void Create_Neural_Network_Preservation_List(Avril_NNAI.MachineAI[] machineAIs)
-        {
-            _AvrilNNAI_OpenCFSD_Praise_IO = machineAIs;
-        }
-        private void Create_Input(Avril_NNAI.Input input)
-        {
-            _input = input;
-        }
-        private void Create_NewMachineAI(Avril_NNAI.MachineAI machineAI)
-        {
-            _newMachineAI = machineAI;
-        }
-        private void Create_Output(Avril_NNAI.Output output)
-        {
-            _output = output;
-        }
-
         public void Preserve_New_Neural_Network(Avril_NNAI.MachineAI newNeuralNetwork)
         {
-            if (_isFirstSave)
+            if (Get_IsFirstSave())
             {
-                _AvrilNNAI_OpenCFSD_Praise_IO[0] = newNeuralNetwork;
-                _isFirstSave = false;
+                Set_Item_Of_Neural_Network_Preservation(0, newNeuralNetwork);
+                Set_IsFirstSave(false);
             }
             else
             {
-                Avril_NNAI.MachineAI[] old_NeuralNetworkList = _AvrilNNAI_OpenCFSD_Praise_IO;
-                _AvrilNNAI_OpenCFSD_Praise_IO = new Avril_NNAI.MachineAI[(ulong)(_AvrilNNAI_OpenCFSD_Praise_IO.LongLength + 1)];
+                Avril_NNAI.MachineAI[] old_NeuralNetworkList = Get_List_Of_Neural_Network_Preservation();
+                Create_Neural_Network_Preservation_List(new Avril_NNAI.MachineAI[(ulong)(Get_List_Of_Neural_Network_Preservation().LongLength + (long)1)]);
                 for (ulong index = 0; index < (ulong)old_NeuralNetworkList.LongLength; index++)
                 {
-                    _AvrilNNAI_OpenCFSD_Praise_IO[index] = old_NeuralNetworkList[index];
+                    Set_Item_Of_Neural_Network_Preservation(index, old_NeuralNetworkList[index]);
                 }
-                _AvrilNNAI_OpenCFSD_Praise_IO[(ulong)_AvrilNNAI_OpenCFSD_Praise_IO.LongLength] = newNeuralNetwork;
+                Set_Item_Of_Neural_Network_Preservation((ulong)Get_List_Of_Neural_Network_Preservation().LongLength, newNeuralNetwork);
             }
         }
     
     // get.
-        public Avril_NNAI.MachineAI Get_Item_Of_Neural_Network_Preservation_List(ulong praiseID)
+        public Avril_NNAI.MachineAI Get_Item_Of_Neural_Network_Preservation(ulong praiseID)
         {
             return _AvrilNNAI_OpenCFSD_Praise_IO[praiseID];
         }
@@ -98,13 +82,47 @@ namespace Avril_NNAI
         }
 
     // set.
-        public void Set_NewMachineAI(ulong index, Avril_NNAI.MachineAI machineAI)
+
+
+// private.
+        private void Create_Neural_Network_Preservation_List(Avril_NNAI.MachineAI[] machineAIs)
+        {
+            _AvrilNNAI_OpenCFSD_Praise_IO = machineAIs;
+        }
+        private void Create_IsFirstSave(bool isFirstSave)
+        {
+            _isFirstSave = isFirstSave;
+        }
+        private void Create_Input(Avril_NNAI.Input input)
+        {
+            _input = input;
+        }
+        private void Create_NewMachineAI(Avril_NNAI.MachineAI machineAI)
+        {
+            _newMachineAI = machineAI;
+        }
+        private void Create_Output(Avril_NNAI.Output output)
+        {
+            _output = output;
+        }
+    // get.
+        private bool Get_IsFirstSave()
+        {
+            return _isFirstSave;
+        }
+        
+    // set.
+        private void Set_Item_Of_Neural_Network_Preservation(ulong praiseID, Avril_NNAI.MachineAI machineAI)
+        {
+            _AvrilNNAI_OpenCFSD_Praise_IO[praiseID] = machineAI;
+        }
+        private void Set_IsFirstSave(bool isFirstSave)
+        {
+            _isFirstSave = isFirstSave;
+        }
+        private void Set_NewMachineAI(ulong index, Avril_NNAI.MachineAI machineAI)
         {
             _AvrilNNAI_OpenCFSD_Praise_IO[index] = machineAI;
         }
-
-// private.
-    // get.
-    // set.
     }
 }
