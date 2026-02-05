@@ -3,9 +3,7 @@ namespace Avril_NNAI
 {
     public class Output_Praise_2
     {
-// classes.
-
-// registers.
+// definitions.
         private enum PRAISE_2 : byte
         {
             Capsule_Position_X,
@@ -21,7 +19,12 @@ namespace Avril_NNAI
             Capsule_Right_Y,
             Capsule_Right_Z
         }
+        
+// classes.
+
+// registers.
         private byte _numberOfOutputValues;
+        private byte _NumberOfResetToConstantValues;
         private double _direction_X;
         private double _direction_y;
         private double _direction_Z;
@@ -42,7 +45,8 @@ namespace Avril_NNAI
 // constructor.
         public Output_Praise_2()
         {
-
+            CreateGet_NumberOfResetToConstantValues(new byte());
+            Set_NumberOfResetToConstantValues(0);
         }
 
 // destructor.
@@ -96,6 +100,10 @@ namespace Avril_NNAI
                 default:
                     return 0;
             }
+        }
+        public byte Get_NumberOfResetToConstantValues()
+        {
+            return _NumberOfResetToConstantValues;
         }
         public byte Get_NumberOfOutputValues()
         {
@@ -161,6 +169,10 @@ namespace Avril_NNAI
         }
 
 // private.
+        private void CreateGet_NumberOfResetToConstantValues(byte value)
+        {
+            _NumberOfResetToConstantValues = value;
+        }
         private void Create_NumberOfOutputValues(byte numberOfOutputValues)
         {
             _numberOfOutputValues = numberOfOutputValues;
@@ -265,7 +277,10 @@ namespace Avril_NNAI
         }
 
     // set.
-
+        private void Set_NumberOfResetToConstantValues(byte value)
+        {
+            _NumberOfResetToConstantValues = value;
+        }
         private void Set_NumberOfOutputValues(byte numberOfOutputValues)
         {
             _numberOfOutputValues = numberOfOutputValues;

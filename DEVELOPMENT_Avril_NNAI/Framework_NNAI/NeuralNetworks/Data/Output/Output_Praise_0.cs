@@ -3,21 +3,27 @@ namespace Avril_NNAI
 {
     public class Output_Praise_0
     {
-// classes.
-
-// registers.
+// definitions.
         private enum PRAISE_0 : byte
         {
             Ping
         }
+
+// classes.
+
+// registers.
         private byte _numberOfOutputValues;
+        private byte _NumberOfResetToConstantValues;
         private double _Ping;
 
-        // constructor.
+// constructor.
         public Output_Praise_0()
         {
             Create_NumberOfOutputValues(new byte());
             Set_NumberOfOutputValues(1);
+
+            Create_NumberOfResetToConstantValues(new byte());
+            Set_NumberOfResetToConstantValues(0);
 
             Create_Ping(new double());
             Set_Ping(0.0);
@@ -41,6 +47,10 @@ namespace Avril_NNAI
                     return 0;
             }
         }
+        public byte Get_NumberOfResetToConstantValues()
+        {
+            return _NumberOfResetToConstantValues;
+        }
         public byte Get_NumberOfOutputValues()
         {
             return _numberOfOutputValues;
@@ -60,10 +70,15 @@ namespace Avril_NNAI
         }
 
 // private.
-        private void Create_NumberOfOutputValues(byte numberOfOutputValues)
+        private void Create_NumberOfResetToConstantValues(byte value)
         {
-            _numberOfOutputValues = numberOfOutputValues;
+            _NumberOfResetToConstantValues = value;
         }
+        private void Create_NumberOfOutputValues(byte value)
+        {
+            _numberOfOutputValues = value;
+        }
+
         private void Create_Ping(double ping)
         {
             _Ping = ping;
@@ -76,6 +91,10 @@ namespace Avril_NNAI
         }
 
     // set.
+        private void Set_NumberOfResetToConstantValues(byte value)
+        {
+            _NumberOfResetToConstantValues = value;
+        }
         private void Set_NumberOfOutputValues(byte numberOfOutputValues)
         {
             _numberOfOutputValues = numberOfOutputValues;

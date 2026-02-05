@@ -62,6 +62,10 @@ namespace Avril_NNAI
         {
             return _REGISTERED_Outputs;
         }
+        public Avril_NNAI.PraiseSet[] Get_PraiseSet()
+        {
+            return _praiseSet;
+        }
         public double Get_REGISTERED_Inputs(ulong registerID)
         {
             return _REGISTERED_Inputs[registerID];

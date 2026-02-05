@@ -63,7 +63,7 @@
 
         }
 
-    // public.
+// public.
         public void Create_Layer4_Nodes(ulong numberOfNodes, Avril_NNAI.Node newEmpty_Node)
         {
             _Layer4_Nodes = new Avril_NNAI.Node[numberOfNodes];
@@ -99,6 +99,10 @@
         public void Create_Layer0_Node(Avril_NNAI.Node newEmpty_Node)
         {
             _Layer0_Node = newEmpty_Node;
+        }
+        public void Create_NumberOfNodesInLayer(ulong[] liatOfNumberOfNodesInLayer)
+        {
+            _NumberOfNodesInLayer = liatOfNumberOfNodesInLayer;
         }
 
     // get.
@@ -159,17 +163,17 @@
                     break;
             }
         }
+
         public void Set_NumberOfNodesInHiddenLayer(byte layerID, ulong numberOfNodes)
         {
             _NumberOfNodesInLayer[layerID] = numberOfNodes;
         }
+        public void Set_NumberOfNodesInLayer(byte layerID, ulong numberOfNodeInLayer)
+        {
+            _NumberOfNodesInLayer[layerID] = numberOfNodeInLayer;
+        }
 
 // private.
-        private void Create_NumberOfNodesInLayer(ulong[] numberOfNodeInLayer)
-        {
-            _NumberOfNodesInLayer = numberOfNodeInLayer;
-        }
-       
     // get.
         private Avril_NNAI.Node Get_Layer4_Node(ulong nodeID)
         {

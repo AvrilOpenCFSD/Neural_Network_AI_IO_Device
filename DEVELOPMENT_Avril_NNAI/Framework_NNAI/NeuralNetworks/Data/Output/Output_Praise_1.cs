@@ -3,9 +3,7 @@ namespace Avril_NNAI
 {
     public class Output_Praise_1
     {
-// classes.
-
-// registers.
+// definitions.
         private enum PRAISE_1 : byte
         {
             Mouse_Screen_X,
@@ -20,7 +18,11 @@ namespace Avril_NNAI
             Capsule_Right_Y,
             Capsule_Right_Z,
         }
+// classes.
+
+// registers.
         private byte _NumberOfOutputValues;
+        private byte _NumberOfResetToConstantValues;
         private double _Mouse_Screen_X;
         private double _Mouse_Screen_Y;
         private double _Capsule_Fowards_X;
@@ -38,6 +40,9 @@ namespace Avril_NNAI
         {
             Create_NumberOfOutputValues(new byte());
             Set_NumberOfOutputValues(11);
+
+            CreateGet_NumberOfResetToConstantValues(new byte());
+            Set_NumberOfResetToConstantValues(5);
 
             Create_Mouse_Screen_X(new double());
             Set_Mouse_Screen_X_ZERO();
@@ -115,6 +120,10 @@ namespace Avril_NNAI
                     return 0;
             }
         }
+        public byte Get_NumberOfResetToConstantValues()
+        {
+            return _NumberOfResetToConstantValues;
+        }
         public byte Get_NumberOfOutputValues()
         {
             return _NumberOfOutputValues;
@@ -173,8 +182,12 @@ namespace Avril_NNAI
                     break;
             }
         }
-        
+
 // private.
+        private void CreateGet_NumberOfResetToConstantValues(byte value)
+        {
+            _NumberOfResetToConstantValues = value;
+        }
         private void Create_NumberOfOutputValues(byte numberOfOutputValues)
         {
             _NumberOfOutputValues = numberOfOutputValues;
@@ -314,6 +327,10 @@ namespace Avril_NNAI
         private void Set_Mouse_Screen_Y_ZERO()
         {
             _Mouse_Screen_Y = 0;
+        }
+        private void Set_NumberOfResetToConstantValues(byte value)
+        {
+            _NumberOfResetToConstantValues = value;
         }
         private void Set_NumberOfOutputValues(byte numberOfOutputValues)
         {

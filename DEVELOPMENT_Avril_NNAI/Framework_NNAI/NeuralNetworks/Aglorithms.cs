@@ -36,22 +36,45 @@ namespace Avril_NNAI
 
             obj.Get_Neural_Networks().Get_Aglorithms().Get_NeuralPath().Calculate_Neural_Network_Parameters(obj, objNNAI, praiseID);
 
-            objNNAI.Create_PraiseSet(new Avril_NNAI.PraiseSet[objNNAI.Get_MetaData().Get_NumberOfPraiseOutputValues()]);
-            for (byte index = 0; index < objNNAI.Get_MetaData().Get_NumberOfPraiseOutputValues(); index++)
+            obj.Get_Neural_Networks().Get_Aglorithms().Get_NeuralPath().Generate_REGISTERED_Inputs_List(obj, objNNAI, praiseID);
+
+            obj.Get_Neural_Networks().Get_Aglorithms().Get_NeuralPath().Generate_REGISTERED_Outputs_List(obj, objNNAI, praiseID);
+
+            objNNAI.Create_PraiseSet(new Avril_NNAI.PraiseSet[(byte)(objNNAI.Get_MetaData().Get_NumberOfPraiseOutputValues() - objNNAI.Get_MetaData().Get_NumberOfResetToConstantValues_OUTPUT())]);
+            while(objNNAI.Get_PraiseSet() == null)
             {
-                objNNAI.Set_Item_On_List_Of_PraiseSets(index, new Avril_NNAI.PraiseSet());
+
             }
-            for (byte outputID = 0; outputID < objNNAI.Get_MetaData().Get_NumberOfPraiseOutputValues() - objNNAI.Get_MetaData().Get_NumberOfResetToConstantValues_OUTPUT(); outputID++)
+            for (byte outputID = 0; outputID < (ulong)(objNNAI.Get_MetaData().Get_NumberOfPraiseOutputValues() - objNNAI.Get_MetaData().Get_NumberOfResetToConstantValues_OUTPUT()) ; outputID++)
             {
-                var praiseOutputTree = objNNAI.Get_Item_On_List_Of_PraiseSets(outputID);
-                for (byte layerID = 4; layerID < 5; layerID--)
+                objNNAI.Set_Item_On_List_Of_PraiseSets(outputID, new Avril_NNAI.PraiseSet());
+                while (objNNAI.Get_PraiseSet()[outputID] == null)
+                {
+
+                }
+                for (byte layerID = 4; layerID >= 0; layerID--)
                 {
                     obj.Get_Neural_Networks().Get_Aglorithms().Get_NeuralPath().Set_NumberOfNodesInHiddenLayer(objNNAI, outputID, layerID);
                     obj.Get_Neural_Networks().Get_Aglorithms().Get_NeuralPath().Set_Layer_Nodes(objNNAI, outputID, layerID);
-
-                    for(ulong nodeID = 0; nodeID < objNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Get_Node(layerID, nodeID).Get_NumberOfInputs(); nodeID++)
+                    System.Console.WriteLine("outputID = " + outputID + "  layerID = " + layerID);
+                //}
+            //}
+            //for (byte outputID = 0; outputID < objNNAI.Get_MetaData().Get_NumberOfPraiseOutputValues(); outputID++)
+            //{
+                //for (byte layerID = 4; layerID >= 0; layerID--)
+               // {
+                    for (ulong nodeID = 0; nodeID < objNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Get_NumberOfNodesInHiddenLayer(layerID); nodeID++)
                     {
-                        obj.Get_Neural_Networks().Get_Aglorithms().Get_NeuralPath().Set_Neural_Path_For_Input(obj, objNNAI, outputID, layerID, nodeID);
+                        if (layerID == (ulong)(4))
+                        {
+                            objNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Get_Node(layerID, nodeID).Create_List_Of_NeuralPathOfNodeInputs(new Avril_NNAI.Linear[objNNAI.Get_MetaData().Get_NumberOfPraiseInputValues()]);
+                            obj.Get_Neural_Networks().Get_Aglorithms().Get_NeuralPath().Set_Neural_Path_For_Input(obj, objNNAI, outputID, layerID, nodeID);
+                        }
+                        else if ((layerID < (ulong)(4)) && (layerID >= (ulong)(0)))
+                        {
+                            objNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Get_Node(layerID, nodeID).Create_List_Of_NeuralPathOfNodeInputs(new Avril_NNAI.Linear[objNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Get_NumberOfNodesInHiddenLayer((byte)(layerID + (byte)1))]);
+                            obj.Get_Neural_Networks().Get_Aglorithms().Get_NeuralPath().Set_Neural_Path_For_Input(obj, objNNAI, outputID, layerID, nodeID);
+                        }
                     }
                 }
             }
