@@ -8,4 +8,8 @@
     <Platforms>AnyCPU;x64</Platforms>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="nnai_extension_files\" />
+  </ItemGroup>
+
 </Project>

@@ -24,7 +24,8 @@ namespace Avril_NNAI
 // public.
         public void WriteValuesToFile(Avril_NNAI.Framework_NNAI obj, Avril_NNAI.MachineAI objNNAI, string fileName)
         {
-            using (var stream = File.Open(fileName, FileMode.Create))
+            string pathName = new string("..\\..\\..\\..\\nnai_extension_files\\" + fileName);
+            using (var stream = File.Open(pathName, FileMode.Create))
             {
                 using (var writer = new BinaryWriter(stream, Encoding.UTF8, false))
                 {
@@ -114,9 +115,10 @@ namespace Avril_NNAI
             Avril_NNAI.MachineAI _AvrilNNAI = obj.Get_Neural_Networks().Get_Data().Get_NewMachineAI();
             while (_AvrilNNAI == null) { }
 
-            if (File.Exists(fileName))
+            string pathName = new string("..\\..\\..\\..\\nnai_extension_files\\" + fileName);
+            if (File.Exists(pathName))
             {
-                using (var stream = File.Open(fileName, FileMode.Open))
+                using (var stream = File.Open(pathName, FileMode.Open))
                 {
                     using (var reader = new BinaryReader(stream, Encoding.UTF8, false))
                     {
