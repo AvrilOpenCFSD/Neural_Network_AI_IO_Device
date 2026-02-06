@@ -22,7 +22,7 @@ namespace Avril_NNAI
             //System.Console.WriteLine("exited Framework_NNAI.");
         }
 
-        // public.
+// public.
         public void Initialise(Avril_NNAI.Framework_NNAI obj)
         {
             obj.Get_Neural_Networks().Get_Execute().Create_And_Run_UI();

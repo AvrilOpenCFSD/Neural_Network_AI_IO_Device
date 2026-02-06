@@ -6,20 +6,6 @@ namespace Avril_NNAI
     public class NeuralPath
     {
 // definitionns.
-        private enum NodeLayer : byte
-        {
-            Layer_4 = 4,
-            Layer_3 = 3,
-            Layer_2 = 2,
-            Layer_1 = 1,
-            Layer_0 = 0,
-        }
-        private enum PraiseID : ulong
-        {
-            Praise_0 = 0,
-            Praise_1 = 1,
-            Praise_2 = 2
-        }
 
 // classes.
         private Avril_NNAI.Constant _New_Constant;
@@ -67,23 +53,23 @@ namespace Avril_NNAI
 
             switch (layerID)
             {
-                case (byte)NodeLayer.Layer_4:
+                case (byte)Avril_NNAI.Global.NodeLayer.Layer_4:
                     objNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Create_Layer4_Nodes(objNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Get_NumberOfNodesInHiddenLayer(layerID), newEmptyNode);
                     break;
 
-                case (byte)NodeLayer.Layer_3:
+                case (byte)Avril_NNAI.Global.NodeLayer.Layer_3:
                     objNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Create_Layer3_Nodes(objNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Get_NumberOfNodesInHiddenLayer(layerID), newEmptyNode);
                     break;
 
-                case (byte)NodeLayer.Layer_2:
+                case (byte)Avril_NNAI.Global.NodeLayer.Layer_2:
                     objNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Create_Layer2_Nodes(objNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Get_NumberOfNodesInHiddenLayer(layerID), newEmptyNode);
                     break;
 
-                case (byte)NodeLayer.Layer_1:
+                case (byte)Avril_NNAI.Global.NodeLayer.Layer_1:
                     objNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Create_Layer1_Nodes(objNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Get_NumberOfNodesInHiddenLayer(layerID), newEmptyNode);
                     break;
 
-                case (byte)NodeLayer.Layer_0:
+                case (byte)Avril_NNAI.Global.NodeLayer.Layer_0:
                     objNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Create_Layer0_Node(newEmptyNode);
                     break;
             }
@@ -102,7 +88,7 @@ namespace Avril_NNAI
         {
             switch (praiseID)
             {
-                case (ulong)PraiseID.Praise_0:
+                case (ulong)Avril_NNAI.Global.PraiseID.Praise_0:
                     Avril_NNAI.Input_Praise_0 subsetOfInput_Praise_0 = (Avril_NNAI.Input_Praise_0)obj.Get_Neural_Networks().Get_Data().Get_Input().Get_ItemOnListOfInputSubsets(0);
                     objNNAI.Create_REGISTERED_Inputs(new double[subsetOfInput_Praise_0.Get_NumberOfInputValues()]);
                     for (byte index = 0; index < subsetOfInput_Praise_0.Get_NumberOfInputValues(); index++)
@@ -111,7 +97,7 @@ namespace Avril_NNAI
                     }
                     break;
 
-                case (ulong)PraiseID.Praise_1:
+                case (ulong)Avril_NNAI.Global.PraiseID.Praise_1:
                     Avril_NNAI.Input_Praise_1 subsetOfInput_Praise_1 = (Avril_NNAI.Input_Praise_1)obj.Get_Neural_Networks().Get_Data().Get_Input().Get_ItemOnListOfInputSubsets(1);
                     objNNAI.Create_REGISTERED_Inputs(new double[subsetOfInput_Praise_1.Get_NumberOfInputValues()]);
                     for (byte index = 0; index < subsetOfInput_Praise_1.Get_NumberOfInputValues(); index++)
@@ -120,7 +106,7 @@ namespace Avril_NNAI
                     }
                     break;
 
-                case (ulong)PraiseID.Praise_2:
+                case (ulong)Avril_NNAI.Global.PraiseID.Praise_2:
                     Avril_NNAI.Input_Praise_2 subsetOfInput_Praise_2 = (Avril_NNAI.Input_Praise_2)obj.Get_Neural_Networks().Get_Data().Get_Input().Get_ItemOnListOfInputSubsets(2);
                     objNNAI.Create_REGISTERED_Inputs(new double[subsetOfInput_Praise_2.Get_NumberOfInputValues()]);
                     for (byte index = 0; index < subsetOfInput_Praise_2.Get_NumberOfInputValues(); index++)
@@ -137,7 +123,7 @@ namespace Avril_NNAI
         {
             switch (praiseID)
             {
-                case (ulong)PraiseID.Praise_0:
+                case (ulong)Avril_NNAI.Global.PraiseID.Praise_0:
                     Avril_NNAI.Output_Praise_0 subsetOfOutput_Praise_0 = (Avril_NNAI.Output_Praise_0)obj.Get_Neural_Networks().Get_Data().Get_Output().Get_ItemOnListOfOutputSubsets(0);
                     objNNAI.Create_REGISTERED_Outputs(new double[subsetOfOutput_Praise_0.Get_NumberOfOutputValues()]);
                     for (byte index = 0; index < subsetOfOutput_Praise_0.Get_NumberOfOutputValues(); index++)
@@ -146,7 +132,7 @@ namespace Avril_NNAI
                     }
                     break;
 
-                case (ulong)PraiseID.Praise_1:
+                case (ulong)Avril_NNAI.Global.PraiseID.Praise_1:
                     Avril_NNAI.Output_Praise_1 subsetOfOutput_Praise_1 = (Avril_NNAI.Output_Praise_1)obj.Get_Neural_Networks().Get_Data().Get_Output().Get_ItemOnListOfOutputSubsets(1);
                     objNNAI.Create_REGISTERED_Outputs(new double[subsetOfOutput_Praise_1.Get_NumberOfOutputValues()]);
                     for (byte index = 0; index < subsetOfOutput_Praise_1.Get_NumberOfOutputValues(); index++)
@@ -155,7 +141,7 @@ namespace Avril_NNAI
                     }
                     break;
 
-                case (ulong)PraiseID.Praise_2:
+                case (ulong)Avril_NNAI.Global.PraiseID.Praise_2:
                     Avril_NNAI.Output_Praise_2 subsetOfOutput_Praise_2 = (Avril_NNAI.Output_Praise_2)obj.Get_Neural_Networks().Get_Data().Get_Output().Get_ItemOnListOfOutputSubsets(2);
                     objNNAI.Create_REGISTERED_Outputs(new double[subsetOfOutput_Praise_2.Get_NumberOfOutputValues()]);
                     for (byte index = 0; index < subsetOfOutput_Praise_2.Get_NumberOfOutputValues(); index++)
@@ -187,7 +173,7 @@ namespace Avril_NNAI
             
             switch (outputID)
             {
-                case (byte)PraiseID.Praise_0:
+                case (byte)Avril_NNAI.Global.PraiseID.Praise_0:
                     Avril_NNAI.Output_Praise_0 objobjOutputSubset_Praise0 = (Avril_NNAI.Output_Praise_0)obj.Get_Neural_Networks().Get_Data().Get_Output().Get_ItemOnListOfOutputSubsets(outputID);
                     for (byte inputID = 0; inputID < numberOfInputsForNode; inputID++)
                     {
@@ -195,7 +181,7 @@ namespace Avril_NNAI
                     }
                     break;
 
-                case (byte)PraiseID.Praise_1:
+                case (byte)Avril_NNAI.Global.PraiseID.Praise_1:
                     Avril_NNAI.Output_Praise_1 objOutputSubset_Praise1 = (Avril_NNAI.Output_Praise_1)obj.Get_Neural_Networks().Get_Data().Get_Output().Get_ItemOnListOfOutputSubsets(outputID);
                     for (byte inputID = 0; inputID < numberOfInputsForNode; inputID++)
                     {
@@ -203,7 +189,7 @@ namespace Avril_NNAI
                     }
                     break;
 
-                case (byte)PraiseID.Praise_2:
+                case (byte)Avril_NNAI.Global.PraiseID.Praise_2:
                     Avril_NNAI.Output_Praise_2 objobjOutputSubset_Praise2 = (Avril_NNAI.Output_Praise_2)obj.Get_Neural_Networks().Get_Data().Get_Output().Get_ItemOnListOfOutputSubsets(outputID);
                     for (byte inputID = 0; inputID < numberOfInputsForNode; inputID++)
                     {
@@ -248,23 +234,23 @@ namespace Avril_NNAI
             numberOfNodesInLayer = 0;
             switch (layerID)
             {
-                case (byte)NodeLayer.Layer_4:
+                case (byte)Avril_NNAI.Global.NodeLayer.Layer_4:
                     numberOfNodesInLayer = (ulong)Math.Round((double)objNNAI.Get_MetaData().Get_NumberOfPraiseInputValues() * (double)0.8);
                     break;
 
-                case (byte)NodeLayer.Layer_3:
+                case (byte)Avril_NNAI.Global.NodeLayer.Layer_3:
                     numberOfNodesInLayer = (ulong)Math.Round((double)objNNAI.Get_MetaData().Get_NumberOfPraiseInputValues() * (double)0.6);
                     break;
 
-                case (byte)NodeLayer.Layer_2:
+                case (byte)Avril_NNAI.Global.NodeLayer.Layer_2:
                     numberOfNodesInLayer = (ulong)Math.Round((double)objNNAI.Get_MetaData().Get_NumberOfPraiseInputValues() * (double)0.4);
                     break;
 
-                case (byte)NodeLayer.Layer_1:
+                case (byte)Avril_NNAI.Global.NodeLayer.Layer_1:
                     numberOfNodesInLayer = (ulong)Math.Round((double)objNNAI.Get_MetaData().Get_NumberOfPraiseInputValues() * (double)0.2);
                     break;
 
-                case (byte)NodeLayer.Layer_0:
+                case (byte)Avril_NNAI.Global.NodeLayer.Layer_0:
                     numberOfNodesInLayer = (ulong)1;
                     break;
             }
@@ -285,17 +271,17 @@ namespace Avril_NNAI
         {
             switch (praiseID)
             {
-                case (ulong)PraiseID.Praise_0:
+                case (ulong)Avril_NNAI.Global.PraiseID.Praise_0:
                     Avril_NNAI.Input_Praise_0 objValue_Praise0 = (Avril_NNAI.Input_Praise_0)obj.Get_Neural_Networks().Get_Data().Get_Input().Get_ItemOnListOfInputSubsets(0);
                     objNNAI.Get_MetaData().Set_NumberOfPraiseInputValues(objValue_Praise0.Get_NumberOfInputValues());
                     break;
 
-                case (ulong)PraiseID.Praise_1:
+                case (ulong)Avril_NNAI.Global.PraiseID.Praise_1:
                     Avril_NNAI.Input_Praise_1 objValue_Praise1 = (Avril_NNAI.Input_Praise_1)obj.Get_Neural_Networks().Get_Data().Get_Input().Get_ItemOnListOfInputSubsets(1);
                     objNNAI.Get_MetaData().Set_NumberOfPraiseInputValues(objValue_Praise1.Get_NumberOfInputValues());
                     break;
 
-                case (ulong)PraiseID.Praise_2:
+                case (ulong)Avril_NNAI.Global.PraiseID.Praise_2:
                     Avril_NNAI.Input_Praise_2 objValue_Praise2 = (Avril_NNAI.Input_Praise_2)obj.Get_Neural_Networks().Get_Data().Get_Input().Get_ItemOnListOfInputSubsets(2);
                     objNNAI.Get_MetaData().Set_NumberOfPraiseInputValues(objValue_Praise2.Get_NumberOfInputValues());
                     break;
@@ -305,17 +291,17 @@ namespace Avril_NNAI
         {
             switch (praiseID)
             {
-                case (ulong)PraiseID.Praise_0:
+                case (ulong)Avril_NNAI.Global.PraiseID.Praise_0:
                     var objValue_Praise0 = (Avril_NNAI.Output_Praise_0)obj.Get_Neural_Networks().Get_Data().Get_Output().Get_ItemOnListOfOutputSubsets(0);
                     objNNAI.Get_MetaData().Set_NumberOfPraiseOutputValues(objValue_Praise0.Get_NumberOfOutputValues());
                     break;
 
-                case (ulong)PraiseID.Praise_1:
+                case (ulong)Avril_NNAI.Global.PraiseID.Praise_1:
                     var objValue_Praise1 = (Avril_NNAI.Output_Praise_1)obj.Get_Neural_Networks().Get_Data().Get_Output().Get_ItemOnListOfOutputSubsets(1);
                     objNNAI.Get_MetaData().Set_NumberOfPraiseOutputValues(objValue_Praise1.Get_NumberOfOutputValues());
                     break;
 
-                case (ulong)PraiseID.Praise_2:
+                case (ulong)Avril_NNAI.Global.PraiseID.Praise_2:
                     var objValue_Praise2 = (Avril_NNAI.Output_Praise_2)obj.Get_Neural_Networks().Get_Data().Get_Output().Get_ItemOnListOfOutputSubsets(2);
                     objNNAI.Get_MetaData().Set_NumberOfPraiseOutputValues(objValue_Praise2.Get_NumberOfOutputValues());
                     break;
@@ -325,17 +311,17 @@ namespace Avril_NNAI
         {
             switch (praiseID)
             {
-                case (ulong)PraiseID.Praise_0:
+                case (ulong)Avril_NNAI.Global.PraiseID.Praise_0:
                     Avril_NNAI.Input_Praise_0 objValue_Praise0 = (Avril_NNAI.Input_Praise_0)obj.Get_Neural_Networks().Get_Data().Get_Input().Get_ItemOnListOfInputSubsets(0);
                     objNNAI.Get_MetaData().Set_NumberOfResetToConstantValues_INPUT(objValue_Praise0.Get_NumberOfResetToConstantValues());
                     break;
 
-                case (ulong)PraiseID.Praise_1:
+                case (ulong)Avril_NNAI.Global.PraiseID.Praise_1:
                     Avril_NNAI.Input_Praise_1 objValue_Praise1 = (Avril_NNAI.Input_Praise_1)obj.Get_Neural_Networks().Get_Data().Get_Input().Get_ItemOnListOfInputSubsets(1);
                     objNNAI.Get_MetaData().Set_NumberOfResetToConstantValues_INPUT(objValue_Praise1.Get_NumberOfResetToConstantValues());
                     break;
 
-                case (ulong)PraiseID.Praise_2:
+                case (ulong)Avril_NNAI.Global.PraiseID.Praise_2:
                     Avril_NNAI.Input_Praise_2 objValue_Praise2 = (Avril_NNAI.Input_Praise_2)obj.Get_Neural_Networks().Get_Data().Get_Input().Get_ItemOnListOfInputSubsets(2);
                     objNNAI.Get_MetaData().Set_NumberOfResetToConstantValues_INPUT(objValue_Praise2.Get_NumberOfResetToConstantValues());
                     break;
@@ -345,17 +331,17 @@ namespace Avril_NNAI
         {
             switch (praiseID)
             {
-                case (ulong)PraiseID.Praise_0:
+                case (ulong)Avril_NNAI.Global.PraiseID.Praise_0:
                     var objValue_Praise0 = (Avril_NNAI.Output_Praise_0)obj.Get_Neural_Networks().Get_Data().Get_Output().Get_ItemOnListOfOutputSubsets(0);
                     objNNAI.Get_MetaData().Set_NumberOfResetToConstantValues_OUTPUT(objValue_Praise0.Get_NumberOfResetToConstantValues());
                     break;
 
-                case (ulong)PraiseID.Praise_1:
+                case (ulong)Avril_NNAI.Global.PraiseID.Praise_1:
                     var objValue_Praise1 = (Avril_NNAI.Output_Praise_1)obj.Get_Neural_Networks().Get_Data().Get_Output().Get_ItemOnListOfOutputSubsets(1);
                     objNNAI.Get_MetaData().Set_NumberOfResetToConstantValues_OUTPUT(objValue_Praise1.Get_NumberOfResetToConstantValues());
                     break;
 
-                case (ulong)PraiseID.Praise_2:
+                case (ulong)Avril_NNAI.Global.PraiseID.Praise_2:
                     var objValue_Praise2 = (Avril_NNAI.Output_Praise_2)obj.Get_Neural_Networks().Get_Data().Get_Output().Get_ItemOnListOfOutputSubsets(2);
                     objNNAI.Get_MetaData().Set_NumberOfResetToConstantValues_OUTPUT(objValue_Praise2.Get_NumberOfResetToConstantValues());
                     break;

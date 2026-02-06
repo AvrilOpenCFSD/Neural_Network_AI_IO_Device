@@ -19,10 +19,6 @@ namespace Avril_NNAI
             Praise_2 = 2
         }
 
-// classes.
-
-// registers.
-
 // constructor.
         public Global()
         {

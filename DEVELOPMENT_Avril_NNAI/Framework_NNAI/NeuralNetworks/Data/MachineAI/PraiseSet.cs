@@ -3,14 +3,7 @@
     public class PraiseSet
     {
 // definitions.
-        enum NodeLayer : byte
-        {
-            Layer_4 = 4,
-            Layer_3 = 3,
-            Layer_2 = 2,
-            Layer_1 = 1,
-            Layer_0 = 0,
-        }
+
 // classes.
 
 // registers.
@@ -127,19 +120,19 @@
         {
             switch (layer)
             {
-                case (byte)NodeLayer.Layer_4:
+                case (byte)Avril_NNAI.Global.NodeLayer.Layer_4:
                     return Get_Layer4_Node(nodeID);
 
-                case (byte)NodeLayer.Layer_3:
+                case (byte)Avril_NNAI.Global.NodeLayer.Layer_3:
                     return Get_Layer3_Node(nodeID);
 
-                case (byte)NodeLayer.Layer_2:
+                case (byte)Avril_NNAI.Global.NodeLayer.Layer_2:
                     return Get_Layer2_Node(nodeID);
 
-                case (byte)NodeLayer.Layer_1:
+                case (byte)Avril_NNAI.Global.NodeLayer.Layer_1:
                     return Get_Layer1_Node(nodeID);
 
-                case (byte)NodeLayer.Layer_0:
+                case (byte)Avril_NNAI.Global.NodeLayer.Layer_0:
                     return Get_Layer0_Node();
 
                 default:
@@ -156,23 +149,23 @@
         {
             switch (layerID)
             {
-                case (byte)NodeLayer.Layer_4:
+                case (byte)Avril_NNAI.Global.NodeLayer.Layer_4:
                     Set_Layer4_Nodes(nodeID, node);
                     break;
 
-                case (byte)NodeLayer.Layer_3:
+                case (byte)Avril_NNAI.Global.NodeLayer.Layer_3:
                     Set_Layer3_Nodes(nodeID, node);
                     break;
 
-                case (byte)NodeLayer.Layer_2:
+                case (byte)Avril_NNAI.Global.NodeLayer.Layer_2:
                     Set_Layer2_Nodes(nodeID, node);
                     break;
 
-                case (byte)NodeLayer.Layer_1:
+                case (byte)Avril_NNAI.Global.NodeLayer.Layer_1:
                     Set_Layer1_Nodes(nodeID, node);
                     break;
 
-                case (byte)NodeLayer.Layer_0:
+                case (byte)Avril_NNAI.Global.NodeLayer.Layer_0:
                     Set_Layer0_Node(node);
                     break;
 

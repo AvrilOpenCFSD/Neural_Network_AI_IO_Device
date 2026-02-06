@@ -1,4 +1,6 @@
 ﻿
+using System.ComponentModel;
+
 namespace Avril_NNAI
 {
     public class Aglorithms
