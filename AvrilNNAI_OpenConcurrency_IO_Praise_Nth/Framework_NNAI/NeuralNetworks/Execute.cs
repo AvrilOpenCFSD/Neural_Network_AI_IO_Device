@@ -6,14 +6,14 @@ namespace Avril_NNAI
 // classes.
 
 // registers.
-        private Avril_NNAI.FileReadWrite _FileReadWrite;
+        private Avril_NNAI.FileRead _FileReadWrite;
 
 // constructor.
         public Execute()
         {
             //System.Console.WriteLine("entered Execute.");
-            Create_FileReadWrite(new Avril_NNAI.FileReadWrite());
-            while (Get_FileReadWrite() == null) { }
+            Create_FileRead(new Avril_NNAI.FileRead());
+            while (Get_FileRead() == null) { }
         }
 
 // destructor.
@@ -23,19 +23,16 @@ namespace Avril_NNAI
         }
 
 // public.
-        public void Create_And_Run_UI()
-        {
 
-        }
     // get.
-        public Avril_NNAI.FileReadWrite Get_FileReadWrite()
+        public Avril_NNAI.FileRead Get_FileRead()
         {
             return _FileReadWrite;
         }
     // set.
 
 // private.
-        private void Create_FileReadWrite(Avril_NNAI.FileReadWrite fileReadWrite)
+        private void Create_FileRead(Avril_NNAI.FileRead fileReadWrite)
         {
             _FileReadWrite = fileReadWrite;
         }

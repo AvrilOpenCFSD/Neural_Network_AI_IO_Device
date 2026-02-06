@@ -5,7 +5,7 @@ namespace Avril_NNAI
     {
 // classes.
         private Avril_NNAI.NeuralNetworks _neuralNetwork;
-        private Avril_NNAI.SIMULATION _simulation;
+
 // registers.
 
 // constructor.
@@ -23,10 +23,6 @@ namespace Avril_NNAI
         }
 
 // public.
-        public void Initialise(Avril_NNAI.Framework_NNAI obj)
-        {
-            obj.Get_Neural_Networks().Get_Execute().Create_And_Run_UI();
-        }
     // get.
         public Avril_NNAI.NeuralNetworks Get_Neural_Networks()
         {
