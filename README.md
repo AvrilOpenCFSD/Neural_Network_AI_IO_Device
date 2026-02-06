@@ -31,25 +31,25 @@ Version 17.13.4.
 *					|               |
 *			NeuralNetworks      SIMULATION
 *					|
-*			   _____|__________________________________________________________________________________________________________________________________________________________________________________________________
-*			   |                    |																 |																												  |
-* 			Global				Algorithms															Data																											Execute
-*									|																 |
-*									|____________________________________________					 |______________________________________________________________________________
-*									|											|					 |									  |										    | 
-*								SolutionLogic								NeuralPath				Input								Output									MachineAI (Data File)
+*			   _____|______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+*			   |                    |																 |																												                                                                              |
+* 			Global				Algorithms															Data																											                                                                            Execute
+*			   |					|																 |                                                                                                                                                                                            |
+*			   |					|____________________________________________					 |______________________________________________________________________________                                                                                                              |                              
+*			   |					|											|					 |									  |										    |                                                                                                             |                          
+*			MyEnumExtensions    SolutionLogic								NeuralPath				Input								Output									MachineAI (Data File)                                                                                           FileReadWrite (.nnai)
 *									|											|					 |									  |										    |				
-*									L------------	Algorithms_Praise_0		 ___|__________			 L------------	Input_Praise_0		  L------------	Output_Praise_0			    |______________________________________
-*									L------------	Algorithms_Praise_1		 |			  |			 L------------	Input_Praise_1		  L------------	Output_Praise_1			    |                  |                   |
-*									L------------	Algorithms_Praise_2		Linear		//ToDo		 L------------	Intput_Praise_1		  L------------	Output_Praise_1		    PraiseSet           Constant            MetaData 
-*																																												    |
-*																																												    |
-*																																												    |                      
-*																																												   Node                 
-*																																												    |			
-*																																													|_______________________________________________
-*																																												    |					    |					|				
-* 																																												NeuralPathSubSet	InputPraiseSubSet	OuputPraiseSubSet	
+*									L------------	Algorithms_Praise_0		 ___|__________			 L------------	Input_Praise_0		  L------------	Output_Praise_0			    |_______________________________________________________________________________
+*									L------------	Algorithms_Praise_1		 |			  |			 L------------	Input_Praise_1		  L------------	Output_Praise_1			    |                  |                   |                    |                   |
+*									L------------	Algorithms_Praise_2		Linear		Constant	 L------------	Intput_Praise_1		  L------------	Output_Praise_1		    InputPraiseSubSet   PraiseSet           Constant            MetaData        	OuputPraiseSubSet
+*																																												                       |
+*																															  												                           |
+*                   																																												   |                      
+*					                    																																							  Node                 
+*										                    																																		   |			
+*															                    																													   |
+*																				                    																								   |
+* 																									                       																			NeuralPathSubSet		
 */
 ````
 
