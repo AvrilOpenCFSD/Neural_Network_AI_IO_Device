@@ -41,7 +41,7 @@ Version 17.13.4.
 *									|											|					 |									  |										    |				
 *									L------------	Algorithms_Praise_0		 ___|__________			 L------------	Input_Praise_0		  L------------	Output_Praise_0			    |_______________________________________________________________________________
 *									L------------	Algorithms_Praise_1		 |			  |			 L------------	Input_Praise_1		  L------------	Output_Praise_1			    |                  |                   |                    |                   |
-*									L------------	Algorithms_Praise_2		Linear		//ToDo		 L------------	Intput_Praise_1		  L------------	Output_Praise_1		    InputPraiseSubSet   PraiseSet           Constant            MetaData        	OuputPraiseSubSet
+*									L------------	Algorithms_Praise_2		Linear		Constant	 L------------	Intput_Praise_1		  L------------	Output_Praise_1		    InputPraiseSubSet   PraiseSet           Constant            MetaData        	OuputPraiseSubSet
 *																																												                       |
 *																															  												                           |
 *                   																																												   |                      
