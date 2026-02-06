@@ -53,14 +53,6 @@ Version 17.13.4.
 */
 ````
 
-### Avril_NNAI_User_Interface.
-#### C# - Forms App
-#### Using Windows 11 Home.
-Edition: Windows 11 Home OEM System Builder
-Version: 24H2
-#### Using Microsoft Visual Studio Professional 2022.
-Version 17.13.4.
-
 ### AvrilNNAI_OpenConcurrency_IO_Praise_Nth
 #### C# : Dynamic Link Library
 #### Using Windows 11 Home.
