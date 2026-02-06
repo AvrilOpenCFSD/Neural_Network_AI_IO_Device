@@ -180,6 +180,39 @@ namespace Avril_NNAI
         }
 
     // set.
+        public void Set_Constant_Path_To_Output(Avril_NNAI.Framework_NNAI obj, Avril_NNAI.MachineAI objNNAI, byte outputID, byte constantID)
+        {
+            byte numberOfInputsForNode = new byte();
+            numberOfInputsForNode = objNNAI.Get_MetaData().Get_NumberOfPraiseInputValues();
+            
+            switch (outputID)
+            {
+                case (byte)PraiseID.Praise_0:
+                    Avril_NNAI.Output_Praise_0 objobjOutputSubset_Praise0 = (Avril_NNAI.Output_Praise_0)obj.Get_Neural_Networks().Get_Data().Get_Output().Get_ItemOnListOfOutputSubsets(outputID);
+                    for (byte inputID = 0; inputID < numberOfInputsForNode; inputID++)
+                    {
+                        objNNAI.Get_Item_On_List_Of_Constant(outputID).Set_Constant_REGISTERED_Output(objobjOutputSubset_Praise0.Get_Item_Of_Output_Praise(inputID)); ;
+                    }
+                    break;
+
+                case (byte)PraiseID.Praise_1:
+                    Avril_NNAI.Output_Praise_1 objOutputSubset_Praise1 = (Avril_NNAI.Output_Praise_1)obj.Get_Neural_Networks().Get_Data().Get_Output().Get_ItemOnListOfOutputSubsets(outputID);
+                    for (byte inputID = 0; inputID < numberOfInputsForNode; inputID++)
+                    {
+                        objNNAI.Get_Item_On_List_Of_Constant(outputID).Set_Constant_REGISTERED_Output(objOutputSubset_Praise1.Get_Item_Of_Output_Praise(inputID)); ;
+                    }
+                    break;
+
+                case (byte)PraiseID.Praise_2:
+                    Avril_NNAI.Output_Praise_2 objobjOutputSubset_Praise2 = (Avril_NNAI.Output_Praise_2)obj.Get_Neural_Networks().Get_Data().Get_Output().Get_ItemOnListOfOutputSubsets(outputID);
+                    for (byte inputID = 0; inputID < numberOfInputsForNode; inputID++)
+                    {
+                        objNNAI.Get_Item_On_List_Of_Constant(outputID).Set_Constant_REGISTERED_Output(objobjOutputSubset_Praise2.Get_Item_Of_Output_Praise(inputID)); ;
+                    }
+                    break;
+            }
+
+        }
         public void Set_Neural_Path_For_Input(Avril_NNAI.Framework_NNAI obj, Avril_NNAI.MachineAI objNNAI, byte outputID, byte layerID, ulong nodeID)
         {
             System.Console.WriteLine("entered Create_Nodes.");

@@ -44,10 +44,10 @@ namespace Avril_NNAI
             CreateGet_NumberOfResetToConstantValues(new byte());
             Set_NumberOfResetToConstantValues(5);
 
-            Create_Mouse_Screen_X(new double());
-            Set_Mouse_Screen_X_ZERO();
-            Create_Mouse_Screen_Y(new double());
-            Set_Mouse_Screen_Y_ZERO();
+            Create_Mouse_Screen_X_CONSTANT(new double());
+            Set_Mouse_Screen_X_CONSTANT(0.0);
+            Create_Mouse_Screen_Y_CONSTANT(new double());
+            Set_Mouse_Screen_Y_CONSTANT(0.0);
 
             Create_Capsule_Fowards_X(new double());
             Set_Capsule_Fowards_X(0.0);
@@ -56,12 +56,12 @@ namespace Avril_NNAI
             Create_Capsule_Fowards_Z(new double());
             Set_Capsule_Fowards_Z(0.0);
 
-            Create_Capsule_Up_X(new double());
-            Set_Capsule_Up_X(0.0);
-            Create_Capsule_Up_Y(new double());
-            Set_Capsule_Up_Y(0.0);
-            Create_Capsule_Up_Z(new double());
-            Set_Capsule_Up_Z(0.0);
+            Create_Capsule_Up_X_CONSTANT(new double());
+            Set_Capsule_Up_X_CONSTANT(0.0);
+            Create_Capsule_Up_Y_CONSTANT(new double());
+            Set_Capsule_Up_Y_CONSTANT(1.0);
+            Create_Capsule_Up_Z_CONSTANT(new double());
+            Set_Capsule_Up_Z_CONSTANT(0.0);
 
             Create_Capsule_Right_X(new double());
             Set_Capsule_Right_X(0.0);
@@ -79,15 +79,15 @@ namespace Avril_NNAI
 
 // public.
     // get.
-        public double Get_Item_Of_Output_Praise(byte index)
+        public double Get_Item_Of_Output_Praise(byte inputID)
         {
-            switch (index)
+            switch (inputID)
             {
                 case (byte)PRAISE_1.Mouse_Screen_X:
-                    return Get_Mouse_Screen_X();
+                    return Get_Mouse_Screen_X_CONSTANT();
 
                 case (byte)PRAISE_1.Mouse_Screen_Y:
-                    return Get_Mouse_Screen_Y();
+                    return Get_Mouse_Screen_Y_CONSTANT();
 
                 case (byte)PRAISE_1.Capsule_Fowards_X:
                     return Get_Capsule_Fowards_X();
@@ -99,13 +99,13 @@ namespace Avril_NNAI
                     return Get_Capsule_Fowards_Z();
 
                 case (byte)PRAISE_1.Capsule_Up_X:
-                    return Get_Capsule_Up_X();
+                    return Get_Capsule_Up_X_CONSTANT();
 
                 case (byte)PRAISE_1.Capsule_Up_Y:
-                    return Get_Capsule_Up_Y();
+                    return Get_Capsule_Up_Y_CONSTANT();
 
                 case (byte)PRAISE_1.Capsule_Up_Z:
-                    return Get_Capsule_Up_Z();
+                    return Get_Capsule_Up_Z_CONSTANT();
 
                 case (byte)PRAISE_1.Capsule_Right_X:
                     return Get_Capsule_Right_X();
@@ -130,16 +130,16 @@ namespace Avril_NNAI
         }
 
     // set.
-        public void Set_Item_Of_Output_Praise(byte index, double value)
+        public void Set_Item_Of_Output_Praise(byte inputID, double value)
         {
-            switch (index)
+            switch (inputID)
             {
                 case (byte)PRAISE_1.Mouse_Screen_X:
-                    Set_Mouse_Screen_X_ZERO();
+                    Set_Mouse_Screen_X_CONSTANT(0.0);
                     break;
 
                 case (byte)PRAISE_1.Mouse_Screen_Y:
-                    Set_Mouse_Screen_Y_ZERO();
+                    Set_Mouse_Screen_Y_CONSTANT(0.0);
                     break;
 
                 case (byte)PRAISE_1.Capsule_Fowards_X:
@@ -155,15 +155,15 @@ namespace Avril_NNAI
                     break;
 
                 case (byte)PRAISE_1.Capsule_Up_X:
-                    Set_Capsule_Up_X(0.0);
+                    Set_Capsule_Up_X_CONSTANT(0.0);
                     break;
 
                 case (byte)PRAISE_1.Capsule_Up_Y:
-                    Set_Capsule_Up_Y(1.0);
+                    Set_Capsule_Up_Y_CONSTANT(1.0);
                     break;
 
                 case (byte)PRAISE_1.Capsule_Up_Z:
-                    Set_Capsule_Up_Z(0.0);
+                    Set_Capsule_Up_Z_CONSTANT(0.0);
                     break;
 
                 case (byte)PRAISE_1.Capsule_Right_X:
@@ -192,11 +192,11 @@ namespace Avril_NNAI
         {
             _NumberOfOutputValues = numberOfOutputValues;
         }
-        private void Create_Mouse_Screen_X(double mouseX)
+        private void Create_Mouse_Screen_X_CONSTANT(double mouseX)
         {
             _Mouse_Screen_X = mouseX;
         }
-        private void Create_Mouse_Screen_Y(double mouseY)
+        private void Create_Mouse_Screen_Y_CONSTANT(double mouseY)
         {
             _Mouse_Screen_Y = mouseY;
         }
@@ -212,15 +212,15 @@ namespace Avril_NNAI
         {
             _Capsule_Fowards_Z = capsualeFowardsZ;
         }
-        private void Create_Capsule_Up_X(double capsualeUpX)
+        private void Create_Capsule_Up_X_CONSTANT(double capsualeUpX)
         {
             _Capsule_Up_X = capsualeUpX;
         }
-        private void Create_Capsule_Up_Y(double capsualeUpY)
+        private void Create_Capsule_Up_Y_CONSTANT(double capsualeUpY)
         {
             _Capsule_Up_Y = capsualeUpY;
         }
-        private void Create_Capsule_Up_Z(double capsualeUpZ)
+        private void Create_Capsule_Up_Z_CONSTANT(double capsualeUpZ)
         {
             _Capsule_Up_Z = capsualeUpZ;
         }
@@ -250,15 +250,15 @@ namespace Avril_NNAI
         {
             return _Capsule_Fowards_Z;
         }
-        private double Get_Capsule_Up_X()
+        private double Get_Capsule_Up_X_CONSTANT()
         {
             return _Capsule_Up_X;
         }
-        private double Get_Capsule_Up_Y()
+        private double Get_Capsule_Up_Y_CONSTANT()
         {
             return _Capsule_Up_Y;
         }
-        private double Get_Capsule_Up_Z()
+        private double Get_Capsule_Up_Z_CONSTANT()
         {
             return _Capsule_Up_Z;
         }
@@ -274,11 +274,11 @@ namespace Avril_NNAI
         {
             return _Capsule_Right_Z;
         }
-        private double Get_Mouse_Screen_X()
+        private double Get_Mouse_Screen_X_CONSTANT()
         {
             return _Mouse_Screen_X;
         }
-        private double Get_Mouse_Screen_Y()
+        private double Get_Mouse_Screen_Y_CONSTANT()
         {
             return _Mouse_Screen_Y;
         }
@@ -296,15 +296,15 @@ namespace Avril_NNAI
         {
             _Capsule_Fowards_Z = capsualeFowardsZ;
         }
-        private void Set_Capsule_Up_X(double capsualeUpX)
+        private void Set_Capsule_Up_X_CONSTANT(double capsualeUpX)
         {
             _Capsule_Up_X = capsualeUpX;
         }
-        private void Set_Capsule_Up_Y(double capsualeUpY)
+        private void Set_Capsule_Up_Y_CONSTANT(double capsualeUpY)
         {
             _Capsule_Up_Y = capsualeUpY;
         }
-        private void Set_Capsule_Up_Z(double capsualeUpZ)
+        private void Set_Capsule_Up_Z_CONSTANT(double capsualeUpZ)
         {
             _Capsule_Up_Z = capsualeUpZ;
         }
@@ -320,13 +320,13 @@ namespace Avril_NNAI
         {
             _Capsule_Right_Z = capsualeRightZ;
         }
-        private void Set_Mouse_Screen_X_ZERO()
+        private void Set_Mouse_Screen_X_CONSTANT(double constantValue)
         {
-            _Mouse_Screen_X = 0;
+            _Mouse_Screen_X = constantValue;
         }
-        private void Set_Mouse_Screen_Y_ZERO()
+        private void Set_Mouse_Screen_Y_CONSTANT(double constantValue)
         {
-            _Mouse_Screen_Y = 0;
+            _Mouse_Screen_Y = constantValue;
         }
         private void Set_NumberOfResetToConstantValues(byte value)
         {

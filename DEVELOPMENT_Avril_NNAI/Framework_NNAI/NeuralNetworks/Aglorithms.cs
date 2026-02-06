@@ -84,21 +84,25 @@ namespace Avril_NNAI
                 else if (outputID < (numberOfPraiseSets + numberOfResetToConstant))
                 {
                     _AvrilNNAI.Create_Constants(new Avril_NNAI.Constant[(byte)(_AvrilNNAI.Get_MetaData().Get_NumberOfPraiseOutputValues() - numberOfResetToConstant)]);
-                    _AvrilNNAI.Set_Item_On_List_Of_Constant((byte)(outputID - numberOfPraiseSets), new Avril_NNAI.Constant());
+                    _AvrilNNAI.Set_Item_On_List_Of_Constant((byte)(outputID - numberOfPraiseSets), obj.Get_Neural_Networks().Get_Aglorithms().Get_NeuralPath().Get_New_Constant());
                     while (_AvrilNNAI.Get_List_Of_PraiseSet()[(byte)(outputID - numberOfPraiseSets)] == null) { }
 
-                    for (sbyte layerID = 4; layerID > -1; layerID--)
+                    for (byte constantID = 0; constantID < numberOfResetToConstant; constantID++)
                     {
-                        byte hiddenLayerID = Convert.ToByte(layerID);
-
+                        obj.Get_Neural_Networks().Get_Aglorithms().Get_NeuralPath().Set_Constant_Path_To_Output(obj, _AvrilNNAI, outputID, constantID);
                         //ToDo:
                     }
                 }
             }
             return _AvrilNNAI;
         }
+        public void Save_Instance_Of_MachineAI_To_File(Avril_NNAI.Framework_NNAI obj, Avril_NNAI.MachineAI objNNAI)
+        {
 
-    // get.
+
+        }
+
+        // get.
         public Avril_NNAI.NeuralPath Get_NeuralPath()
         {
             return _NeuralPath;

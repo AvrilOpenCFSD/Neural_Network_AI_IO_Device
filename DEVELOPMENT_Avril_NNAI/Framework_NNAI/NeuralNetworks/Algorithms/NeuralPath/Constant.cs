@@ -2,17 +2,19 @@
 {
     public class Constant
     {
+// definitions.
+
 // classes.
 
 // registers.
-        private double _constant;
+        private double _constant_REGISTERED_Output;
 
 // constructor.
         public Constant()
         {
             //System.Console.WriteLine("entered Constant.");
-            Create_Constant(new double());
-            Set_Constant(0.0);
+            Create_Constant_REGISTERED_Output(new double());
+            Set_Constant_REGISTERED_Output(0.0);
             //System.Console.WriteLine("exiting Constant.");
         }
 
@@ -24,21 +26,21 @@
 
 // public.
     // get.
-        public double Get_Constant()
+        public double Get_Constant_REGISTERED_Output()
         {
-            return _constant;
+            return _constant_REGISTERED_Output;
         }
         
     // set.
-        public void Set_Constant(double constant)
+        public void Set_Constant_REGISTERED_Output(double constant)
         {
-            _constant = constant;
+            _constant_REGISTERED_Output = constant;
         }
         
 // private.
-        private void Create_Constant(double constant)
+        private void Create_Constant_REGISTERED_Output(double constant)
         {
-            _constant = constant;
+            _constant_REGISTERED_Output = constant;
         }   
 
     // get.
