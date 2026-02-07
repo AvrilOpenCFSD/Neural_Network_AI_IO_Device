@@ -84,6 +84,7 @@ namespace AvrilNNAI_OpenConcurrency_IO_Praise_Nth
                 _AvrilNNAI.Set_Item_On_List_Of_Constant(outputID, obj.Get_Neural_Networks().Get_Aglorithms().Get_NeuralPath().Get_New_Constant());
                 obj.Get_Neural_Networks().Get_Aglorithms().Get_NeuralPath().Set_Constant_Path_To_Output(obj, _AvrilNNAI, outputID, outputID);
             }
+            Set_IO_Defaults(_AvrilNNAI, praiseID);
             return _AvrilNNAI;
         }
         public void Save_Instance_Of_MachineAI_To_File(AvrilNNAI_OpenConcurrency_IO_Praise_Nth.Framework_NNAI obj, AvrilNNAI_OpenConcurrency_IO_Praise_Nth.MachineAI objNNAI)
@@ -105,5 +106,33 @@ namespace AvrilNNAI_OpenConcurrency_IO_Praise_Nth
         }
     // get.
     // set.
+        private void Set_IO_Defaults(AvrilNNAI_OpenConcurrency_IO_Praise_Nth.MachineAI objNNAI, ulong praiseID)
+        {
+            switch(praiseID)
+            {
+                case (byte)Global.PraiseID.Praise_0:
+
+                    break;
+
+                case (byte)Global.PraiseID.Praise_1:
+                    objNNAI.Set_Item_On_List_Of_REGISTERED_Input((byte)Global.PRAISE_1.Mouse_Screen_X, 0.0);
+                    objNNAI.Set_Item_On_List_Of_REGISTERED_Input((byte)Global.PRAISE_1.Mouse_Screen_Y, 0.0);
+                    objNNAI.Set_Item_On_List_Of_REGISTERED_Input((byte)Global.PRAISE_1.Capsule_Fowards_X, 1.0);
+                    objNNAI.Set_Item_On_List_Of_REGISTERED_Input((byte)Global.PRAISE_1.Capsule_Fowards_Y, 0.0);
+                    objNNAI.Set_Item_On_List_Of_REGISTERED_Input((byte)Global.PRAISE_1.Capsule_Fowards_Z, 0.0);
+                    objNNAI.Set_Item_On_List_Of_REGISTERED_Input((byte)Global.PRAISE_1.Capsule_Up_X, 0.0);
+                    objNNAI.Set_Item_On_List_Of_REGISTERED_Input((byte)Global.PRAISE_1.Capsule_Up_Y, 1.0);
+                    objNNAI.Set_Item_On_List_Of_REGISTERED_Input((byte)Global.PRAISE_1.Capsule_Up_Z, 0.0);
+                    objNNAI.Set_Item_On_List_Of_REGISTERED_Input((byte)Global.PRAISE_1.Capsule_Right_X, 0.0);
+                    objNNAI.Set_Item_On_List_Of_REGISTERED_Input((byte)Global.PRAISE_1.Capsule_Right_Y, 0.0);
+                    objNNAI.Set_Item_On_List_Of_REGISTERED_Input((byte)Global.PRAISE_1.Capsule_Right_Z, 1.0);
+                    break;
+
+
+                case (byte)Global.PraiseID.Praise_2:
+
+                    break;
+            }
+        }
     }
 }

@@ -29,9 +29,23 @@ namespace AvrilNNAI_OpenConcurrency_IO_Praise_Nth
             Praise_1 = 1,
             Praise_2 = 2
         }
+		public enum PRAISE_1 : byte
+		{
+			Mouse_Screen_X,
+			Mouse_Screen_Y,
+			Capsule_Fowards_X,
+			Capsule_Fowards_Y,
+			Capsule_Fowards_Z,
+			Capsule_Right_X,
+			Capsule_Right_Y,
+			Capsule_Right_Z,
+			Capsule_Up_X,
+			Capsule_Up_Y,
+			Capsule_Up_Z,
+		}
 
 // constructor.
-        public Global()
+		public Global()
         {
             System.Console.WriteLine("entered Global.");
         }

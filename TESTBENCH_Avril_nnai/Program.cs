@@ -8,17 +8,7 @@ MachineAI newMachineAI = IO.Initialise_Instance_Of_MachineAI(obj);
 Console.WriteLine("bravo.");
 double[] inputValues = new double[newMachineAI.Get_MetaData().Get_NumberOfPraiseInputValues()];
 Console.WriteLine("charlie.");
-inputValues[(byte)Global.PRAISE_1.Mouse_Screen_X] = 0.0;
-inputValues[(byte)Global.PRAISE_1.Mouse_Screen_Y] = 0.0;
-inputValues[(byte)Global.PRAISE_1.Capsule_Fowards_X] = 1.0;
-inputValues[(byte)Global.PRAISE_1.Capsule_Fowards_Y] = 0.0;
-inputValues[(byte)Global.PRAISE_1.Capsule_Fowards_Z] = 0.0;
-inputValues[(byte)Global.PRAISE_1.Capsule_Up_X] = 0.0;
-inputValues[(byte)Global.PRAISE_1.Capsule_Up_Y] = 1.0;
-inputValues[(byte)Global.PRAISE_1.Capsule_Up_Z] = 0.0;
-inputValues[(byte)Global.PRAISE_1.Capsule_Right_X] = 0.0;
-inputValues[(byte)Global.PRAISE_1.Capsule_Right_Y] = 0.0;
-inputValues[(byte)Global.PRAISE_1.Capsule_Right_Z] = 1.0;
+
 
 Console.WriteLine("echo.");
 
