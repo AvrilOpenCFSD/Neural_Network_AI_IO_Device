@@ -60,7 +60,16 @@ Edition: Windows 11 Home OEM System Builder
 Version: 24H2
 #### Using Microsoft Visual Studio Professional 2022.
 Version 17.13.4.
- 
+
+### TESTBENCH_Avril_nnai
+#### C# : Console.
+#### Using Windows 11 Home.
+Edition: Windows 11 Home OEM System Builder
+Version: 24H2
+#### Using Microsoft Visual Studio Professional 2022.
+Version 17.13.4.
+
+
 ## Dependencies.
 ### Tutorial: Neural networks
  - https://developers.google.com/machine-learning/crash-course/neural-networks
