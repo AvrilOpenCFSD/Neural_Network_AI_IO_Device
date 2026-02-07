@@ -18,7 +18,7 @@ namespace Avril_NNAI
         }
 
 // public.
-        public void Do_Solution_Logic(double[] inputs, object output)
+        public void Do_Solution_Logic(double[] inputs, double output)
         {
 
         }

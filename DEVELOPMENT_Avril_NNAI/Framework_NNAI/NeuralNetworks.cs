@@ -13,18 +13,12 @@ namespace Avril_NNAI
 // constructor.
         public NeuralNetworks()
         {
-            //System.Console.WriteLine("entered NeuralNetworks.");
-            Create_Global(new Avril_NNAI.Global());
-            while (Get_Global() == null) { }
-
-            Create_Aglorithms(new Avril_NNAI.Aglorithms());
-            while (Get_Aglorithms() == null) { }
-
-            Create_Data(new Avril_NNAI.Data());
-            while (Get_Data() == null) { }
-
-            Create_Execute(new Avril_NNAI.Execute());
-            while (Get_Execute() == null) { }
+            System.Console.WriteLine("entered NeuralNetworks.");
+            Create_Global();
+            Create_Aglorithms();
+            Create_Data();
+            Create_Execute();
+            System.Console.WriteLine("exiting NeuralNetworks.");
         }
 
 // destructor
@@ -54,21 +48,25 @@ namespace Avril_NNAI
     // set.
 
 // private.
-        private void Create_Aglorithms(Avril_NNAI.Aglorithms aglorithms)
+        private void Create_Aglorithms()
         {
-            _aglorithms = aglorithms;
+            _aglorithms = new Avril_NNAI.Aglorithms();
+            while (Get_Aglorithms() == null) { }
         }
-        private void Create_Global(Avril_NNAI.Global global)
+        private void Create_Global()
         {
-            _global = global;
+            _global = new Avril_NNAI.Global();
+            while (Get_Global() == null) { }
         }
-        private void Create_Data(Avril_NNAI.Data data)
+        private void Create_Data()
         {
-            _data = data;
+            _data = new Avril_NNAI.Data();
+            while (Get_Data() == null) { }
         }
-        private void Create_Execute(Avril_NNAI.Execute execute)
+        private void Create_Execute()
         {
-            _execute = execute;
+            _execute = new Avril_NNAI.Execute();
+            while (Get_Execute() == null) { }
         }
     // get.
     // set.

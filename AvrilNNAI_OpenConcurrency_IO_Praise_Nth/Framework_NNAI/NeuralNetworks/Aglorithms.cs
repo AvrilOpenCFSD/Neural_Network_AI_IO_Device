@@ -1,5 +1,4 @@
-﻿
-using System.ComponentModel;
+﻿using System.ComponentModel;
 
 namespace AvrilNNAI_OpenConcurrency_IO_Praise_Nth
 {
@@ -7,19 +6,14 @@ namespace AvrilNNAI_OpenConcurrency_IO_Praise_Nth
     {
 // classes.
         private AvrilNNAI_OpenConcurrency_IO_Praise_Nth.NeuralPath _NeuralPath;
-        private AvrilNNAI_OpenConcurrency_IO_Praise_Nth.SolutionLogic _SolutionLogic;
 
 // registers.
 
 // constructor.
         public Aglorithms()
         {
-            //System.Console.WriteLine("entered Aglorithms.");
-            Create_NeuralPath(new AvrilNNAI_OpenConcurrency_IO_Praise_Nth.NeuralPath());
-            while (Get_NeuralPath() == null) { }
-
-            Create_SolutionLogic(new AvrilNNAI_OpenConcurrency_IO_Praise_Nth.SolutionLogic());
-            while (Get_SolutionLogic() == null) { }
+            System.Console.WriteLine("entered Aglorithms.");
+            Create_NeuralPath();
         }
 
 // destructor.
@@ -93,28 +87,20 @@ namespace AvrilNNAI_OpenConcurrency_IO_Praise_Nth
         }
         public void Save_Instance_Of_MachineAI_To_File(AvrilNNAI_OpenConcurrency_IO_Praise_Nth.Framework_NNAI obj, AvrilNNAI_OpenConcurrency_IO_Praise_Nth.MachineAI objNNAI)
         {
-            obj.Get_Neural_Networks().Get_Execute().Get_FileReadWrite().WriteValuesToFile(obj, objNNAI, objNNAI.Get_MetaData().Get_NameOfNNAI());
+            obj.Get_Neural_Networks().Get_Execute().Get_FileReader().ReadValuesFromFile(obj, objNNAI.Get_MetaData().Get_NameOfNNAI());
         }
-
-        // get.
+    // get.
         public AvrilNNAI_OpenConcurrency_IO_Praise_Nth.NeuralPath Get_NeuralPath()
         {
             return _NeuralPath;
         }
-        public AvrilNNAI_OpenConcurrency_IO_Praise_Nth.SolutionLogic Get_SolutionLogic()
-        {
-            return _SolutionLogic;
-        }
     // set.
 
 // private.
-        private void Create_NeuralPath(AvrilNNAI_OpenConcurrency_IO_Praise_Nth.NeuralPath neuralPath)
+        private void Create_NeuralPath()
         {
-            _NeuralPath = neuralPath;
-        }
-        private void Create_SolutionLogic(AvrilNNAI_OpenConcurrency_IO_Praise_Nth.SolutionLogic solutionLogic)
-        {
-            _SolutionLogic = solutionLogic;
+            _NeuralPath = new AvrilNNAI_OpenConcurrency_IO_Praise_Nth.NeuralPath();
+            while (Get_NeuralPath() == null) { }
         }
     // get.
     // set.

@@ -3,103 +3,25 @@ using System.Text;
 
 namespace AvrilNNAI_OpenConcurrency_IO_Praise_Nth
 {
-    public class FileReadWrite
+    public class FileReader
     {
  // definitions.
 
         // classes.
 
         // constructor.
-        public FileReadWrite()
+        public FileReader()
         {
 
         }
 
 // destructor.
-        ~FileReadWrite() 
+        ~FileReader() 
         {
         
         }
 
 // public.
-        public void WriteValuesToFile(AvrilNNAI_OpenConcurrency_IO_Praise_Nth.Framework_NNAI obj, AvrilNNAI_OpenConcurrency_IO_Praise_Nth.MachineAI objNNAI, string fileName)
-        {
-            string pathName = new string("..\\..\\..\\..\\nnai_extension_files\\" + fileName);
-            using (var stream = File.Open(pathName, FileMode.Create))
-            {
-                using (var writer = new BinaryWriter(stream, Encoding.UTF8, false))
-                {
-                    byte numberOfPraiseSets = (byte)(objNNAI.Get_MetaData().Get_NumberOfPraiseOutputValues() - objNNAI.Get_MetaData().Get_NumberOfResetToConstantValues_OUTPUT());
-                    byte numberOfResetToConstant = objNNAI.Get_MetaData().Get_NumberOfResetToConstantValues_OUTPUT();
-    // write class MachineAI.
-        // write class MachineAI\MetaData.
-            // write register _NameOfNNAI.
-                    writer.Write(objNNAI.Get_MetaData().Get_NameOfNNAI());
-            // write register _PraiseID.
-                    writer.Write(objNNAI.Get_MetaData().Get_PraiseID());
-            // write register _NumberOfPraiseInputValues.
-                    writer.Write(objNNAI.Get_MetaData().Get_NumberOfPraiseInputValues());
-            // write register _NumberOfPraiseOutputValues.
-                    writer.Write(objNNAI.Get_MetaData().Get_NumberOfPraiseOutputValues());
-            // write register _NumberOfResetToConstantValues_INPUT.
-                    writer.Write(objNNAI.Get_MetaData().Get_NumberOfResetToConstantValues_INPUT());
-            // write register _NumberOfResetToConstantValues_OUTPUT.
-                    writer.Write(objNNAI.Get_MetaData().Get_NumberOfResetToConstantValues_OUTPUT());
-            // write register _NumberOfNodesInLayer.
-                    for (sbyte layerID = 4; layerID < -1; layerID--)
-                    {
-                        byte hidenLayerID = Convert.ToByte(layerID);
-                        writer.Write(objNNAI.Get_MetaData().Get_NumberOfNodesInHiddenLayer(hidenLayerID));
-                    }
-        // write register _REGISTERED_Inputs.
-                    for (ulong inputID = 0; inputID < objNNAI.Get_MetaData().Get_NumberOfPraiseInputValues(); inputID++)
-                    {
-                        writer.Write(objNNAI.Get_Item_On_List_Of_REGISTERED_Inputs(inputID));
-                    }
-        // write register _REGISTERED_Outputs.
-                    for (ulong outputID = 0; outputID < objNNAI.Get_MetaData().Get_NumberOfPraiseOutputValues(); outputID++)
-                    {
-                        writer.Write(objNNAI.Get_Item_On_List_Of_REGISTERED_Outputs(outputID));
-                    }
-        // write class MachineAI\PraiseSet.
-            // write class MachineAI\PraiseSet\Node.
-                    for (byte outputID = 0; outputID < numberOfPraiseSets; outputID++)
-                    {
-                        for (sbyte layerID = 4; layerID > -1; layerID--)
-                        {
-                            byte hiddenLayerID = Convert.ToByte(layerID);
-                            for (ulong nodeID = 0; nodeID < objNNAI.Get_MetaData().Get_NumberOfNodesInHiddenLayer(hiddenLayerID); nodeID++)
-                            {
-                // write register _NumberOfInputs.
-                                writer.Write(objNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Get_Node(hiddenLayerID, nodeID).Get_NumberOfInputs());
-                // write register _REGISTERED_Output.
-                                writer.Write(objNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Get_Node(hiddenLayerID, nodeID).Get_REGISTERED_Output());
-                // write class MachineAI\PraiseSet\Node\Linear.
-                                ulong numberOfInputsForNode = new ulong();
-                                numberOfInputsForNode = 0;
-                                if (layerID == (byte)4)
-                                {
-                                    numberOfInputsForNode = objNNAI.Get_MetaData().Get_NumberOfPraiseInputValues();
-                                }
-                                else
-                                {
-                                    numberOfInputsForNode = objNNAI.Get_MetaData().Get_NumberOfNodesInHiddenLayer((byte)(layerID + (byte)1));
-                                }
-                                for (ulong inputID = 0; inputID < numberOfInputsForNode; inputID++)
-                                {
-                    // write register _bias.
-                                    writer.Write(objNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Get_Node(hiddenLayerID, nodeID).Get_Item_On_List_Of_NeuralPathOfInput(inputID).Get_Bias());
-                    // write register _weight.
-                                    writer.Write(objNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Get_Node(hiddenLayerID, nodeID).Get_Item_On_List_Of_NeuralPathOfInput(inputID).Get_Weight());
-                                }
-                            }
-                        }
-                    }
-        // write class MachineAI\Constants.
-                }
-            }
-        }
-
         public AvrilNNAI_OpenConcurrency_IO_Praise_Nth.MachineAI ReadValuesFromFile(AvrilNNAI_OpenConcurrency_IO_Praise_Nth.Framework_NNAI obj, string fileName)
         {
             AvrilNNAI_OpenConcurrency_IO_Praise_Nth.MachineAI _AvrilNNAI = obj.Get_Neural_Networks().Get_Data().Get_NewMachineAI();

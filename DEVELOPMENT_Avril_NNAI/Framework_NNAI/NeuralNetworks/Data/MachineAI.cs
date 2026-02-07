@@ -67,7 +67,6 @@ namespace Avril_NNAI
             {
                 byte numberOfPraiseSets = (byte)(objNNAI.Get_MetaData().Get_NumberOfPraiseOutputValues() - objNNAI.Get_MetaData().Get_NumberOfResetToConstantValues_OUTPUT());
                 byte numberOfResetToConstant = objNNAI.Get_MetaData().Get_NumberOfResetToConstantValues_OUTPUT();
-                double outputValue = 0.0;
                 for (byte outputID = 0; outputID < numberOfPraiseSets; outputID++)
                 {
                     for (sbyte layerID = 4; layerID > -1; layerID--)
@@ -85,16 +84,11 @@ namespace Avril_NNAI
                             {
                                 numberOfInputsForNode = objNNAI.Get_MetaData().Get_NumberOfNodesInHiddenLayer((byte)(layerID + (byte)1));
                             }
-                            for (ulong inputID = 0; inputID < numberOfInputsForNode; inputID++)
-                            {
-                                outputValue = objNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Get_Node(hiddenLayerID, nodeID).Get_Item_On_List_Of_NeuralPathOfInput(inputID).Run_Neural_Path_Calculation(objNNAI, outputID, hiddenLayerID, nodeID, inputID);
-                                objNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Get_Node(hiddenLayerID, nodeID).Set_REGISTERED_Output(outputValue);
-                            }
+                            objNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Get_Node(hiddenLayerID, nodeID).Run_Neural_Path_Calculation(objNNAI, outputID, hiddenLayerID, nodeID, numberOfInputsForNode);
                         }
                     }
                     objNNAI.Set_Item_On_List_Of_REGISTERED_Output(outputID, objNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Get_Node(0, 1).Get_REGISTERED_Output());
                 }
-                
             }
             objNNAI.Set_IsNewDataReady(true);
             return objNNAI.Get_IsNewDataReady();

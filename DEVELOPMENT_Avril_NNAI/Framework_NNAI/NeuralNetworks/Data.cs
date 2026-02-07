@@ -15,22 +15,16 @@ namespace Avril_NNAI
 // constructor.
         public Data()
         {
-            //System.Console.WriteLine("entered Data.");
-            Create_Input(new Avril_NNAI.Input());
-            while (Get_Input() == null) { }
-            //System.Console.WriteLine("ALPHA.");
-            Create_Output(new Avril_NNAI.Output());
-            while (Get_Output() == null) { }
-            //System.Console.WriteLine("BRAVO.");
-            Create_NewMachineAI(new Avril_NNAI.MachineAI());
-            while (Get_NewMachineAI() == null) { }
-            //System.Console.WriteLine("CHARLIE.");
-            Create_Neural_Network_Preservation_List(new Avril_NNAI.MachineAI[1]);
-            while (Get_List_Of_Neural_Network_Preservation() == null) { }
-            Set_NewMachineAI(0, Get_NewMachineAI());
-            //System.Console.WriteLine("ECHO.");
-            Create_IsFirstSave(new bool());
-            Set_IsFirstSave(true);
+            System.Console.WriteLine("entered Data.");
+            Create_Input();
+            System.Console.WriteLine("ALPHA.");
+            Create_Output();
+            System.Console.WriteLine("BRAVO.");
+            Create_NewMachineAI();
+            System.Console.WriteLine("CHARLIE.");
+            Create_Neural_Network_Preservation_List(1);
+            System.Console.WriteLine("ECHO.");
+            Create_IsFirstSave();
         }
 
 // destructor.
@@ -50,7 +44,7 @@ namespace Avril_NNAI
             else
             {
                 Avril_NNAI.MachineAI[] old_NeuralNetworkList = Get_List_Of_Neural_Network_Preservation();
-                Create_Neural_Network_Preservation_List(new Avril_NNAI.MachineAI[(ulong)(Get_List_Of_Neural_Network_Preservation().LongLength + (long)1)]);
+                Create_Neural_Network_Preservation_List((ulong)(Get_List_Of_Neural_Network_Preservation().LongLength + (long)1));
                 for (ulong index = 0; index < (ulong)old_NeuralNetworkList.LongLength; index++)
                 {
                     Set_Item_Of_Neural_Network_Preservation(index, old_NeuralNetworkList[index]);
@@ -58,7 +52,6 @@ namespace Avril_NNAI
                 Set_Item_Of_Neural_Network_Preservation((ulong)Get_List_Of_Neural_Network_Preservation().LongLength, newNeuralNetwork);
             }
         }
-    
     // get.
         public Avril_NNAI.MachineAI Get_Item_On_List_Of_Neural_Network_Preservation(ulong praiseID)
         {
@@ -80,49 +73,56 @@ namespace Avril_NNAI
         {
             return _output;
         }
-
     // set.
 
-
 // private.
-        private void Create_Neural_Network_Preservation_List(Avril_NNAI.MachineAI[] machineAIs)
+        private void Create_Neural_Network_Preservation_List(ulong numberOfNNAI)
         {
-            _AvrilNNAI_OpenCFSD_Praise_IO = machineAIs;
+            _AvrilNNAI_OpenCFSD_Praise_IO = new Avril_NNAI.MachineAI[numberOfNNAI];
+            while (Get_List_Of_Neural_Network_Preservation() == null) { }
+            for (ulong index = 0; index < numberOfNNAI; index++)
+            {
+                Set_Item_Of_Neural_Network_Preservation(index, Get_NewMachineAI());
+            }
+            Set_NewMachineAI(0, Get_NewMachineAI());
         }
-        private void Create_IsFirstSave(bool isFirstSave)
+        private void Create_IsFirstSave()
         {
-            _isFirstSave = isFirstSave;
+            _isFirstSave = new bool();
+            Set_IsFirstSave(true);
         }
-        private void Create_Input(Avril_NNAI.Input input)
+        private void Create_Input()
         {
-            _input = input;
+            _input = new Avril_NNAI.Input();
+            while (Get_Input() == null) { }
         }
-        private void Create_NewMachineAI(Avril_NNAI.MachineAI machineAI)
+        private void Create_NewMachineAI()
         {
-            _newMachineAI = machineAI;
+            _newMachineAI = new Avril_NNAI.MachineAI();
+            while (Get_NewMachineAI() == null) { }
         }
-        private void Create_Output(Avril_NNAI.Output output)
+        private void Create_Output()
         {
-            _output = output;
+            _output = new Avril_NNAI.Output();
+            while (Get_Output() == null) { }
         }
     // get.
         private bool Get_IsFirstSave()
         {
             return _isFirstSave;
         }
-        
     // set.
-        private void Set_Item_Of_Neural_Network_Preservation(ulong praiseID, Avril_NNAI.MachineAI machineAI)
+        private void Set_Item_Of_Neural_Network_Preservation(ulong praiseID, Avril_NNAI.MachineAI newMachineAI)
         {
-            _AvrilNNAI_OpenCFSD_Praise_IO[praiseID] = machineAI;
+            _AvrilNNAI_OpenCFSD_Praise_IO[praiseID] = newMachineAI;
         }
-        private void Set_IsFirstSave(bool isFirstSave)
+        private void Set_IsFirstSave(bool newIsFirstSave)
         {
-            _isFirstSave = isFirstSave;
+            _isFirstSave = newIsFirstSave;
         }
-        private void Set_NewMachineAI(ulong index, Avril_NNAI.MachineAI machineAI)
+        private void Set_NewMachineAI(ulong index, Avril_NNAI.MachineAI newMachineAI)
         {
-            _AvrilNNAI_OpenCFSD_Praise_IO[index] = machineAI;
+            _AvrilNNAI_OpenCFSD_Praise_IO[index] = newMachineAI;
         }
     }
 }

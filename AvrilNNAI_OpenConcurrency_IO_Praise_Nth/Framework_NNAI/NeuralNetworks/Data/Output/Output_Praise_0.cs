@@ -1,5 +1,4 @@
-﻿
-namespace AvrilNNAI_OpenConcurrency_IO_Praise_Nth
+﻿namespace AvrilNNAI_OpenConcurrency_IO_Praise_Nth
 {
     public class Output_Praise_0
     {

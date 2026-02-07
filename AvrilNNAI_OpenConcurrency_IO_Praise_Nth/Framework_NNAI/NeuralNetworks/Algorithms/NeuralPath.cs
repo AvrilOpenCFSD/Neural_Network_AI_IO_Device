@@ -1,7 +1,4 @@
-﻿
-using System;
-
-namespace AvrilNNAI_OpenConcurrency_IO_Praise_Nth
+﻿namespace AvrilNNAI_OpenConcurrency_IO_Praise_Nth
 {
     public class NeuralPath
     {
@@ -17,11 +14,8 @@ namespace AvrilNNAI_OpenConcurrency_IO_Praise_Nth
         public NeuralPath() 
         {
             //System.Console.WriteLine("entered NeuralPath.");
-            Create_New_Linear(new AvrilNNAI_OpenConcurrency_IO_Praise_Nth.Linear());
-            while (Get_New_Linear() == null) { }
-            
-            Create_New_Constant(new AvrilNNAI_OpenConcurrency_IO_Praise_Nth.Constant());
-            while (Get_New_Constant() == null) { }
+            Create_New_Linear();
+            Create_New_Constant();
             //System.Console.WriteLine("exiting NeuralPath.");
         }
 
@@ -154,7 +148,6 @@ namespace AvrilNNAI_OpenConcurrency_IO_Praise_Nth
                     break;
             }
         }
-        
     // get.
         public AvrilNNAI_OpenConcurrency_IO_Praise_Nth.Constant Get_New_Constant()
         {
@@ -164,7 +157,6 @@ namespace AvrilNNAI_OpenConcurrency_IO_Praise_Nth
         {
             return _New_Linear;
         }
-
     // set.
         public void Set_Constant_Path_To_Output(AvrilNNAI_OpenConcurrency_IO_Praise_Nth.Framework_NNAI obj, AvrilNNAI_OpenConcurrency_IO_Praise_Nth.MachineAI objNNAI, byte outputID, byte constantID)
         {
@@ -259,13 +251,15 @@ namespace AvrilNNAI_OpenConcurrency_IO_Praise_Nth
         }
 
 // private.
-        private void Create_New_Constant(AvrilNNAI_OpenConcurrency_IO_Praise_Nth.Constant constant)
+        private void Create_New_Constant()
         {
-            _New_Constant = constant;
+            _New_Constant = new AvrilNNAI_OpenConcurrency_IO_Praise_Nth.Constant();
+            while (Get_New_Constant() == null) { }
         }
-        private void Create_New_Linear(AvrilNNAI_OpenConcurrency_IO_Praise_Nth.Linear linear)
+        private void Create_New_Linear()
         {
-            _New_Linear = linear;
+            _New_Linear = new AvrilNNAI_OpenConcurrency_IO_Praise_Nth.Linear();
+            while (Get_New_Linear() == null) { }
         }
         private void Calculate_NumberOfPraiseInputValues(AvrilNNAI_OpenConcurrency_IO_Praise_Nth.Framework_NNAI obj, AvrilNNAI_OpenConcurrency_IO_Praise_Nth.MachineAI objNNAI, ulong praiseID)
         {
@@ -347,9 +341,7 @@ namespace AvrilNNAI_OpenConcurrency_IO_Praise_Nth
                     break;
             }
         }
-
     // get.
-
     // set.
 
     }

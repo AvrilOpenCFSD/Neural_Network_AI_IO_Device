@@ -5,15 +5,15 @@ namespace Avril_NNAI
 {
     public static class MyEnumExtensions
     {
-        // definitions.
+// definitions.
 
-        // classes.
+// classes.
 
-        // constructor.
+// constructor.
 
-        // destructor.
+// destructor.
 
-        // public.
+// public.
         public static string ToDescriptionString(Avril_NNAI.Global.FILE_NAME val)
         {
             DescriptionAttribute[] attributes = (DescriptionAttribute[])val
@@ -22,14 +22,11 @@ namespace Avril_NNAI
                .GetCustomAttributes(typeof(DescriptionAttribute), false);
             return attributes.Length > 0 ? attributes[0].Description : string.Empty;
         }
-        // get.
+    // get.
+    // set.
 
-        // set.
-
-        // private.
-
-        // get.
-
-        // set.
+// private.
+    // get.
+    // set.
     }
 }

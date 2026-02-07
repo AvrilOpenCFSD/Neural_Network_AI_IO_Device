@@ -1,4 +1,5 @@
-﻿namespace Avril_NNAI
+﻿
+namespace Avril_NNAI
 {
     public class Constant
     {
@@ -13,8 +14,7 @@
         public Constant()
         {
             //System.Console.WriteLine("entered Constant.");
-            Create_Constant_REGISTERED_Output(new double());
-            Set_Constant_REGISTERED_Output(0.0);
+            Create_Constant_REGISTERED_Output();
             //System.Console.WriteLine("exiting Constant.");
         }
 
@@ -30,22 +30,19 @@
         {
             return _constant_REGISTERED_Output;
         }
-        
     // set.
-        public void Set_Constant_REGISTERED_Output(double constant)
+        public void Set_Constant_REGISTERED_Output(double newConstant)
         {
-            _constant_REGISTERED_Output = constant;
+            _constant_REGISTERED_Output = newConstant;
         }
         
 // private.
-        private void Create_Constant_REGISTERED_Output(double constant)
+        private void Create_Constant_REGISTERED_Output()
         {
-            _constant_REGISTERED_Output = constant;
+            _constant_REGISTERED_Output = new double();
+            Set_Constant_REGISTERED_Output(0.0);
         }   
-
     // get.
-    
     // set
-
     }
 }

@@ -6,14 +6,14 @@ namespace Avril_NNAI
 // classes.
         private Avril_NNAI.NeuralNetworks _neuralNetwork;
         private Avril_NNAI.SIMULATION _simulation;
+
 // registers.
 
 // constructor.
         public Framework_NNAI()
         {
-            //System.Console.WriteLine("entered Framework_NNAI.");
-            Create_NeuralNetworks(new Avril_NNAI.NeuralNetworks());
-            while (Get_Neural_Networks() == null) { }
+            System.Console.WriteLine("entered Framework_NNAI.");
+            Create_NeuralNetworks();
         }
 
 // destructor.
@@ -35,9 +35,10 @@ namespace Avril_NNAI
     // set.
 
 // private.
-        private void Create_NeuralNetworks(Avril_NNAI.NeuralNetworks neuralNetwork)
+        private void Create_NeuralNetworks()
         {
-            _neuralNetwork = neuralNetwork;
+            _neuralNetwork = new Avril_NNAI.NeuralNetworks();
+            while(Get_Neural_Networks() == null) { }
         }
     // get.
     // set.

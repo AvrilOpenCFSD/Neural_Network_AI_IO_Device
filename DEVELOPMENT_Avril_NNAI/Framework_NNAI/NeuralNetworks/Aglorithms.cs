@@ -14,12 +14,9 @@ namespace Avril_NNAI
 // constructor.
         public Aglorithms()
         {
-            //System.Console.WriteLine("entered Aglorithms.");
-            Create_NeuralPath(new Avril_NNAI.NeuralPath());
-            while (Get_NeuralPath() == null) { }
-
-            Create_SolutionLogic(new Avril_NNAI.SolutionLogic());
-            while (Get_SolutionLogic() == null) { }
+            System.Console.WriteLine("entered Aglorithms.");
+            Create_NeuralPath();
+            Create_SolutionLogic();
         }
 
 // destructor.
@@ -95,8 +92,7 @@ namespace Avril_NNAI
         {
             obj.Get_Neural_Networks().Get_Execute().Get_FileReadWrite().WriteValuesToFile(obj, objNNAI, objNNAI.Get_MetaData().Get_NameOfNNAI());
         }
-
-        // get.
+    // get.
         public Avril_NNAI.NeuralPath Get_NeuralPath()
         {
             return _NeuralPath;
@@ -108,13 +104,15 @@ namespace Avril_NNAI
     // set.
 
 // private.
-        private void Create_NeuralPath(Avril_NNAI.NeuralPath neuralPath)
+        private void Create_NeuralPath()
         {
-            _NeuralPath = neuralPath;
+            _NeuralPath = new Avril_NNAI.NeuralPath();
+            while (Get_NeuralPath() == null) { }
         }
-        private void Create_SolutionLogic(Avril_NNAI.SolutionLogic solutionLogic)
+        private void Create_SolutionLogic()
         {
-            _SolutionLogic = solutionLogic;
+            _SolutionLogic = new Avril_NNAI.SolutionLogic();
+            while (Get_SolutionLogic() == null) { }
         }
     // get.
     // set.

@@ -43,7 +43,22 @@ namespace Avril_NNAI
         {
             _List_Of_NeuralPathOfNodeInputs = list_Of_NeuralPathOfNodeInputsneuralPathOfInputs;
         }
-    
+        public void Run_Neural_Path_Calculation(Avril_NNAI.MachineAI objNNAI, byte outputID, byte hiddenLayerID, ulong nodeID, ulong numberOfInputsForNode)
+        {
+            double sum_Bias = 0.0;
+            double sum_weight = 0.0;
+            double outputValue = 0.0;
+            for (byte inputID = 0; inputID < numberOfInputsForNode; inputID++)
+            {
+                sum_Bias = sum_Bias + objNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Get_Node(hiddenLayerID, nodeID).Get_Item_On_List_Of_NeuralPathOfInput(inputID).Get_Bias();
+            }
+            for (byte inputID = 0; inputID < numberOfInputsForNode; inputID++)
+            {
+                sum_weight = sum_weight + (objNNAI.Get_Item_On_List_Of_REGISTERED_Inputs(inputID) * objNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Get_Node(hiddenLayerID, nodeID).Get_Item_On_List_Of_NeuralPathOfInput(inputID).Get_Weight());
+            }
+            outputValue = sum_Bias + sum_weight;
+            objNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Get_Node(hiddenLayerID, nodeID).Set_REGISTERED_Output(outputValue);
+        }
     // get.
         public Avril_NNAI.Linear Get_Item_On_List_Of_NeuralPathOfInput(ulong inputID)
         {

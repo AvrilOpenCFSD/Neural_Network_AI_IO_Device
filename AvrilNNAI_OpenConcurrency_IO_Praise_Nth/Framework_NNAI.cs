@@ -5,15 +5,14 @@ namespace AvrilNNAI_OpenConcurrency_IO_Praise_Nth
     {
 // classes.
         private AvrilNNAI_OpenConcurrency_IO_Praise_Nth.NeuralNetworks _neuralNetwork;
-        private AvrilNNAI_OpenConcurrency_IO_Praise_Nth.SIMULATION _simulation;
+
 // registers.
 
 // constructor.
         public Framework_NNAI()
         {
-            //System.Console.WriteLine("entered Framework_NNAI.");
-            Create_NeuralNetworks(new AvrilNNAI_OpenConcurrency_IO_Praise_Nth.NeuralNetworks());
-            while (Get_Neural_Networks() == null) { }
+            System.Console.WriteLine("entered Framework_NNAI.");
+            Create_NeuralNetworks();
         }
 
 // destructor.
@@ -35,9 +34,10 @@ namespace AvrilNNAI_OpenConcurrency_IO_Praise_Nth
     // set.
 
 // private.
-        private void Create_NeuralNetworks(AvrilNNAI_OpenConcurrency_IO_Praise_Nth.NeuralNetworks neuralNetwork)
+        private void Create_NeuralNetworks()
         {
-            _neuralNetwork = neuralNetwork;
+            _neuralNetwork = new AvrilNNAI_OpenConcurrency_IO_Praise_Nth.NeuralNetworks();
+            while(Get_Neural_Networks() == null) { }
         }
     // get.
     // set.

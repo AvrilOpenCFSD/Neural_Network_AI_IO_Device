@@ -47,9 +47,7 @@ namespace Avril_NNAI
             System.Console.WriteLine("Framework_NNAI ready.");
             framework.Initialise(framework);
             System.Console.WriteLine("framework initialised.");
-
 // SIMULATION
-
             ulong praiseID = new ulong();
             praiseID = 1;
             Avril_NNAI.MachineAI myNeuralNetwork = framework.Get_Neural_Networks().Get_Aglorithms().Create_Instance_Of_MachineAI(framework, "Avril_NNAI_OpenCFSD_Praise_1_IO.nnai", praiseID);
@@ -57,7 +55,6 @@ namespace Avril_NNAI
             //ToDO: train network
             framework.Get_Neural_Networks().Get_Execute().Get_FileReadWrite().WriteValuesToFile(framework, framework.Get_Neural_Networks().Get_Data().Get_Item_On_List_Of_Neural_Network_Preservation(0), myNeuralNetwork.Get_MetaData().Get_NameOfNNAI());
         }
-
         static public Avril_NNAI.Framework_NNAI Get_Framework_NNAI()
         {
             return framework;

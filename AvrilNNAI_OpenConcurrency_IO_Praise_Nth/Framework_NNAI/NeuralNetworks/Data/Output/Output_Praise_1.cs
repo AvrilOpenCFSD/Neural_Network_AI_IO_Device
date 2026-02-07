@@ -1,4 +1,5 @@
-﻿
+﻿using System;
+
 namespace AvrilNNAI_OpenConcurrency_IO_Praise_Nth
 {
     public class Output_Praise_1
@@ -45,9 +46,9 @@ namespace AvrilNNAI_OpenConcurrency_IO_Praise_Nth
             Set_NumberOfResetToConstantValues(5);
 
             Create_Mouse_Screen_X_CONSTANT(new double());
-            Set_Mouse_Screen_X_CONSTANT(0.0);
+            Set_Mouse_Screen_X_CONSTANT();
             Create_Mouse_Screen_Y_CONSTANT(new double());
-            Set_Mouse_Screen_Y_CONSTANT(0.0);
+            Set_Mouse_Screen_Y_CONSTANT();
 
             Create_Capsule_Fowards_X(new double());
             Set_Capsule_Fowards_X(0.0);
@@ -57,11 +58,11 @@ namespace AvrilNNAI_OpenConcurrency_IO_Praise_Nth
             Set_Capsule_Fowards_Z(0.0);
 
             Create_Capsule_Up_X_CONSTANT(new double());
-            Set_Capsule_Up_X_CONSTANT(0.0);
+            Set_Capsule_Up_X_CONSTANT();
             Create_Capsule_Up_Y_CONSTANT(new double());
-            Set_Capsule_Up_Y_CONSTANT(1.0);
+            Set_Capsule_Up_Y_CONSTANT();
             Create_Capsule_Up_Z_CONSTANT(new double());
-            Set_Capsule_Up_Z_CONSTANT(0.0);
+            Set_Capsule_Up_Z_CONSTANT();
 
             Create_Capsule_Right_X(new double());
             Set_Capsule_Right_X(0.0);
@@ -135,11 +136,11 @@ namespace AvrilNNAI_OpenConcurrency_IO_Praise_Nth
             switch (inputID)
             {
                 case (byte)PRAISE_1.Mouse_Screen_X:
-                    Set_Mouse_Screen_X_CONSTANT(0.0);
+                    Set_Mouse_Screen_X_CONSTANT();
                     break;
 
                 case (byte)PRAISE_1.Mouse_Screen_Y:
-                    Set_Mouse_Screen_Y_CONSTANT(0.0);
+                    Set_Mouse_Screen_Y_CONSTANT();
                     break;
 
                 case (byte)PRAISE_1.Capsule_Fowards_X:
@@ -155,15 +156,15 @@ namespace AvrilNNAI_OpenConcurrency_IO_Praise_Nth
                     break;
 
                 case (byte)PRAISE_1.Capsule_Up_X:
-                    Set_Capsule_Up_X_CONSTANT(0.0);
+                    Set_Capsule_Up_X_CONSTANT();
                     break;
 
                 case (byte)PRAISE_1.Capsule_Up_Y:
-                    Set_Capsule_Up_Y_CONSTANT(1.0);
+                    Set_Capsule_Up_Y_CONSTANT();
                     break;
 
                 case (byte)PRAISE_1.Capsule_Up_Z:
-                    Set_Capsule_Up_Z_CONSTANT(0.0);
+                    Set_Capsule_Up_Z_CONSTANT();
                     break;
 
                 case (byte)PRAISE_1.Capsule_Right_X:
@@ -252,15 +253,15 @@ namespace AvrilNNAI_OpenConcurrency_IO_Praise_Nth
         }
         private double Get_Capsule_Up_X_CONSTANT()
         {
-            return _Capsule_Up_X;
+            return 0.0;
         }
         private double Get_Capsule_Up_Y_CONSTANT()
         {
-            return _Capsule_Up_Y;
+            return 1.0;
         }
         private double Get_Capsule_Up_Z_CONSTANT()
         {
-            return _Capsule_Up_Z;
+            return 0.0;
         }
         private double Get_Capsule_Right_X()
         {
@@ -276,11 +277,11 @@ namespace AvrilNNAI_OpenConcurrency_IO_Praise_Nth
         }
         private double Get_Mouse_Screen_X_CONSTANT()
         {
-            return _Mouse_Screen_X;
+            return 0.0;
         }
         private double Get_Mouse_Screen_Y_CONSTANT()
         {
-            return _Mouse_Screen_Y;
+            return 0.0;
         }
         
     // set.
@@ -296,17 +297,17 @@ namespace AvrilNNAI_OpenConcurrency_IO_Praise_Nth
         {
             _Capsule_Fowards_Z = capsualeFowardsZ;
         }
-        private void Set_Capsule_Up_X_CONSTANT(double capsualeUpX)
+        private void Set_Capsule_Up_X_CONSTANT()
         {
-            _Capsule_Up_X = capsualeUpX;
+            _Capsule_Up_X = 0.0;
         }
-        private void Set_Capsule_Up_Y_CONSTANT(double capsualeUpY)
+        private void Set_Capsule_Up_Y_CONSTANT()
         {
-            _Capsule_Up_Y = capsualeUpY;
+            _Capsule_Up_Y = 1.0;
         }
-        private void Set_Capsule_Up_Z_CONSTANT(double capsualeUpZ)
+        private void Set_Capsule_Up_Z_CONSTANT()
         {
-            _Capsule_Up_Z = capsualeUpZ;
+            _Capsule_Up_Z = 0.0;
         }
         private void Set_Capsule_Right_X(double capsualeRightX)
         {
@@ -320,13 +321,13 @@ namespace AvrilNNAI_OpenConcurrency_IO_Praise_Nth
         {
             _Capsule_Right_Z = capsualeRightZ;
         }
-        private void Set_Mouse_Screen_X_CONSTANT(double constantValue)
+        private void Set_Mouse_Screen_X_CONSTANT()
         {
-            _Mouse_Screen_X = constantValue;
+            _Mouse_Screen_X = 0.0;
         }
-        private void Set_Mouse_Screen_Y_CONSTANT(double constantValue)
+        private void Set_Mouse_Screen_Y_CONSTANT()
         {
-            _Mouse_Screen_Y = constantValue;
+            _Mouse_Screen_Y = 0.0;
         }
         private void Set_NumberOfResetToConstantValues(byte value)
         {

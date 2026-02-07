@@ -1,4 +1,5 @@
-﻿using AvrilNNAI_OpenConcurrency_IO_Praise_Nth;
+﻿
+using AvrilNNAI_OpenConcurrency_IO_Praise_Nth;
 
 Console.WriteLine("entering TESTBANCH: AvrilNNAI_OpenConcurrency_IO_Praise_Nth.");
 Framework_NNAI obj = IO.Create_Neural_Network();

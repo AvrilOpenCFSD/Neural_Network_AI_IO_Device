@@ -13,18 +13,12 @@ namespace AvrilNNAI_OpenConcurrency_IO_Praise_Nth
 // constructor.
         public NeuralNetworks()
         {
-            //System.Console.WriteLine("entered NeuralNetworks.");
-            Create_Global(new AvrilNNAI_OpenConcurrency_IO_Praise_Nth.Global());
-            while (Get_Global() == null) { }
-
-            Create_Aglorithms(new AvrilNNAI_OpenConcurrency_IO_Praise_Nth.Aglorithms());
-            while (Get_Aglorithms() == null) { }
-
-            Create_Data(new AvrilNNAI_OpenConcurrency_IO_Praise_Nth.Data());
-            while (Get_Data() == null) { }
-
-            Create_Execute(new AvrilNNAI_OpenConcurrency_IO_Praise_Nth.Execute());
-            while (Get_Execute() == null) { }
+            System.Console.WriteLine("entered NeuralNetworks.");
+            Create_Global();
+            Create_Aglorithms();
+            Create_Data();
+            Create_Execute();
+            System.Console.WriteLine("exiting NeuralNetworks.");
         }
 
 // destructor
@@ -54,21 +48,25 @@ namespace AvrilNNAI_OpenConcurrency_IO_Praise_Nth
     // set.
 
 // private.
-        private void Create_Aglorithms(AvrilNNAI_OpenConcurrency_IO_Praise_Nth.Aglorithms aglorithms)
+        private void Create_Aglorithms()
         {
-            _aglorithms = aglorithms;
+            _aglorithms = new AvrilNNAI_OpenConcurrency_IO_Praise_Nth.Aglorithms();
+            while (Get_Aglorithms() == null) { }
         }
-        private void Create_Global(AvrilNNAI_OpenConcurrency_IO_Praise_Nth.Global global)
+        private void Create_Global()
         {
-            _global = global;
+            _global = new AvrilNNAI_OpenConcurrency_IO_Praise_Nth.Global();
+            while (Get_Global() == null) { }
         }
-        private void Create_Data(AvrilNNAI_OpenConcurrency_IO_Praise_Nth.Data data)
+        private void Create_Data()
         {
-            _data = data;
+            _data = new AvrilNNAI_OpenConcurrency_IO_Praise_Nth.Data();
+            while (Get_Data() == null) { }
         }
-        private void Create_Execute(AvrilNNAI_OpenConcurrency_IO_Praise_Nth.Execute execute)
+        private void Create_Execute()
         {
-            _execute = execute;
+            _execute = new AvrilNNAI_OpenConcurrency_IO_Praise_Nth.Execute();
+            while (Get_Execute() == null) { }
         }
     // get.
     // set.

@@ -14,19 +14,10 @@ namespace Avril_NNAI
 // constructor.
         public SolutionLogic() 
         { 
-            Create_ListOfAlgorithmSubsets(new Object[3]);
-
-            Create_Algorithm_Praise_0(new Avril_NNAI.Algorithm_Praise_0());
-            while (Get_Algorithm_Praise_0() == null) { }
-            Set_ListOfAlgorithmSubsets(0, (object)Get_Algorithm_Praise_0());
-
-            Create_Algorithm_Praise_1(new Avril_NNAI.Algorithm_Praise_1());
-            while (Get_Algorithm_Praise_1() == null) { }
-            Set_ListOfAlgorithmSubsets(1, (object)Get_Algorithm_Praise_1());
-
-            Create_Algorithm_Praise_2(new Avril_NNAI.Algorithm_Praise_2());
-            while (Get_Algorithm_Praise_2() == null) { }
-            Set_ListOfAlgorithmSubsets(2, (object)Get_Algorithm_Praise_2());
+            Create_ListOfAlgorithmSubsets((ulong)3);
+            Create_Algorithm_Praise_0();
+            Create_Algorithm_Praise_1();
+            Create_Algorithm_Praise_2();
         }
 
 // destructor
@@ -41,27 +32,36 @@ namespace Avril_NNAI
         {
             return _ListOfAlgorithmSubsets[praiseID];
         }
-
     // set.
 
 // private.
-        private void Create_Algorithm_Praise_0(Avril_NNAI.Algorithm_Praise_0 algorithm_Praise_0)
+        private void Create_Algorithm_Praise_0()
         {
-            _Algorithm_Praise_0 = algorithm_Praise_0;
+            _Algorithm_Praise_0 = new Avril_NNAI.Algorithm_Praise_0();
+            while (Get_Algorithm_Praise_0() == null) { }
+            Set_ListOfAlgorithmSubsets(0, (object)Get_Algorithm_Praise_0());
         }
-        private void Create_Algorithm_Praise_1(Avril_NNAI.Algorithm_Praise_1 algorithm_Praise_1)
+        private void Create_Algorithm_Praise_1()
         {
-            _Algorithm_Praise_1 = algorithm_Praise_1;
+            _Algorithm_Praise_1 = new Avril_NNAI.Algorithm_Praise_1();
+            while (Get_Algorithm_Praise_1() == null) { }
+            Set_ListOfAlgorithmSubsets(1, (object)Get_Algorithm_Praise_1());
         }
-        private void Create_Algorithm_Praise_2(Avril_NNAI.Algorithm_Praise_2 algorithm_Praise_2)
+        private void Create_Algorithm_Praise_2()
         {
-            _Algorithm_Praise_2 = algorithm_Praise_2;
+            _Algorithm_Praise_2 = new Avril_NNAI.Algorithm_Praise_2();
+            while (Get_Algorithm_Praise_2() == null) { }
+            Set_ListOfAlgorithmSubsets(2, (object)Get_Algorithm_Praise_2());
         }
-        private void Create_ListOfAlgorithmSubsets(Object[] listOfAlgorithmSubsets)
+        private void Create_ListOfAlgorithmSubsets(ulong praiseIDcount)
         {
-            _ListOfAlgorithmSubsets = listOfAlgorithmSubsets;
+            _ListOfAlgorithmSubsets = new Object[praiseIDcount];
+            while (Get_List_Of_Algorithms() == null) { }
+            for (ulong index = 0; index < praiseIDcount; index++) 
+            {
+                Set_ListOfAlgorithmSubsets(index, null);
+            }
         }
-
     // get.
         private Avril_NNAI.Algorithm_Praise_0 Get_Algorithm_Praise_0()
         {
@@ -75,15 +75,14 @@ namespace Avril_NNAI
         {
             return _Algorithm_Praise_2;
         }
-        private Object Get_ItemOnListOfAlgorithmSubsets()
+        private Object[] Get_List_Of_Algorithms()
         {
             return _ListOfAlgorithmSubsets;
         }
-
     // set.
-        private void Set_ListOfAlgorithmSubsets(ulong praiseID, Object algorithmSubset)
+        private void Set_ListOfAlgorithmSubsets(ulong praiseID, Object newAlgorithmSubset)
         {
-            _ListOfAlgorithmSubsets[praiseID] = algorithmSubset;
+            _ListOfAlgorithmSubsets[praiseID] = newAlgorithmSubset;
         }
     }
 }

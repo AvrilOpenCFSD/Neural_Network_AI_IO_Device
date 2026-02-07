@@ -33,7 +33,7 @@ namespace AvrilNNAI_OpenConcurrency_IO_Praise_Nth
 // constructor.
         public Global()
         {
-            //System.Console.WriteLine("entered Global.");
+            System.Console.WriteLine("entered Global.");
         }
 
 // destructor

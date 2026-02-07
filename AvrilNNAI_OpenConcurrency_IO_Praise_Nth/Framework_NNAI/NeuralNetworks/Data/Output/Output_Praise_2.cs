@@ -1,5 +1,4 @@
-﻿
-namespace AvrilNNAI_OpenConcurrency_IO_Praise_Nth
+﻿namespace AvrilNNAI_OpenConcurrency_IO_Praise_Nth
 {
     public class Output_Praise_2
     {
@@ -116,51 +115,51 @@ namespace AvrilNNAI_OpenConcurrency_IO_Praise_Nth
             switch (index)
             {
                 case (byte)PRAISE_2.Capsule_Position_X:
-                    this.Set_Capsule_Position_X(value);
+                    Set_Capsule_Position_X(value);
                     break;
 
                 case (byte)PRAISE_2.Capsule_Position_Y:
-                    this.Set_Capsule_Position_Y(value);
+                    Set_Capsule_Position_Y(value);
                     break;
 
                 case (byte)PRAISE_2.Capsule_Position_Z:
-                    this.Set_Capsule_Position_Z(value);
+                    Set_Capsule_Position_Z(value);
                     break;
 
                 case (byte)PRAISE_2.Capsule_Fowards_X:
-                    this.Set_Capsule_Fowards_X(value);
+                    Set_Capsule_Fowards_X(value);
                     break;
 
                 case (byte)PRAISE_2.Capsule_Fowards_Y:
-                    this.Set_Capsule_Fowards_Y(value);
+                    Set_Capsule_Fowards_Y(value);
                     break;
 
                 case (byte)PRAISE_2.Capsule_Fowards_Z:
-                    this.Set_Capsule_Fowards_Z(value);
+                    Set_Capsule_Fowards_Z(value);
                     break;
 
                 case (byte)PRAISE_2.Capsule_Up_X:
-                    this.Set_Capsule_Up_X(value);
+                    Set_Capsule_Up_X(value);
                     break;
 
                 case (byte)PRAISE_2.Capsule_Up_Y:
-                    this.Set_Capsule_Up_Y(value);
+                    Set_Capsule_Up_Y(value);
                     break;
 
                 case (byte)PRAISE_2.Capsule_Up_Z:
-                    this.Set_Capsule_Up_Z(value);
+                    Set_Capsule_Up_Z(value);
                     break;
 
                 case (byte)PRAISE_2.Capsule_Right_X:
-                    this.Set_Capsule_Right_X(value);
+                    Set_Capsule_Right_X(value);
                     break;
 
                 case (byte)PRAISE_2.Capsule_Right_Y:
-                    this.Set_Capsule_Right_Y(value);
+                    Set_Capsule_Right_Y(value);
                     break;
 
                 case (byte)PRAISE_2.Capsule_Right_Z:
-                    this.Set_Capsule_Right_Z(value);
+                    Set_Capsule_Right_Z(value);
                     break;
 
                 default:

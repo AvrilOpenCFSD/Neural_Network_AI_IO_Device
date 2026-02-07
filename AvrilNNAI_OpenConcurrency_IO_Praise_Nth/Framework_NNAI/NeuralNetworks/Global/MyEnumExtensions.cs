@@ -5,15 +5,15 @@ namespace AvrilNNAI_OpenConcurrency_IO_Praise_Nth
 {
     public static class MyEnumExtensions
     {
-        // definitions.
+// definitions.
 
-        // classes.
+// classes.
 
-        // constructor.
+// constructor.
 
-        // destructor.
+// destructor.
 
-        // public.
+// public.
         public static string ToDescriptionString(AvrilNNAI_OpenConcurrency_IO_Praise_Nth.Global.FILE_NAME val)
         {
             DescriptionAttribute[] attributes = (DescriptionAttribute[])val
@@ -22,14 +22,11 @@ namespace AvrilNNAI_OpenConcurrency_IO_Praise_Nth
                .GetCustomAttributes(typeof(DescriptionAttribute), false);
             return attributes.Length > 0 ? attributes[0].Description : string.Empty;
         }
-        // get.
+    // get.
+    // set.
 
-        // set.
-
-        // private.
-
-        // get.
-
-        // set.
+// private.
+    // get.
+    // set.
     }
 }
