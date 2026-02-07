@@ -1,7 +1,7 @@
 ﻿
 using System.ComponentModel;
 
-namespace Avril_NNAI
+namespace AvrilNNAI_OpenConcurrency_IO_Praise_Nth
 {
     public class Global
     {

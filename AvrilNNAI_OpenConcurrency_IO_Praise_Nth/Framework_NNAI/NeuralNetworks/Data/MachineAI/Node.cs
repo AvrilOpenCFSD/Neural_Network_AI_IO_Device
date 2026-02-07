@@ -1,12 +1,13 @@
-﻿namespace AvrilNNAI_OpenConcurrency_IO_Praise_Nth
+﻿
+namespace AvrilNNAI_OpenConcurrency_IO_Praise_Nth
 {
     public class Node
     {
 // classes.
-        private Node_Control _Node_Control;
+        private AvrilNNAI_OpenConcurrency_IO_Praise_Nth.Node_Control _Node_Control;
 
         // registers.
-        private Linear[] _List_Of_NeuralPathOfNodeInputs;
+        private AvrilNNAI_OpenConcurrency_IO_Praise_Nth.Linear[] _List_Of_NeuralPathOfNodeInputs;
         private ulong _NumberOfInputs;
         private double _REGISTERED_Output;
 
@@ -21,11 +22,11 @@
             Create_REGISTERED_Output(new double());
             Set_REGISTERED_Output(0.0);
 
-            Create_List_Of_NeuralPathOfNodeInputs(new Linear[Get_NumberOfInputs()]);
+            Create_List_Of_NeuralPathOfNodeInputs(new AvrilNNAI_OpenConcurrency_IO_Praise_Nth.Linear[Get_NumberOfInputs()]);
             while (Get_List_Of_NeuralPathOfInput() == null) { }
-            Set_NeuralPathOfInput_SubSet(0, new Linear());
+            Set_NeuralPathOfInput_SubSet(0, new AvrilNNAI_OpenConcurrency_IO_Praise_Nth.Linear());
             while (Get_List_Of_NeuralPathOfInput()[0] == null) { }
-            Set_NeuralPathOfInput_SubSet(1, new Linear());
+            Set_NeuralPathOfInput_SubSet(1, new AvrilNNAI_OpenConcurrency_IO_Praise_Nth.Linear());
             while (Get_List_Of_NeuralPathOfInput()[1] == null) { }
 
             //System.Console.WriteLine("exiting Node.");
@@ -38,7 +39,7 @@
         }
 
 // public.
-        public void Create_List_Of_NeuralPathOfNodeInputs(Linear[] list_Of_NeuralPathOfNodeInputsneuralPathOfInputs)
+        public void Create_List_Of_NeuralPathOfNodeInputs(AvrilNNAI_OpenConcurrency_IO_Praise_Nth.Linear[] list_Of_NeuralPathOfNodeInputsneuralPathOfInputs)
         {
             _List_Of_NeuralPathOfNodeInputs = list_Of_NeuralPathOfNodeInputsneuralPathOfInputs;
         }
@@ -53,17 +54,17 @@
             }
             for (byte inputID = 0; inputID < numberOfInputsForNode; inputID++)
             {
-                sum_weight = sum_weight + objNNAI.Get_Item_On_List_Of_REGISTERED_Inputs(inputID) * objNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Get_Node(hiddenLayerID, nodeID).Get_Item_On_List_Of_NeuralPathOfInput(inputID).Get_Weight();
+                sum_weight = sum_weight + (objNNAI.Get_Item_On_List_Of_REGISTERED_Inputs(inputID) * objNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Get_Node(hiddenLayerID, nodeID).Get_Item_On_List_Of_NeuralPathOfInput(inputID).Get_Weight());
             }
             outputValue = sum_Bias + sum_weight;
             objNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Get_Node(hiddenLayerID, nodeID).Set_REGISTERED_Output(outputValue);
         }
     // get.
-        public Linear Get_Item_On_List_Of_NeuralPathOfInput(ulong inputID)
+        public AvrilNNAI_OpenConcurrency_IO_Praise_Nth.Linear Get_Item_On_List_Of_NeuralPathOfInput(ulong inputID)
         {
             return _List_Of_NeuralPathOfNodeInputs[inputID];
         }
-        public Linear[] Get_List_Of_NeuralPathOfInput()
+        public AvrilNNAI_OpenConcurrency_IO_Praise_Nth.Linear[] Get_List_Of_NeuralPathOfInput()
         {
             return _List_Of_NeuralPathOfNodeInputs;
         }
@@ -77,7 +78,7 @@
         }
 
     // set.
-        public void Set_NeuralPathOfInput_SubSet(ulong inputID, Linear neuralPathOfInput_SubSet)
+        public void Set_NeuralPathOfInput_SubSet(ulong inputID, AvrilNNAI_OpenConcurrency_IO_Praise_Nth.Linear neuralPathOfInput_SubSet)
         {
             _List_Of_NeuralPathOfNodeInputs[inputID] = neuralPathOfInput_SubSet;
         }

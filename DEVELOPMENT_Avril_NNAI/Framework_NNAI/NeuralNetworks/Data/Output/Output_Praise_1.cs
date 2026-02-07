@@ -81,7 +81,7 @@ namespace Avril_NNAI
 
 // public.
     // get.
-        public double Get_Item_Of_Output_Praise(byte inputID)
+        public double Get_Item_On_List_Of_Input_Praise(byte inputID)
         {
             switch (inputID)
             {
@@ -132,7 +132,7 @@ namespace Avril_NNAI
         }
 
     // set.
-        public void Set_Item_Of_Output_Praise(byte inputID, double value)
+        public void Set_Item_On_List_Of_Input_Praise(byte inputID, double value)
         {
             switch (inputID)
             {

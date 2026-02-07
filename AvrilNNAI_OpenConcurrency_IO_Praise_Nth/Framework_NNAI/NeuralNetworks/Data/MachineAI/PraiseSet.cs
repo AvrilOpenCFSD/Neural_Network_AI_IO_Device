@@ -108,19 +108,19 @@
         {
             switch (layer)
             {
-                case (byte)Global.NodeLayer.Layer_4:
+                case (byte)AvrilNNAI_OpenConcurrency_IO_Praise_Nth.Global.NodeLayer.Layer_4:
                     return Get_Layer4_Node(nodeID);
 
-                case (byte)Global.NodeLayer.Layer_3:
+                case (byte)AvrilNNAI_OpenConcurrency_IO_Praise_Nth.Global.NodeLayer.Layer_3:
                     return Get_Layer3_Node(nodeID);
 
-                case (byte)Global.NodeLayer.Layer_2:
+                case (byte)AvrilNNAI_OpenConcurrency_IO_Praise_Nth.Global.NodeLayer.Layer_2:
                     return Get_Layer2_Node(nodeID);
 
-                case (byte)Global.NodeLayer.Layer_1:
+                case (byte)AvrilNNAI_OpenConcurrency_IO_Praise_Nth.Global.NodeLayer.Layer_1:
                     return Get_Layer1_Node(nodeID);
 
-                case (byte)Global.NodeLayer.Layer_0:
+                case (byte)AvrilNNAI_OpenConcurrency_IO_Praise_Nth.Global.NodeLayer.Layer_0:
                     return Get_Layer0_Node();
 
                 default:
@@ -133,23 +133,23 @@
         {
             switch (layerID)
             {
-                case (byte)Global.NodeLayer.Layer_4:
+                case (byte)AvrilNNAI_OpenConcurrency_IO_Praise_Nth.Global.NodeLayer.Layer_4:
                     Set_Layer4_Nodes(nodeID, node);
                     break;
 
-                case (byte)Global.NodeLayer.Layer_3:
+                case (byte)AvrilNNAI_OpenConcurrency_IO_Praise_Nth.Global.NodeLayer.Layer_3:
                     Set_Layer3_Nodes(nodeID, node);
                     break;
 
-                case (byte)Global.NodeLayer.Layer_2:
+                case (byte)AvrilNNAI_OpenConcurrency_IO_Praise_Nth.Global.NodeLayer.Layer_2:
                     Set_Layer2_Nodes(nodeID, node);
                     break;
 
-                case (byte)Global.NodeLayer.Layer_1:
+                case (byte)AvrilNNAI_OpenConcurrency_IO_Praise_Nth.Global.NodeLayer.Layer_1:
                     Set_Layer1_Nodes(nodeID, node);
                     break;
 
-                case (byte)Global.NodeLayer.Layer_0:
+                case (byte)AvrilNNAI_OpenConcurrency_IO_Praise_Nth.Global.NodeLayer.Layer_0:
                     Set_Layer0_Node(node);
                     break;
 

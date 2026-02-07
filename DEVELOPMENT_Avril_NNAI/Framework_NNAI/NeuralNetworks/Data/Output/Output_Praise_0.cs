@@ -37,7 +37,7 @@ namespace Avril_NNAI
 
 // public.
     // get.
-        public double Get_Item_Of_Output_Praise(byte index)
+        public double Get_Item_On_List_Of_Input_Praise(byte index)
         {
             switch (index)
             {
@@ -57,7 +57,7 @@ namespace Avril_NNAI
         }
 
     // set.
-        public void Set_Item_Of_Output_Praise(byte index, double value)
+        public void Set_Item_On_List_Of_Input_Praise(byte index, double value)
         {
             switch (index)
             {

@@ -1,4 +1,5 @@
-﻿namespace AvrilNNAI_OpenConcurrency_IO_Praise_Nth
+﻿
+namespace AvrilNNAI_OpenConcurrency_IO_Praise_Nth
 {
     public class Input_Praise_1
     {
@@ -10,12 +11,12 @@
             Capsule_Fowards_X,
             Capsule_Fowards_Y,
             Capsule_Fowards_Z,
-            Capsule_Up_X,
-            Capsule_Up_Y,
-            Capsule_Up_Z,
             Capsule_Right_X,
             Capsule_Right_Y,
             Capsule_Right_Z,
+            Capsule_Up_X,
+            Capsule_Up_Y,
+            Capsule_Up_Z,
         }
         
 // classes.
@@ -38,44 +39,19 @@
 // constructor.
         public Input_Praise_1()
         {
-            Create_NumberOfInputValues(new byte());
-            Set_NumberOfInputValues(11);
-
-            Create_NumberOfResetToConstantValues(new byte());
-            Set_NumberOfResetToConstantValues(3);
-
-            Create_Mouse_Screen_X(new double());
-            Set_Mouse_Screen_X(0.0);
-
-            Create_Mouse_Screen_Y(new double());
-            Set_Mouse_Screen_Y(0.0);
-
-            Create_Capsule_Fowards_X(new double());
-            Set_Capsule_Fowards_X(0.0);
-
-            Create_Capsule_Fowards_Y(new double());
-            Set_Capsule_Fowards_Y(0.0);
-
-            Create_Capsule_Fowards_Z(new double());
-            Set_Capsule_Fowards_Z(0.0);
-
-            Create_Capsule_Up_X(new double());
-            Set_Capsule_Up_X(0.0);
-
-            Create_Capsule_Up_Y(new double());
-            Set_Capsule_Up_Y(0.0);
-
-            Create_Capsule_Up_Z(new double());
-            Set_Capsule_Up_Z(0.0);
-
-            Create_Capsule_Right_X(new double());
-            Set_Capsule_Right_X(0.0);
-
-            Create_Capsule_Right_Y(new double());
-            Set_Capsule_Right_Y(0.0);
-
-            Create_Capsule_Right_Z(new double());
-            Set_Capsule_Right_Z(0.0);
+            Create_NumberOfInputValues();
+            Create_NumberOfResetToConstantValues();
+            Create_Mouse_Screen_X();
+            Create_Mouse_Screen_Y();
+            Create_Capsule_Fowards_X();
+            Create_Capsule_Fowards_Y();
+            Create_Capsule_Fowards_Z();
+            Create_Capsule_Up_X();
+            Create_Capsule_Up_Y();
+            Create_Capsule_Up_Z();
+            Create_Capsule_Right_X();
+            Create_Capsule_Right_Y();
+            Create_Capsule_Right_Z();
         }
 
 // destructor.
@@ -85,7 +61,7 @@
 
 // public.
     // get.
-        public double Get_Item_Of_Input_Praise(byte index)
+        public double Get_Item_On_List_Of_Input_Praise(byte index)
         {
             switch (index)
             {
@@ -105,13 +81,13 @@
                     return Get_Capsule_Fowards_Z();
 
                 case (byte)PRAISE_1.Capsule_Up_X:
-                    return Get_Capsule_Up_X();
+                    return Get_Capsule_Up_X_CONST();
 
                 case (byte)PRAISE_1.Capsule_Up_Y:
-                    return Get_Capsule_Up_Y();
+                    return Get_Capsule_Up_Y_CONST();
 
                 case (byte)PRAISE_1.Capsule_Up_Z:
-                    return Get_Capsule_Up_Z();
+                    return Get_Capsule_Up_Z_CONST();
 
                 case (byte)PRAISE_1.Capsule_Right_X:
                     return Get_Capsule_Right_X();
@@ -134,9 +110,8 @@
         {
             return _numberOfInputValues;
         }
-
     // set.
-        public void Set_Item_Of_Input_Praise(byte index, double value)
+        public void Set_Item_On_List_Of_Input_Praise(byte index, double value)
         {
             switch (index)
             {
@@ -161,15 +136,15 @@
                     break;
 
                 case (byte)PRAISE_1.Capsule_Up_X:
-                    Set_Capsule_Up_X(value);
+                    Set_Capsule_Up_X_CONST();
                     break;
 
                 case (byte)PRAISE_1.Capsule_Up_Y:
-                    Set_Capsule_Up_Y(value);
+                    Set_Capsule_Up_Y_CONST();
                     break;
 
                 case (byte)PRAISE_1.Capsule_Up_Z:
-                    Set_Capsule_Up_Z(value);
+                    Set_Capsule_Up_Z_CONST();
                     break;
 
                 case (byte)PRAISE_1.Capsule_Right_X:
@@ -190,57 +165,70 @@
         }
 
 // private.
-        private void Create_NumberOfResetToConstantValues(byte numberOfResetToConstantValues)
+        private void Create_NumberOfResetToConstantValues()
         {
-            _NumberOfResetToConstantValues = numberOfResetToConstantValues;
+            _NumberOfResetToConstantValues = new byte();
+            Set_NumberOfResetToConstantValues(3);
         }
-        private void Create_NumberOfInputValues(byte numberOfInputValues)
+        private void Create_NumberOfInputValues()
         {
-            _numberOfInputValues = numberOfInputValues;
+            _numberOfInputValues = new byte();
+            Set_NumberOfInputValues(11);
         }
-        private void Create_Mouse_Screen_X(double mouseX)
+        private void Create_Mouse_Screen_X()
         {
-            _Mouse_Screen_X = mouseX;
+            _Mouse_Screen_X = new double();
+            Set_Mouse_Screen_X(0.0);
         }
-        private void Create_Mouse_Screen_Y(double mouseY)
+        private void Create_Mouse_Screen_Y()
         {
-            _Mouse_Screen_Y = mouseY;
+            _Mouse_Screen_Y = new double();
+            Set_Mouse_Screen_Y(0.0);
         }
-        private void Create_Capsule_Fowards_X(double capsualeFowardsX)
+        private void Create_Capsule_Fowards_X()
         {
-            _Capsule_Fowards_X = capsualeFowardsX;
+            _Capsule_Fowards_X = new double();
+            Set_Capsule_Fowards_X(1.0);
         }
-        private void Create_Capsule_Fowards_Y(double capsualeFowardsY)
+        private void Create_Capsule_Fowards_Y()
         {
-            _Capsule_Fowards_Y = capsualeFowardsY;
+            _Capsule_Fowards_Y = new double();
+            Set_Capsule_Fowards_Y(0.0);
         }
-        private void Create_Capsule_Fowards_Z(double capsualeFowardsZ)
+        private void Create_Capsule_Fowards_Z()
         {
-            _Capsule_Fowards_Z = capsualeFowardsZ;
+            _Capsule_Fowards_Z = new double();
+            Set_Capsule_Fowards_Z(0.0);
         }
-        private void Create_Capsule_Up_X(double capsualeUpX)
+        private void Create_Capsule_Up_X()
         {
-            _Capsule_Up_X = capsualeUpX;
+            _Capsule_Up_X = new double();
+            Set_Capsule_Up_X_CONST();
         }
-        private void Create_Capsule_Up_Y(double capsualeUpY)
+        private void Create_Capsule_Up_Y()
         {
-            _Capsule_Up_Y = capsualeUpY;
+            _Capsule_Up_Y = new double();
+            Set_Capsule_Up_Y_CONST();
         }
-        private void Create_Capsule_Up_Z(double capsualeUpZ)
+        private void Create_Capsule_Up_Z()
         {
-            _Capsule_Up_Z = capsualeUpZ;
+            _Capsule_Up_Z = new double();
+            Set_Capsule_Up_Z_CONST();
         }
-        private void Create_Capsule_Right_X(double capsualeRightX)
+        private void Create_Capsule_Right_X()
         {
-            _Capsule_Right_X = capsualeRightX;
+            _Capsule_Right_X = new double();
+            Set_Capsule_Right_X(0.0);
         }
-        private void Create_Capsule_Right_Y(double capsualeRightY)
+        private void Create_Capsule_Right_Y()
         {
-            _Capsule_Right_Y = capsualeRightY;
+            _Capsule_Right_Y = new double();
+            Set_Capsule_Right_Y(0.0);
         }
-        private void Create_Capsule_Right_Z(double capsualeRightZ)
+        private void Create_Capsule_Right_Z()
         {
-            _Capsule_Right_Z = capsualeRightZ;
+            _Capsule_Right_Z = new double();
+            Set_Capsule_Right_Z(1.0);
         }
 
     // get.
@@ -256,17 +244,17 @@
         {
             return _Capsule_Fowards_Z;
         }
-        private double Get_Capsule_Up_X()
+        private double Get_Capsule_Up_X_CONST()
         {
-            return _Capsule_Up_X;
+            return 0.0;
         }
-        private double Get_Capsule_Up_Y()
+        private double Get_Capsule_Up_Y_CONST()
         {
-            return _Capsule_Up_Y;
+            return 1.0;
         }
-        private double Get_Capsule_Up_Z()
+        private double Get_Capsule_Up_Z_CONST()
         {
-            return _Capsule_Up_Z;
+            return 0.0;
         }
         private double Get_Capsule_Right_X()
         {
@@ -302,17 +290,17 @@
         {
             _Capsule_Fowards_Z = capsualeFowardsZ;
         }
-        private void Set_Capsule_Up_X(double capsualeUpX)
+        private void Set_Capsule_Up_X_CONST()
         {
-            _Capsule_Up_X = capsualeUpX;
+            _Capsule_Up_X = 0.0;
         }
-        private void Set_Capsule_Up_Y(double capsualeUpY)
+        private void Set_Capsule_Up_Y_CONST()
         {
-            _Capsule_Up_Y = capsualeUpY;
+            _Capsule_Up_Y = 1.0;
         }
-        private void Set_Capsule_Up_Z(double capsualeUpZ)
+        private void Set_Capsule_Up_Z_CONST()
         {
-            _Capsule_Up_Z = capsualeUpZ;
+            _Capsule_Up_Z = 0.0;
         }
         private void Set_Capsule_Right_X(double capsualeRightX)
         {

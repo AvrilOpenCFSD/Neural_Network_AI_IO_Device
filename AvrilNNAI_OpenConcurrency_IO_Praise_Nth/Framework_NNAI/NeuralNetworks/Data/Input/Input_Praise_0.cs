@@ -1,4 +1,5 @@
-﻿namespace AvrilNNAI_OpenConcurrency_IO_Praise_Nth
+﻿
+namespace AvrilNNAI_OpenConcurrency_IO_Praise_Nth
 {
     public class Input_Praise_0
     {
@@ -18,14 +19,9 @@
 // constructor.
         public Input_Praise_0()
         {
-            Create_NumberOfInputValues(new byte());
-            Set_NumberOfInputValues(1);
-
-            Create_NumberOfResetToConstantValues(new byte());
+            Create_NumberOfInputValues();
             Set_NumberOfResetToConstantValues(0);
-
-            Create_Ping(new double());
-            Set_Item_Of_Input_Praise(0, 0.0);
+            Create_Ping();
         }
 
 // destructor
@@ -36,11 +32,11 @@
 
 // public.
     // get.
-        public double Get_Item_Of_Input_Praise(byte index)
+        public double Get_Item_On_List_Of_Input_Praise(byte index)
         {
             switch (index)
             {
-                case 0:
+                case (byte)PRAISE_0.Ping:
                     return Get_Ping();
                 default:
                     return 0;
@@ -54,13 +50,12 @@
         {
             return _numberOfInputValues;
         }
-
     // set.
-        public void Set_Item_Of_Input_Praise(byte index, double value)
+        public void Set_Item_On_List_Of_Input_Praise(byte index, double value)
         {
             switch (index)
             {
-                case 0:
+                case (byte)PRAISE_0.Ping:
                     Set_Ping(value);
                     break;
                 default:
@@ -69,25 +64,26 @@
         }
 
 // private.
-        private void Create_NumberOfResetToConstantValues(byte numberOfResetToConstantValues)
+        private void Create_NumberOfResetToConstantValues()
         {
-            _NumberOfResetToConstantValues = numberOfResetToConstantValues;
+            _NumberOfResetToConstantValues = new byte();
+            Set_NumberOfResetToConstantValues(0);
         }
-        private void Create_NumberOfInputValues(byte numberOfInputValues)
+        private void Create_NumberOfInputValues()
         {
-            _numberOfInputValues = numberOfInputValues;
+            _numberOfInputValues = new byte();
+            Set_NumberOfInputValues(1);
         }
-        private void Create_Ping(double ping)
+        private void Create_Ping()
         {
-            _Ping = ping;
+            _Ping = new double();
+            Set_Ping(0.0);
         }
-
     // get.
         private double Get_Ping()
         {
             return _Ping;
         }
-
     // set.
         private void Set_NumberOfResetToConstantValues(byte numberOfResetToConstantValues)
         {

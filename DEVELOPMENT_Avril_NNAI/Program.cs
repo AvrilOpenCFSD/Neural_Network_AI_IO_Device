@@ -8,9 +8,9 @@
 *                   |
 *   		Framework_NNAI
 *					|
-*					|________________
-*					|               |
-*			NeuralNetworks      SIMULATION
+*					|
+*					|        
+*			NeuralNetworks
 *					|
 *			   _____|______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
 *			   |                    |																 |																												                                                                              |
@@ -36,28 +36,43 @@ namespace Avril_NNAI
 {
     public static class Program
     {
+// definitions.
+
+// classes.
+
+// registers.
         static private Avril_NNAI.Framework_NNAI framework = null;
 
+// main.
         static void Main()
         {
             System.Console.WriteLine("started program entry.");
-            framework = new Avril_NNAI.Framework_NNAI();
+            Create_Framework_NNAI();
             System.Console.WriteLine("created Avril_NNAI.Framework_NNAI()");
-            while (framework == null) { /* wait untill is created */ }
-            System.Console.WriteLine("Framework_NNAI ready.");
-            framework.Initialise(framework);
+            //framework.Initialise(framework);
             System.Console.WriteLine("framework initialised.");
-// SIMULATION
-            ulong praiseID = new ulong();
-            praiseID = 1;
-            Avril_NNAI.MachineAI myNeuralNetwork = framework.Get_Neural_Networks().Get_Aglorithms().Create_Instance_Of_MachineAI(framework, "Avril_NNAI_OpenCFSD_Praise_1_IO.nnai", praiseID);
+    // SIMULATION
+            Avril_NNAI.MachineAI myNeuralNetwork = framework.Get_Neural_Networks().Get_Aglorithms().Create_Instance_Of_MachineAI(framework, "Avril_NNAI_OpenCFSD_Praise_1_IO.nnai", (ulong)1);
             framework.Get_Neural_Networks().Get_Data().Preserve_New_Neural_Network(myNeuralNetwork);
             //ToDO: train network
             framework.Get_Neural_Networks().Get_Execute().Get_FileReadWrite().WriteValuesToFile(framework, framework.Get_Neural_Networks().Get_Data().Get_Item_On_List_Of_Neural_Network_Preservation(0), myNeuralNetwork.Get_MetaData().Get_NameOfNNAI());
         }
+
+// public.
+        static private void Create_Framework_NNAI()
+        {
+            framework = new Avril_NNAI.Framework_NNAI();
+            while (framework == null) { }
+        }
+    // get.
         static public Avril_NNAI.Framework_NNAI Get_Framework_NNAI()
         {
-            return framework;
+                return framework;
         }
+    // set.
+
+// private.
+    // get.
+    // set.
     }
 }

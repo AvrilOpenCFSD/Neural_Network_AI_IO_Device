@@ -1,4 +1,5 @@
-﻿namespace AvrilNNAI_OpenConcurrency_IO_Praise_Nth
+﻿
+namespace AvrilNNAI_OpenConcurrency_IO_Praise_Nth
 {
     public class Output_Praise_0
     {
@@ -36,7 +37,7 @@
 
 // public.
     // get.
-        public double Get_Item_Of_Output_Praise(byte index)
+        public double Get_Item_On_List_Of_Input_Praise(byte index)
         {
             switch (index)
             {
@@ -56,7 +57,7 @@
         }
 
     // set.
-        public void Set_Item_Of_Output_Praise(byte index, double value)
+        public void Set_Item_On_List_Of_Input_Praise(byte index, double value)
         {
             switch (index)
             {

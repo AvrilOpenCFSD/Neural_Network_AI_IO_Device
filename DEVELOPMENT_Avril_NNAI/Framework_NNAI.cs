@@ -5,7 +5,6 @@ namespace Avril_NNAI
     {
 // classes.
         private Avril_NNAI.NeuralNetworks _neuralNetwork;
-        private Avril_NNAI.SIMULATION _simulation;
 
 // registers.
 

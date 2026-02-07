@@ -12,8 +12,7 @@ namespace AvrilNNAI_OpenConcurrency_IO_Praise_Nth
         public Execute()
         {
             //System.Console.WriteLine("entered Execute.");
-            Create_FileReadWrite(new AvrilNNAI_OpenConcurrency_IO_Praise_Nth.FileReader());
-            while (Get_FileReader() == null) { }
+            Create_FileReader();
         }
 
 // destructor.
@@ -35,9 +34,10 @@ namespace AvrilNNAI_OpenConcurrency_IO_Praise_Nth
     // set.
 
 // private.
-        private void Create_FileReadWrite(AvrilNNAI_OpenConcurrency_IO_Praise_Nth.FileReader fileReader)
+        private void Create_FileReader()
         {
-            _FileReader = fileReader;
+            _FileReader = new AvrilNNAI_OpenConcurrency_IO_Praise_Nth.FileReader();
+            while (Get_FileReader() == null) { }
         }
     // get.
     // set.
