@@ -1,5 +1,5 @@
 ﻿
-namespace Avril_NNAI
+namespace OpenAvrilNNI
 {
     public class Algorithm_Praise_0
     {

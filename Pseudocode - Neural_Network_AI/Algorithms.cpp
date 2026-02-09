@@ -1,24 +1,24 @@
 #include "pch.h"
 #include "Algorithms.h"
 
-class Avril_NNAI::NeuralPath* ptr_NeuralPaths = NULL;
-class Avril_NNAI::SolutionLogic* ptr_SolutionLogic = NULL;
+class OpenAvrilNNI::NeuralPath* ptr_NeuralPaths = NULL;
+class OpenAvrilNNI::SolutionLogic* ptr_SolutionLogic = NULL;
 
-Avril_NNAI::Algorithms::Algorithms()
+OpenAvrilNNI::Algorithms::Algorithms()
 {
-    ptr_NeuralPaths = new class Avril_NNAI::NeuralPath();
+    ptr_NeuralPaths = new class OpenAvrilNNI::NeuralPath();
     while (ptr_NeuralPaths == NULL) {}
 
-    ptr_SolutionLogic = new class Avril_NNAI::SolutionLogic();
+    ptr_SolutionLogic = new class OpenAvrilNNI::SolutionLogic();
     while (ptr_SolutionLogic == NULL) {}
 }
 
-Avril_NNAI::Algorithms::~Algorithms()
+OpenAvrilNNI::Algorithms::~Algorithms()
 {
     //delete ;
 }
 
-void Avril_NNAI::Algorithms::ConstructNeuralNetworkAI_Frame(Avril_NNAI::Framework_NNAI* obj, INT64 _numberOfTotalInputs)
+void OpenAvrilNNI::Algorithms::ConstructNeuralNetworkAI_Frame(OpenAvrilNNI::Framework_NNI* obj, INT64 _numberOfTotalInputs)
 {
     obj->Get_Neural_Networks()->Get_Data()->Set_NumberOfTotalInputs(_numberOfTotalInputs);
 
@@ -40,12 +40,12 @@ void Avril_NNAI::Algorithms::ConstructNeuralNetworkAI_Frame(Avril_NNAI::Framewor
     }
 }
 
-void Avril_NNAI::Algorithms::Initialise_Control()
+void OpenAvrilNNI::Algorithms::Initialise_Control()
 {
   
 }
 
-Avril_NNAI::NeuralPath* Avril_NNAI::Algorithms::Get_NeuralPath()
+OpenAvrilNNI::NeuralPath* OpenAvrilNNI::Algorithms::Get_NeuralPath()
 {
     return ptr_NeuralPaths;
 }

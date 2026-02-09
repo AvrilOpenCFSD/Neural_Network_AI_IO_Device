@@ -1,29 +1,29 @@
 #include "pch.h"
 #include "Data.h"
 
-class Avril_NNAI::Input* ptr_Input = NULL;
-class Avril_NNAI::Output* ptr_Output = NULL;
+class OpenAvrilNNI::Input* ptr_Input = NULL;
+class OpenAvrilNNI::Output* ptr_Output = NULL;
 
 INT64 _numberOfTotalInputs;
 //std::vector<class Object*>* ptr_REGISTERED_Input_List;
-std::vector<class Avril_NNAI::Node*>* ptr_Layer4_Node_Inputs;
-std::vector<class Avril_NNAI::Node*>* ptr_Layer3_Node_Inputs;
-std::vector<class Avril_NNAI::Node*>* ptr_Layer2_Node_Inputs;
-std::vector<class Avril_NNAI::Node*>* ptr_Layer1_Node_Inputs;
-class Avril_NNAI::Node* ptr_Layer0_Node_Output;
+std::vector<class OpenAvrilNNI::Node*>* ptr_Layer4_Node_Inputs;
+std::vector<class OpenAvrilNNI::Node*>* ptr_Layer3_Node_Inputs;
+std::vector<class OpenAvrilNNI::Node*>* ptr_Layer2_Node_Inputs;
+std::vector<class OpenAvrilNNI::Node*>* ptr_Layer1_Node_Inputs;
+class OpenAvrilNNI::Node* ptr_Layer0_Node_Output;
 class Object* ptr_REGISTERED_Output;
 
-Avril_NNAI::Data::Data()
+OpenAvrilNNI::Data::Data()
 {
-	Set_Input(new class Avril_NNAI::Input());
+	Set_Input(new class OpenAvrilNNI::Input());
 	while (ptr_Input == NULL) {}
 
-	Set_Output(new class Avril_NNAI::Output());
+	Set_Output(new class OpenAvrilNNI::Output());
 	while (ptr_Output == NULL) {}
 
 	Set_NumberOfTotalInputs(INT64(0));
 
-	Avril_NNAI::Node* newEmptyNode = new class Avril_NNAI::Node();
+	OpenAvrilNNI::Node* newEmptyNode = new class OpenAvrilNNI::Node();
 
 	ptr_Layer4_Node_Inputs->clear();
 	ptr_Layer4_Node_Inputs->at(INT64(0)) = newEmptyNode;
@@ -45,47 +45,47 @@ Avril_NNAI::Data::Data()
 	while (ptr_Layer0_Node_Output == NULL) {}
 }
 
-Avril_NNAI::Data::~Data()
+OpenAvrilNNI::Data::~Data()
 {
     //delete ;
 }
 
-void Avril_NNAI::Data::Initialise_Control()
+void OpenAvrilNNI::Data::Initialise_Control()
 {
 
 }
 
-Avril_NNAI::Input* Avril_NNAI::Data::Get_Input()
+OpenAvrilNNI::Input* OpenAvrilNNI::Data::Get_Input()
 {
 	return ptr_Input;
 }
 
-Avril_NNAI::Output* Avril_NNAI::Data::Get_Output()
+OpenAvrilNNI::Output* OpenAvrilNNI::Data::Get_Output()
 {
 	return ptr_Output;
 }
 
-class Object* Avril_NNAI::Data::Get_Item_At_REGISTERED_Output()
+class Object* OpenAvrilNNI::Data::Get_Item_At_REGISTERED_Output()
 {
 	return ptr_REGISTERED_Output;
 }
 
-INT64 Avril_NNAI::Data::Get_NumberOfTotalInputs()
+INT64 OpenAvrilNNI::Data::Get_NumberOfTotalInputs()
 {
 	return _numberOfTotalInputs;
 }
 
-void Avril_NNAI::Data::Set_Input(class Avril_NNAI::Input* input)
+void OpenAvrilNNI::Data::Set_Input(class OpenAvrilNNI::Input* input)
 {
 	ptr_Input = input;
 }
 
-void Avril_NNAI::Data::Set_Output(class Avril_NNAI::Output* output)
+void OpenAvrilNNI::Data::Set_Output(class OpenAvrilNNI::Output* output)
 {
 	ptr_Output = output;
 }
 
-void Avril_NNAI::Data::Set_NumberOfTotalInputs(INT64 numberOfTotalInputs)
+void OpenAvrilNNI::Data::Set_NumberOfTotalInputs(INT64 numberOfTotalInputs)
 {
 	_numberOfTotalInputs = numberOfTotalInputs;
 

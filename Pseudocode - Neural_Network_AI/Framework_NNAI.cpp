@@ -1,35 +1,35 @@
 #include "pch.h"
-#include "Framework_NNAI.h"
+#include "Framework_NNI.h"
 
 
-class Avril_NNAI::NeuralNetworks* ptr_NeuralNetworks = NULL;
+class OpenAvrilNNI::NeuralNetworks* ptr_NeuralNetworks = NULL;
 
-Avril_NNAI::Framework_NNAI::Framework_NNAI()
+OpenAvrilNNI::Framework_NNI::Framework_NNI()
 {
-	std::cout << "entered => Framework_Server::Framework_NNAI()" << std::endl;
+	std::cout << "entered => Framework_Server::Framework_NNI()" << std::endl;
 
-	Set_Neural_Networks(new class Avril_NNAI::NeuralNetworks());
+	Set_Neural_Networks(new class OpenAvrilNNI::NeuralNetworks());
 	while (Get_Neural_Networks() == NULL) { }
 	std::cout << "Created => Created Server Assembly()" << std::endl;
 
 }
 
-Avril_NNAI::Framework_NNAI::~Framework_NNAI()
+OpenAvrilNNI::Framework_NNI::~Framework_NNI()
 {
 
 }
 
-Avril_NNAI::Framework_NNAI::~Framework_NNAI()
+OpenAvrilNNI::Framework_NNI::~Framework_NNI()
 {
 	delete ptr_NeuralNetworks;
 }
 
-class Avril_NNAI::NeuralNetworks* Avril_NNAI::Framework_NNAI::Get_Neural_Networks()
+class OpenAvrilNNI::NeuralNetworks* OpenAvrilNNI::Framework_NNI::Get_Neural_Networks()
 {
 	return ptr_NeuralNetworks;
 }
 
-void Avril_NNAI::Framework_NNAI::Set_Neural_Networks(Avril_NNAI::NeuralNetworks* neuralNetworks)
+void OpenAvrilNNI::Framework_NNI::Set_Neural_Networks(OpenAvrilNNI::NeuralNetworks* neuralNetworks)
 {
 	ptr_NeuralNetworks = neuralNetworks;
 }

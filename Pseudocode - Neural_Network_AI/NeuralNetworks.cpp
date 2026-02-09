@@ -1,33 +1,33 @@
 #include "pch.h"
 
-class Avril_NNAI::Algorithms* ptr_Algorithms = NULL;
-class Avril_NNAI::Data* ptr_Data = NULL;
-class Avril_NNAI::Execute* ptr_Execute = NULL;
-class Avril_NNAI::Global* ptr_Global = NULL;
+class OpenAvrilNNI::Algorithms* ptr_Algorithms = NULL;
+class OpenAvrilNNI::Data* ptr_Data = NULL;
+class OpenAvrilNNI::Execute* ptr_Execute = NULL;
+class OpenAvrilNNI::Global* ptr_Global = NULL;
 
-Avril_NNAI::NeuralNetworks::NeuralNetworks()
+OpenAvrilNNI::NeuralNetworks::NeuralNetworks()
 {
-    Set_Global(new class Avril_NNAI::Global());
+    Set_Global(new class OpenAvrilNNI::Global());
     while (Get_Global() == NULL) {}
-    std::cout << "Created => Avril_NNAI::Global()" << std::endl;
+    std::cout << "Created => OpenAvrilNNI::Global()" << std::endl;
 
-    Set_Algorithms(new class Avril_NNAI::Algorithms());
+    Set_Algorithms(new class OpenAvrilNNI::Algorithms());
     while (Get_Algorithms() == NULL) {}
 	ptr_Algorithms->Initialise_Control();
-    std::cout << "Created => Avril_NNAI::Algorithms()" << std::endl;
+    std::cout << "Created => OpenAvrilNNI::Algorithms()" << std::endl;
 
-    Set_Data(new class Avril_NNAI::Data());
+    Set_Data(new class OpenAvrilNNI::Data());
     while (Get_Data() == NULL) {}
     ptr_Data->Initialise_Control();
-    std::cout << "Created => Avril_NNAI::Data()" << std::endl;
+    std::cout << "Created => OpenAvrilNNI::Data()" << std::endl;
 
-    Set_Execute(new class Avril_NNAI::Execute());
+    Set_Execute(new class OpenAvrilNNI::Execute());
     while (Get_Execute() == NULL) {}
     Get_Execute()->Initialise_Control();
-    std::cout << "Created => Avril_NNAI::Execute()" << std::endl;
+    std::cout << "Created => OpenAvrilNNI::Execute()" << std::endl;
 }
 
-Avril_NNAI::NeuralNetworks::~NeuralNetworks()
+OpenAvrilNNI::NeuralNetworks::~NeuralNetworks()
 {
     delete ptr_Global;
     delete ptr_Algorithms;
@@ -35,39 +35,39 @@ Avril_NNAI::NeuralNetworks::~NeuralNetworks()
     delete ptr_Execute;
 }
 
-Avril_NNAI::Algorithms* Avril_NNAI::NeuralNetworks::Get_Algorithms()
+OpenAvrilNNI::Algorithms* OpenAvrilNNI::NeuralNetworks::Get_Algorithms()
 {
     return ptr_Algorithms;
 }
 
-Avril_NNAI::Data* Avril_NNAI::NeuralNetworks::Get_Data()
+OpenAvrilNNI::Data* OpenAvrilNNI::NeuralNetworks::Get_Data()
 {
     return ptr_Data;
 }
 
-Avril_NNAI::Execute* Avril_NNAI::NeuralNetworks::Get_Execute()
+OpenAvrilNNI::Execute* OpenAvrilNNI::NeuralNetworks::Get_Execute()
 {
     return ptr_Execute;
 }
 
-Avril_NNAI::Global* Avril_NNAI::NeuralNetworks::Get_Global()
+OpenAvrilNNI::Global* OpenAvrilNNI::NeuralNetworks::Get_Global()
 {
     return ptr_Global;
 }
 
-void Avril_NNAI::NeuralNetworks::Set_Algorithms(Avril_NNAI::Algorithms* algorithms)
+void OpenAvrilNNI::NeuralNetworks::Set_Algorithms(OpenAvrilNNI::Algorithms* algorithms)
 {
     ptr_Algorithms = algorithms;
 }
-void Avril_NNAI::NeuralNetworks::Set_Data(Avril_NNAI::Data* data)
+void OpenAvrilNNI::NeuralNetworks::Set_Data(OpenAvrilNNI::Data* data)
 {
     ptr_Data = data;
 }
-void Avril_NNAI::NeuralNetworks::Set_Execute(Avril_NNAI::Execute* execute)
+void OpenAvrilNNI::NeuralNetworks::Set_Execute(OpenAvrilNNI::Execute* execute)
 {
     ptr_Execute = execute;
 }
-void Avril_NNAI::NeuralNetworks::Set_Global(Avril_NNAI::Global* global)
+void OpenAvrilNNI::NeuralNetworks::Set_Global(OpenAvrilNNI::Global* global)
 {
     ptr_Global = global;
 }

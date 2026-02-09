@@ -1,7 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputType>Exe</OutputType>
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
@@ -9,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AvrilNNAI_OpenConcurrency_IO_Praise_Nth\AvrilNNAI_OpenConcurrency_IO_Praise_Nth.csproj" />
+    <Folder Include="Framework_NNI\NeuralNetworks\Global\" />
   </ItemGroup>
 
 </Project>

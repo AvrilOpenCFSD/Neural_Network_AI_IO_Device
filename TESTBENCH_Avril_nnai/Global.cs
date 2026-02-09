@@ -1,18 +1,18 @@
 ﻿
 using System.ComponentModel;
 
-namespace AvrilNNAI_OpenConcurrency_IO_Praise_Nth
+namespace OpenAvrilNNAI_OpenAvrilConcurrency_IO_Praise_Nth
 {
-    public class Global
+    public class Global 
     {
 // definitions.
-        public enum FILE_NAME
+        public enum FILE_NAME : byte
         {
-            [Description("Avril_NNAI_OpenCFSD_Praise_0_IO.nnai")]
+            [Description("OpenAvrilNNI_OpenCFSD_Praise_0_IO.nni")]
             PRAISE_0 = 0,
-            [Description("Avril_NNAI_OpenCFSD_Praise_1_IO.nnai")]
+            [Description("OpenAvrilNNI_OpenCFSD_Praise_1_IO.nni")]
             PRAISE_1 = 1,
-            [Description("Avril_NNAI_OpenCFSD_Praise_2_IO.nnai")]
+            [Description("OpenAvrilNNI_OpenCFSD_Praise_2_IO.nni")]
             PRAISE_2 = 2
         }
         public enum NodeLayer : byte

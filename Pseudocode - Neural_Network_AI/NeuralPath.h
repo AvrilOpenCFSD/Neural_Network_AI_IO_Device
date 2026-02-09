@@ -1,6 +1,6 @@
 #pragma once
 
-namespace Avril_NNAI
+namespace OpenAvrilNNI
 {
 	class NeuralPath
 	{
@@ -8,7 +8,7 @@ namespace Avril_NNAI
 		NeuralPath();
 		virtual ~NeuralPath();
 
-		class Object* Get_NatureOfThePath(Avril_NNAI::Framework_NNAI* obj);
+		class Object* Get_NatureOfThePath(OpenAvrilNNI::Framework_NNI* obj);
 
 		void Set_NatureOfThePath_NIL();
 		void Set_NatureOfThePath_LINEAR(class Linear* natureOfInputEquation);

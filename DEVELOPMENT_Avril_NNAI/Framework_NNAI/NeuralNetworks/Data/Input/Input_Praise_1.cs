@@ -1,16 +1,18 @@
 ﻿
-namespace Avril_NNAI
+namespace OpenAvrilNNI
 {
     public class Input_Praise_1
     {
 // definitions.
 
-        
 // classes.
 
 // registers.
-        private byte _NumberOfResetToConstantValues;
-        private byte _numberOfInputValues;
+        private byte _NumberOfBooleanInputs;
+        private byte _NumberOfConstantInputs;
+        private byte _NumberInputRegisters;
+        private byte _NumberOfLinearInputs;
+        // custom user defined.
         private double _Mouse_Screen_X;
         private double _Mouse_Screen_Y;
         private double _Capsule_Fowards_X;
@@ -26,8 +28,11 @@ namespace Avril_NNAI
 // constructor.
         public Input_Praise_1()
         {
-            Create_NumberOfInputValues();
-            Create_NumberOfResetToConstantValues();
+            Create_NumberInputRegisters();
+            Create_NumberOfLinearInputs();
+            Create_NumberOfBooleanInputs();
+            Create_NumberOfConstantInputs();
+            // custom user defined.
             Create_Mouse_Screen_X();
             Create_Mouse_Screen_Y();
             Create_Capsule_Fowards_X();
@@ -48,6 +53,23 @@ namespace Avril_NNAI
 
 // public.
     // get.
+        public byte Get_NumberOfBooleanInputs()
+        {
+            return _NumberOfBooleanInputs;
+        }
+        public byte Get_NumberOfConstantInputs()
+        {
+            return _NumberOfConstantInputs;
+        }
+        public byte Get_NumberInputRegisters()
+        {
+            return _NumberInputRegisters;
+        }
+        public byte Get_NumberOfLinearInputs()
+        {
+            return _NumberOfLinearInputs;
+        }
+        // custom user defined.
         public double Get_Item_On_List_Of_Input_Praise(byte index)
         {
             switch (index)
@@ -89,15 +111,8 @@ namespace Avril_NNAI
                     return 0;
             }
         }
-        public byte Get_NumberOfResetToConstantValues()
-        {
-            return _NumberOfResetToConstantValues;
-        }
-        public byte Get_NumberOfInputValues()
-        {
-            return _numberOfInputValues;
-        }
     // set.
+        // custom user defined.
         public void Set_Item_On_List_Of_Input_Praise(byte index, double value)
         {
             switch (index)
@@ -122,18 +137,6 @@ namespace Avril_NNAI
                     Set_Capsule_Fowards_Z(value);
                     break;
 
-                case (byte)Global.PRAISE_1.Capsule_Up_X:
-                    Set_Capsule_Up_X_CONST();
-                    break;
-
-                case (byte)Global.PRAISE_1.Capsule_Up_Y:
-                    Set_Capsule_Up_Y_CONST();
-                    break;
-
-                case (byte)Global.PRAISE_1.Capsule_Up_Z:
-                    Set_Capsule_Up_Z_CONST();
-                    break;
-
                 case (byte)Global.PRAISE_1.Capsule_Right_X:
                     Set_Capsule_Right_X(value);
                     break;
@@ -146,79 +149,102 @@ namespace Avril_NNAI
                     Set_Capsule_Right_Z(value);
                     break;
 
+                case (byte)Global.PRAISE_1.Capsule_Up_X:
+                    Set_Capsule_Up_X_CONST(0.0);
+                    break;
+
+                case (byte)Global.PRAISE_1.Capsule_Up_Y:
+                    Set_Capsule_Up_Y_CONST(1.0);
+                    break;
+
+                case (byte)Global.PRAISE_1.Capsule_Up_Z:
+                    Set_Capsule_Up_Z_CONST(0.0);
+                    break;
+
                 default:
                     break;
             }
         }
 
 // private.
-        private void Create_NumberOfResetToConstantValues()
+        private void Create_NumberOfBooleanInputs()
         {
-            _NumberOfResetToConstantValues = new byte();
-            Set_NumberOfResetToConstantValues(3);
+            Set_NumberOfBooleanInputs(new byte());
+            Set_NumberOfBooleanInputs(0);
         }
-        private void Create_NumberOfInputValues()
+        private void Create_NumberOfConstantInputs()
         {
-            _numberOfInputValues = new byte();
-            Set_NumberOfInputValues(11);
+            Set_NumberOfConstantInputs(new byte());
+            Set_NumberOfConstantInputs(0);
         }
+        private void Create_NumberInputRegisters()
+        {
+            Set_NumberInputRegisters(new byte());
+            Set_NumberInputRegisters(0);
+        }
+        private void Create_NumberOfLinearInputs()
+        {
+            Set_NumberOfLinearInputs(new byte());
+            Set_NumberOfLinearInputs(0);
+        }
+        // custom user defined.
         private void Create_Mouse_Screen_X()
         {
-            _Mouse_Screen_X = new double();
+            Set_Mouse_Screen_X(new double());
             Set_Mouse_Screen_X(0.0);
         }
         private void Create_Mouse_Screen_Y()
         {
-            _Mouse_Screen_Y = new double();
+            Set_Mouse_Screen_Y(new double());
             Set_Mouse_Screen_Y(0.0);
         }
         private void Create_Capsule_Fowards_X()
         {
-            _Capsule_Fowards_X = new double();
+            Set_Capsule_Fowards_X(new double());
             Set_Capsule_Fowards_X(1.0);
         }
         private void Create_Capsule_Fowards_Y()
         {
-            _Capsule_Fowards_Y = new double();
+            Set_Capsule_Fowards_Y(new double());
             Set_Capsule_Fowards_Y(0.0);
         }
         private void Create_Capsule_Fowards_Z()
         {
-            _Capsule_Fowards_Z = new double();
+            Set_Capsule_Fowards_Z(new double());
             Set_Capsule_Fowards_Z(0.0);
         }
         private void Create_Capsule_Up_X_CONST()
         {
-            _Capsule_Up_X = new double();
-            Set_Capsule_Up_X_CONST();
+            Set_Capsule_Up_X_CONST(new double());
+            Set_Capsule_Up_X_CONST(0.0);
         }
         private void Create_Capsule_Up_Y_CONST()
         {
-            _Capsule_Up_Y = new double();
-            Set_Capsule_Up_Y_CONST();
+            Set_Capsule_Up_Y_CONST(new double());
+            Set_Capsule_Up_Y_CONST(0.0);
         }
         private void Create_Capsule_Up_Z_CONST()
         {
-            _Capsule_Up_Z = new double();
-            Set_Capsule_Up_Z_CONST();
+            Set_Capsule_Up_Z_CONST(new double());
+            Set_Capsule_Up_Z_CONST(0.0);
         }
         private void Create_Capsule_Right_X()
         {
-            _Capsule_Right_X = new double();
+            Set_Capsule_Right_X(new double());
             Set_Capsule_Right_X(0.0);
         }
         private void Create_Capsule_Right_Y()
         {
-            _Capsule_Right_Y = new double();
+            Set_Capsule_Right_Y(new double());
             Set_Capsule_Right_Y(0.0);
         }
         private void Create_Capsule_Right_Z()
         {
-            _Capsule_Right_Z = new double();
+            Set_Capsule_Right_Z(new double());
             Set_Capsule_Right_Z(1.0);
         }
-
     // get.
+        // custom user defined.
         private double Get_Capsule_Fowards_X()
         {
             return _Capsule_Fowards_X;
@@ -263,8 +289,24 @@ namespace Avril_NNAI
         {
             return _Mouse_Screen_Y;
         }
-
-    // set.
+        // set.
+        private void Set_NumberOfBooleanInputs(byte numberOfbooleanInputs)
+        {
+            _NumberOfBooleanInputs = numberOfbooleanInputs;
+        }
+        private void Set_NumberOfConstantInputs(byte numberOfConstantInputs)
+        {
+            _NumberOfConstantInputs = numberOfConstantInputs;
+        }
+        private void Set_NumberInputRegisters(byte numberOfInputValues)
+        {
+            _NumberInputRegisters = numberOfInputValues;
+        }
+        private void Set_NumberOfLinearInputs(byte numberOfLinearInputs)
+        {
+            _NumberOfLinearInputs = numberOfLinearInputs;
+        }
+        // custom user defined.
         private void Set_Capsule_Fowards_X(double capsualeFowardsX)
         {
             _Capsule_Fowards_X = capsualeFowardsX;
@@ -277,17 +319,17 @@ namespace Avril_NNAI
         {
             _Capsule_Fowards_Z = capsualeFowardsZ;
         }
-        private void Set_Capsule_Up_X_CONST()
+        private void Set_Capsule_Up_X_CONST(double capsualeUpX)
         {
-            _Capsule_Up_X = 0.0;
+            _Capsule_Up_X = capsualeUpX;
         }
-        private void Set_Capsule_Up_Y_CONST()
+        private void Set_Capsule_Up_Y_CONST(double capsualeUpY)
         {
-            _Capsule_Up_Y = 1.0;
+            _Capsule_Up_Y = capsualeUpY;
         }
-        private void Set_Capsule_Up_Z_CONST()
+        private void Set_Capsule_Up_Z_CONST(double capsualeUpZ)
         {
-            _Capsule_Up_Z = 0.0;
+            _Capsule_Up_Z = capsualeUpZ;
         }
         private void Set_Capsule_Right_X(double capsualeRightX)
         {
@@ -309,13 +351,6 @@ namespace Avril_NNAI
         {
             _Mouse_Screen_Y = mouseY;
         }
-        private void Set_NumberOfResetToConstantValues(byte numberOfResetToConstantValues)
-        {
-            _NumberOfResetToConstantValues = numberOfResetToConstantValues;
-        }
-        private void Set_NumberOfInputValues(byte numberOfInputValues)
-        {
-            _numberOfInputValues = numberOfInputValues;
-        }
+
     }
 }

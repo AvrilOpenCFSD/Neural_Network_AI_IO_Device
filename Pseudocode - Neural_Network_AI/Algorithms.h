@@ -1,5 +1,5 @@
 #pragma once
-namespace Avril_NNAI
+namespace OpenAvrilNNI
 {
 	class Algorithms
 	{
@@ -8,7 +8,7 @@ namespace Avril_NNAI
 		virtual ~Algorithms();
 		void Initialise_Control();
 
-		void ConstructNeuralNetworkAI_Frame(Avril_NNAI::Framework_NNAI* obj, INT64 _numberOfTotalInputs);
+		void ConstructNeuralNetworkAI_Frame(OpenAvrilNNI::Framework_NNI* obj, INT64 _numberOfTotalInputs);
 
 		class NeuralPath* Get_NeuralPath();
 	};

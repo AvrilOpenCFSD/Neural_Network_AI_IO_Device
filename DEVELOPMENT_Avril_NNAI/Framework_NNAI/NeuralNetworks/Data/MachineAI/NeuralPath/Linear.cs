@@ -1,9 +1,10 @@
 ﻿
-namespace Avril_NNAI
+namespace OpenAvrilNNI
 {
     public class Linear
     {
 // classes.
+        private PraiseSet _praiseSet;
 
 // registers.
         private double _bias;
@@ -34,6 +35,10 @@ namespace Avril_NNAI
         {
             return _weight;
         }
+        public PraiseSet Get_PraiseSet()
+        {
+            return _praiseSet;
+        }
     // set.
         public void Set_Bias(double newBias)
         {
@@ -55,7 +60,16 @@ namespace Avril_NNAI
             _weight = new double();
             Set_Weight(0.0);
         }
+        private void Create_PraiseSet()
+        {
+            Set_PraiseSet(new PraiseSet());
+            while (Get_PraiseSet() == null) { }
+        }
     // get.
     // set
+        private void Set_PraiseSet(PraiseSet newPraiseSet)
+        {
+            _praiseSet = newPraiseSet;
+        }
     }
 }

@@ -1,7 +1,7 @@
 ﻿
 using System.ComponentModel;
 
-namespace Avril_NNAI
+namespace OpenAvrilNNI
 {
     public static class MyEnumExtensions
     {
@@ -14,7 +14,7 @@ namespace Avril_NNAI
 // destructor.
 
 // public.
-        public static string ToDescriptionString(Avril_NNAI.Global.FILE_NAME val)
+        public static string ToDescriptionString(OpenAvrilNNI.Global.FILE_NAME val)
         {
             DescriptionAttribute[] attributes = (DescriptionAttribute[])val
                .GetType()

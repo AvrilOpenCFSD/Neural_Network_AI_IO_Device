@@ -1,18 +1,18 @@
 ﻿
-namespace Avril_NNAI
+namespace OpenAvrilNNI
 {
     public class Execute
     {
 // classes.
 
 // registers.
-        private Avril_NNAI.FileReadWrite _FileReadWrite;
+        private OpenAvrilNNI.FileReadWrite _FileReadWrite;
 
 // constructor.
         public Execute()
         {
             //System.Console.WriteLine("entered Execute.");
-            Create_FileReadWrite(new Avril_NNAI.FileReadWrite());
+            Create_FileReadWrite(new OpenAvrilNNI.FileReadWrite());
             while (Get_FileReadWrite() == null) { }
         }
 
@@ -28,14 +28,14 @@ namespace Avril_NNAI
 
         }
     // get.
-        public Avril_NNAI.FileReadWrite Get_FileReadWrite()
+        public OpenAvrilNNI.FileReadWrite Get_FileReadWrite()
         {
             return _FileReadWrite;
         }
     // set.
 
 // private.
-        private void Create_FileReadWrite(Avril_NNAI.FileReadWrite fileReadWrite)
+        private void Create_FileReadWrite(OpenAvrilNNI.FileReadWrite fileReadWrite)
         {
             _FileReadWrite = fileReadWrite;
         }

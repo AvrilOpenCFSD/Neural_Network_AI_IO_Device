@@ -1,13 +1,13 @@
 ﻿
-namespace Avril_NNAI
+namespace OpenAvrilNNI
 {
     public class NeuralNetworks
     {
 // classes.
-        private Avril_NNAI.Global _global;
-        private Avril_NNAI.Aglorithms _aglorithms;
-        private Avril_NNAI.Data _data;
-        private Avril_NNAI.Execute _execute;
+        private OpenAvrilNNI.Global _global;
+        private OpenAvrilNNI.Aglorithms _aglorithms;
+        private OpenAvrilNNI.Data _data;
+        private OpenAvrilNNI.Execute _execute;
 // registers.
 
 // constructor.
@@ -29,19 +29,19 @@ namespace Avril_NNAI
 
 // public.
     // get.
-        public Avril_NNAI.Aglorithms Get_Aglorithms()
+        public OpenAvrilNNI.Aglorithms Get_Aglorithms()
         {
             return _aglorithms;
         }
-        public Avril_NNAI.Data Get_Data()
+        public OpenAvrilNNI.Data Get_Data()
         {
             return _data;
         }
-        public Avril_NNAI.Execute Get_Execute()
+        public OpenAvrilNNI.Execute Get_Execute()
         {
             return _execute;
         }
-        public Avril_NNAI.Global Get_Global()
+        public OpenAvrilNNI.Global Get_Global()
         {
             return _global;
         }
@@ -50,22 +50,22 @@ namespace Avril_NNAI
 // private.
         private void Create_Aglorithms()
         {
-            _aglorithms = new Avril_NNAI.Aglorithms();
+            _aglorithms = new OpenAvrilNNI.Aglorithms();
             while (Get_Aglorithms() == null) { }
         }
         private void Create_Global()
         {
-            _global = new Avril_NNAI.Global();
+            _global = new OpenAvrilNNI.Global();
             while (Get_Global() == null) { }
         }
         private void Create_Data()
         {
-            _data = new Avril_NNAI.Data();
+            _data = new OpenAvrilNNI.Data();
             while (Get_Data() == null) { }
         }
         private void Create_Execute()
         {
-            _execute = new Avril_NNAI.Execute();
+            _execute = new OpenAvrilNNI.Execute();
             while (Get_Execute() == null) { }
         }
     // get.

@@ -9,6 +9,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Framework_NNI\NeuralNetworks\Data\MachineAI\NeuralPath\Binary\" />
+    <Folder Include="Framework_NNI\NeuralNetworks\Data\MachineAI\NeuralPath\Constant\" />
     <Folder Include="nnai_extension_files\" />
   </ItemGroup>
 

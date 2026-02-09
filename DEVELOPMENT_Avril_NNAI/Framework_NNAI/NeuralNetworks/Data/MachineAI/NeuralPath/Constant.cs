@@ -1,5 +1,4 @@
-﻿
-namespace Avril_NNAI
+﻿namespace OpenAvrilNNI
 {
     public class Constant
     {

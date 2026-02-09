@@ -1,5 +1,5 @@
 ﻿
-namespace Avril_NNAI
+namespace OpenAvrilNNI
 {
     public class Output_Praise_0
     {
@@ -9,24 +9,26 @@ namespace Avril_NNAI
             Ping
         }
 
-// classes.
+        // classes.
 
-// registers.
-        private byte _numberOfOutputValues;
-        private byte _NumberOfResetToConstantValues;
+        // registers.
+        private byte _NumberOfBooleanOutputs;
+        private byte _NumberOfConstantOutputs;
+        private byte _NumberOfLinearOutputs;
+        private byte _NumberOutputRegisters;
+        // custom user defined.
+
         private double _Ping;
 
 // constructor.
         public Output_Praise_0()
         {
-            Create_NumberOfOutputValues(new byte());
-            Set_NumberOfOutputValues(1);
-
-            Create_NumberOfResetToConstantValues(new byte());
-            Set_NumberOfResetToConstantValues(0);
-
+            Create_NumberOfBooleanOutputs();
+            Create_NumberOfLinearOutputs();
+            Create_NumberOfConstantOutputs();
+            Create_NumberOutputRegisters();
+            // custom user defined.
             Create_Ping(new double());
-            Set_Ping(0.0);
         }
 
 // destructor.
@@ -37,6 +39,23 @@ namespace Avril_NNAI
 
 // public.
     // get.
+        public byte Get_NumberOfBooleanOutputs()
+        {
+            return _NumberOfBooleanOutputs;
+        }
+        public byte Get_NumberOfConstantOutputs()
+        {
+            return _NumberOfConstantOutputs;
+        }
+        public byte Get_NumberOfLinearOutputs()
+        {
+            return _NumberOfLinearOutputs;
+        }
+        public byte Get_NumberOutputRegisters()
+        {
+            return _NumberOutputRegisters;
+        }
+        // custom user defined.
         public double Get_Item_On_List_Of_Praise_Output(byte index)
         {
             switch (index)
@@ -47,15 +66,6 @@ namespace Avril_NNAI
                     return 0;
             }
         }
-        public byte Get_NumberOfResetToConstantValues()
-        {
-            return _NumberOfResetToConstantValues;
-        }
-        public byte Get_NumberOfOutputValues()
-        {
-            return _numberOfOutputValues;
-        }
-
     // set.
         public void Set_Item_On_List_Of_Praise_Output(byte index, double value)
         {
@@ -69,21 +79,33 @@ namespace Avril_NNAI
             }
         }
 
-// private.
-        private void Create_NumberOfResetToConstantValues(byte value)
+        // private.
+        private void Create_NumberOfBooleanOutputs()
         {
-            _NumberOfResetToConstantValues = value;
+            Set_NumberOfBooleanOutputs(new byte());
+            Set_NumberOfBooleanOutputs(0);
         }
-        private void Create_NumberOfOutputValues(byte value)
+        private void Create_NumberOfConstantOutputs()
         {
-            _numberOfOutputValues = value;
+            Set_NumberOfConstantOutputs(new byte());
+            Set_NumberOfConstantOutputs(0);
         }
+        private void Create_NumberOfLinearOutputs()
+        {
+            Set_NumberOfLinearOutputs(new byte());
+            Set_NumberOfLinearOutputs(0);
+        }
+        private void Create_NumberOutputRegisters()
+        {
+            Set_NumberOutputRegisters(new byte());
+            Set_NumberOutputRegisters(0);
+        }
+        // custom user defined.
 
         private void Create_Ping(double ping)
         {
             _Ping = ping;
         }
-
     // get.
         private double Get_Ping()
         {
@@ -91,14 +113,23 @@ namespace Avril_NNAI
         }
 
     // set.
-        private void Set_NumberOfResetToConstantValues(byte value)
+        private void Set_NumberOfBooleanOutputs(byte numberOfBinaryValues)
         {
-            _NumberOfResetToConstantValues = value;
+            _NumberOfBooleanOutputs = numberOfBinaryValues;
         }
-        private void Set_NumberOfOutputValues(byte numberOfOutputValues)
+        private void Set_NumberOfConstantOutputs(byte numberOfResetToConstantValues)
         {
-            _numberOfOutputValues = numberOfOutputValues;
+            _NumberOfConstantOutputs = numberOfResetToConstantValues;
         }
+        private void Set_NumberOfLinearOutputs(byte numberOfLinearValues)
+        {
+            _NumberOfLinearOutputs = numberOfLinearValues;
+        }
+        private void Set_NumberOutputRegisters(byte numberOfOutputValues)
+        {
+            _NumberOutputRegisters = numberOfOutputValues;
+        }
+        // custom user defined.
         private void Set_Ping(double value)
         {
             _Ping = value;

@@ -1,33 +1,18 @@
 ﻿
-namespace Avril_NNAI
+namespace OpenAvrilNNI
 {
     public class Input_Praise_2
     {
 // definitions.
-        private enum PRAISE_2 : byte
-        {
-            Direction_X,
-            Direction_Y,
-            Direction_Z,
-            Period,
-            Capsule_Position_X,
-            Capsule_Position_Y,
-            Capsule_Position_Z,
-            Capsule_Fowards_X,
-            Capsule_Fowards_Y,
-            Capsule_Fowards_Z,
-            Capsule_Up_X,
-            Capsule_Up_Y,
-            Capsule_Up_Z,
-            Capsule_Right_X,
-            Capsule_Right_Y,
-            Capsule_Right_Z
-        }
+
 // classes.
 
 // registers.
-        private byte _NumberOfResetToConstantValues;
-        private byte _numberOfInputValues;
+        private byte _NumberOfBooleanInputs;
+        private byte _NumberOfConstantInputs;
+        private byte _NumberInputRegisters;
+        private byte _NumberOfLinearInputs;
+        // custom user defined.
         private double _direction_X;
         private double _direction_y;
         private double _direction_Z;
@@ -48,150 +33,159 @@ namespace Avril_NNAI
 // constructor.
         public Input_Praise_2()
         {
-            Create_NumberOfInputValues(new byte());
-            Set_NumberOfInputValues(16);
-
-            Create_NumberOfResetToConstantValues(new byte());
-            Set_NumberOfResetToConstantValues(3);
+            Create_NumberInputRegisters();
+            Create_NumberOfLinearInputs();
+            Create_NumberOfBooleanInputs();
+            Create_NumberOfConstantInputs();
+            // custom user defined.
         }
 
-// destructor.
+        // destructor.
         ~Input_Praise_2()
         {
         }
 
 // public.
     // get.
+        public byte Get_NumberOfBooleanInputs()
+        {
+            return _NumberOfBooleanInputs;
+        }
+        public byte Get_NumberOfConstantInputs()
+        {
+            return _NumberOfConstantInputs;
+        }
+        public byte Get_NumberInputRegisters()
+        {
+            return _NumberInputRegisters;
+        }
+        public byte Get_NumberOfLinearInputs()
+        {
+            return _NumberOfLinearInputs;
+        }
+        // custom user defined.
         public double Get_Item_On_List_Of_Input_Praise(byte index)
         {
             switch (index)
             {
-                case (byte)PRAISE_2.Direction_X:
+                case (byte)Global.PRAISE_2.Direction_X:
                     return Get_Direction_X();
 
-                case (byte)PRAISE_2.Direction_Y:
+                case (byte)Global.PRAISE_2.Direction_Y:
                     return Get_Direction_Y();
 
-                case (byte)PRAISE_2.Direction_Z:
+                case (byte)Global.PRAISE_2.Direction_Z:
                     return Get_Direction_Z();
 
-                case (byte)PRAISE_2.Period:
+                case (byte)Global.PRAISE_2.Period:
                     return Get_Period();
 
-                case (byte)PRAISE_2.Capsule_Position_X:
+                case (byte)Global.PRAISE_2.Capsule_Position_X:
                     return Get_Capsule_Position_X();
 
-                case (byte)PRAISE_2.Capsule_Position_Y:
+                case (byte)Global.PRAISE_2.Capsule_Position_Y:
                     return Get_Capsule_Position_Y();
 
-                case (byte)PRAISE_2.Capsule_Position_Z:
+                case (byte)Global.PRAISE_2.Capsule_Position_Z:
                     return Get_Capsule_Position_Z();
 
-                case (byte)PRAISE_2.Capsule_Fowards_X:
+                case (byte)Global.PRAISE_2.Capsule_Fowards_X:
                     return Get_Capsule_Fowards_X();
 
-                case (byte)PRAISE_2.Capsule_Fowards_Y:
+                case (byte)Global.PRAISE_2.Capsule_Fowards_Y:
                     return Get_Capsule_Fowards_Y();
 
-                case (byte)PRAISE_2.Capsule_Fowards_Z:
+                case (byte)Global.PRAISE_2.Capsule_Fowards_Z:
                     return Get_Capsule_Fowards_Z();
 
-                case (byte)PRAISE_2.Capsule_Up_X:
+                case (byte)Global.PRAISE_2.Capsule_Up_X:
                     return Get_Capsule_Up_X();
 
-                case (byte)PRAISE_2.Capsule_Up_Y:
+                case (byte)Global.PRAISE_2.Capsule_Up_Y:
                     return Get_Capsule_Up_Y();
 
-                case (byte)PRAISE_2.Capsule_Up_Z:
+                case (byte)Global.PRAISE_2.Capsule_Up_Z:
                     return Get_Capsule_Up_Z();
 
-                case (byte)PRAISE_2.Capsule_Right_X:
+                case (byte)Global.PRAISE_2.Capsule_Right_X:
                     return Get_Capsule_Right_X();
 
-                case (byte)PRAISE_2.Capsule_Right_Y:
+                case (byte)Global.PRAISE_2.Capsule_Right_Y:
                     return Get_Capsule_Right_Y();
 
-                case (byte)PRAISE_2.Capsule_Right_Z:
+                case (byte)Global.PRAISE_2.Capsule_Right_Z:
                     return Get_Capsule_Right_Z();
 
                 default:
                     return 0;
             }
         }
-        public byte Get_NumberOfResetToConstantValues()
-        {
-            return _NumberOfResetToConstantValues;
-        }
-        public byte Get_NumberOfInputValues()
-        {
-            return _numberOfInputValues;
-        }
     // set.
         public void Set_Item_On_List_Of_Input_Praise(byte index, double value)
         {
             switch (index)
             {
-                case (byte)PRAISE_2.Direction_X:
+                case (byte)Global.PRAISE_2.Direction_X:
                     this.Set_Direction_X(value);
                     break;
 
-                case (byte)PRAISE_2.Direction_Y:
+                case (byte)Global.PRAISE_2.Direction_Y:
                     this.Set_Direction_Y(value);
                     break;
 
-                case (byte)PRAISE_2.Direction_Z:
+                case (byte)Global.PRAISE_2.Direction_Z:
                     this.Set_Direction_Z(value);
                     break;
 
-                case (byte)PRAISE_2.Period:
+                case (byte)Global.PRAISE_2.Period:
                     this.Set_Period(value);
                     break;
 
-                case (byte)PRAISE_2.Capsule_Position_X:
+                case (byte)Global.PRAISE_2.Capsule_Position_X:
                     this.Set_Capsule_Position_X(value);
                     break;
 
-                case (byte)PRAISE_2.Capsule_Position_Y:
+                case (byte)Global.PRAISE_2.Capsule_Position_Y:
                     this.Set_Capsule_Position_Y(value);
                     break;
 
-                case (byte)PRAISE_2.Capsule_Position_Z:
+                case (byte)Global.PRAISE_2.Capsule_Position_Z:
                     this.Set_Capsule_Position_Z(value);
                     break;
 
-                case (byte)PRAISE_2.Capsule_Fowards_X:
+                case (byte)Global.PRAISE_2.Capsule_Fowards_X:
                     this.Set_Capsule_Fowards_X(value);
                     break;
 
-                case (byte)PRAISE_2.Capsule_Fowards_Y:
+                case (byte)Global.PRAISE_2.Capsule_Fowards_Y:
                     this.Set_Capsule_Fowards_Y(value);
                     break;
 
-                case (byte)PRAISE_2.Capsule_Fowards_Z:
+                case (byte)Global.PRAISE_2.Capsule_Fowards_Z:
                     this.Set_Capsule_Fowards_Z(value);
                     break;
 
-                case (byte)PRAISE_2.Capsule_Up_X:
+                case (byte)Global.PRAISE_2.Capsule_Up_X:
                     this.Set_Capsule_Up_X(value);
                     break;
 
-                case (byte)PRAISE_2.Capsule_Up_Y:
+                case (byte)Global.PRAISE_2.Capsule_Up_Y:
                     this.Set_Capsule_Up_Y(value);
                     break;
 
-                case (byte)PRAISE_2.Capsule_Up_Z:
+                case (byte)Global.PRAISE_2.Capsule_Up_Z:
                     this.Set_Capsule_Up_Z(value);
                     break;
 
-                case (byte)PRAISE_2.Capsule_Right_X:
+                case (byte)Global.PRAISE_2.Capsule_Right_X:
                     this.Set_Capsule_Right_X(value);
                     break;
 
-                case (byte)PRAISE_2.Capsule_Right_Y:
+                case (byte)Global.PRAISE_2.Capsule_Right_Y:
                     this.Set_Capsule_Right_Y(value);
                     break;
 
-                case (byte)PRAISE_2.Capsule_Right_Z:
+                case (byte)Global.PRAISE_2.Capsule_Right_Z:
                     this.Set_Capsule_Right_Z(value);
                     break;
 
@@ -201,14 +195,27 @@ namespace Avril_NNAI
         }
 
 // private.
-        private void Create_NumberOfResetToConstantValues(byte numberOfResetToConstantValues)
+        private void Create_NumberOfBooleanInputs()
         {
-            _NumberOfResetToConstantValues = numberOfResetToConstantValues;
+            Set_NumberOfBooleanInputs(new byte());
+            Set_NumberOfBooleanInputs(0);
         }
-        private void Create_NumberOfInputValues(byte numberOfInputValues)
+        private void Create_NumberOfConstantInputs()
         {
-            _numberOfInputValues = numberOfInputValues;
+            Set_NumberOfConstantInputs(new byte());
+            Set_NumberOfConstantInputs(0);
         }
+        private void Create_NumberInputRegisters()
+        {
+            Set_NumberInputRegisters(new byte());
+            Set_NumberInputRegisters(0);
+        }
+        private void Create_NumberOfLinearInputs()
+        {
+            Set_NumberOfLinearInputs(new byte());
+            Set_NumberOfLinearInputs(0);
+        }
+        // custom user defined.
         private void Create_Direction_X(double direction_X)
         {
             _direction_X = direction_X;
@@ -341,6 +348,23 @@ namespace Avril_NNAI
         }
 
     // set.
+        private void Set_NumberOfBooleanInputs(byte numberOfbooleanInputs)
+        {
+            _NumberOfBooleanInputs = numberOfbooleanInputs;
+        }
+        private void Set_NumberOfConstantInputs(byte numberOfConstantInputs)
+        {
+            _NumberOfConstantInputs = numberOfConstantInputs;
+        }
+        private void Set_NumberInputRegisters(byte numberOfInputValues)
+        {
+            _NumberInputRegisters = numberOfInputValues;
+        }
+        private void Set_NumberOfLinearInputs(byte numberOfLinearInputs)
+        {
+            _NumberOfLinearInputs = numberOfLinearInputs;
+        }
+        // custom user defined.
         private void Set_Direction_X(double value)
         {
             _direction_X = value;
@@ -352,14 +376,6 @@ namespace Avril_NNAI
         private void Set_Direction_Z(double value)
         {
             _direction_Z = value;
-        }
-        private void Set_NumberOfResetToConstantValues(byte numberOfResetToConstantValues)
-        {
-            _NumberOfResetToConstantValues = numberOfResetToConstantValues;
-        }
-        private void Set_NumberOfInputValues(byte numberOfInputValues)
-        {
-            _numberOfInputValues = numberOfInputValues;
         }
         private void Set_Period(double value)
         {

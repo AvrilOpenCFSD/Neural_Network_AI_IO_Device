@@ -2,27 +2,27 @@
 #include "Input.h"
 
 std::vector<class Object*>* ptr_List_Of_Input_SubSet;
-class Avril_NNAI::Input_Praise_0* ptr_Input_Praise_0;
+class OpenAvrilNNI::Input_Praise_0* ptr_Input_Praise_0;
 
-Avril_NNAI::Input::Input()
+OpenAvrilNNI::Input::Input()
 {
 	ptr_List_Of_Input_SubSet->clear();
 
-	Set_PraiseSubSet(INT64(0), new class Avril_NNAI::Input_Praise_0());
+	Set_PraiseSubSet(INT64(0), new class OpenAvrilNNI::Input_Praise_0());
 	while (ptr_List_Of_Input_SubSet->at(0) == NULL) {}
 }
 
-Avril_NNAI::Input::~Input()
+OpenAvrilNNI::Input::~Input()
 {
     //delete ;
 }
 
-class Object* Avril_NNAI::Input::Get_Item_On_List_Of_Input_SubSet(INT64 nodeID)
+class Object* OpenAvrilNNI::Input::Get_Item_On_List_Of_Input_SubSet(INT64 nodeID)
 {
 	return ptr_List_Of_Input_SubSet->at(nodeID);
 }
 
-void Avril_NNAI::Input::Set_PraiseSubSet(INT64 nodeID, class Avril_NNAI::Input_Praise_0* inputSubSet)
+void OpenAvrilNNI::Input::Set_PraiseSubSet(INT64 nodeID, class OpenAvrilNNI::Input_Praise_0* inputSubSet)
 {
 	ptr_List_Of_Input_SubSet->at(nodeID) = (Object*)inputSubSet;
 }

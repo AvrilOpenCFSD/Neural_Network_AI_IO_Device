@@ -1,6 +1,6 @@
 #pragma once
 
-namespace Avril_NNAI
+namespace OpenAvrilNNI
 {
 	class Output
 	{

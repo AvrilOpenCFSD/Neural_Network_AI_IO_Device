@@ -1,26 +1,28 @@
 ﻿
-namespace Avril_NNAI
+namespace OpenAvrilNNI
 {
     public class Input_Praise_0
     {
 // deinitions.
-        private enum PRAISE_0 : byte
-        {
-            Ping
-        }
 
 // classes.
 
 // registers.
-        private byte _NumberOfResetToConstantValues;
-        private byte _numberOfInputValues;
+        private byte _NumberOfBooleanInputs;
+        private byte _NumberOfConstantInputs;
+        private byte _NumberInputRegisters;
+        private byte _NumberOfLinearInputs;
+        // custom user defined.
         private double _Ping;
 
 // constructor.
         public Input_Praise_0()
         {
-            Create_NumberOfInputValues();
-            Set_NumberOfResetToConstantValues(0);
+            Create_NumberOfItemsOnListOfInputRegister();
+            Create_NumberOfLinearInputs();
+            Create_NumberOfBooleanInputs();
+            Create_NumberOfConstantInputs();
+            // custom user defined.
             Create_Ping();
         }
 
@@ -32,30 +34,40 @@ namespace Avril_NNAI
 
 // public.
     // get.
+        public byte Get_NumberOfBooleanInputs()
+        {
+            return _NumberOfBooleanInputs;
+        }
+        public byte Get_NumberOfConstantInputs()
+        {
+            return _NumberOfConstantInputs;
+        }
+        public byte Get_NumberInputRegisters()
+        {
+            return _NumberInputRegisters;
+        }
+        public byte Get_NumberOfLinearInputs()
+        {
+            return _NumberOfLinearInputs;
+        }
+        // custom user defined.
         public double Get_Item_On_List_Of_Input_Praise(byte index)
         {
             switch (index)
             {
-                case (byte)PRAISE_0.Ping:
+                case (byte)Global.PRAISE_0.Ping:
                     return Get_Ping();
                 default:
                     return 0;
             }
         }
-        public byte Get_NumberOfResetToConstantValues()
-        {
-            return _NumberOfResetToConstantValues;
-        }
-        public byte Get_NumberOfInputValues()
-        {
-            return _numberOfInputValues;
-        }
     // set.
+        // custom user defined.
         public void Set_Item_On_List_Of_Input_Praise(byte index, double value)
         {
             switch (index)
             {
-                case (byte)PRAISE_0.Ping:
+                case (byte)Global.PRAISE_0.Ping:
                     Set_Ping(value);
                     break;
                 default:
@@ -64,35 +76,56 @@ namespace Avril_NNAI
         }
 
 // private.
-        private void Create_NumberOfResetToConstantValues()
+        private void Create_NumberOfBooleanInputs()
         {
-            _NumberOfResetToConstantValues = new byte();
-            Set_NumberOfResetToConstantValues(0);
+            Set_NumberOfBooleanInputs(new byte());
+            Set_NumberOfBooleanInputs(0);
         }
-        private void Create_NumberOfInputValues()
+        private void Create_NumberOfConstantInputs()
         {
-            _numberOfInputValues = new byte();
-            Set_NumberOfInputValues(1);
+            Set_NumberOfConstantInputs(new byte());
+            Set_NumberOfConstantInputs(0);
         }
+        private void Create_NumberOfItemsOnListOfInputRegister()
+        {
+            Set_NumberInputRegisters(new byte());
+            Set_NumberInputRegisters(0);
+        }
+        private void Create_NumberOfLinearInputs()
+        {
+            Set_NumberOfLinearInputs(new byte());
+            Set_NumberOfLinearInputs(0);
+        }
+        // custom user defined.
         private void Create_Ping()
         {
             _Ping = new double();
             Set_Ping(0.0);
         }
     // get.
+        // custom user defined.
         private double Get_Ping()
         {
             return _Ping;
         }
     // set.
-        private void Set_NumberOfResetToConstantValues(byte numberOfResetToConstantValues)
+        private void Set_NumberOfBooleanInputs(byte numberOfbooleanInputs)
         {
-            _NumberOfResetToConstantValues = numberOfResetToConstantValues;
+            _NumberOfBooleanInputs = numberOfbooleanInputs;
         }
-        private void Set_NumberOfInputValues(byte numberOfInputValues)
+        private void Set_NumberOfConstantInputs(byte numberOfConstantInputs)
         {
-            _numberOfInputValues = numberOfInputValues;
+            _NumberOfConstantInputs = numberOfConstantInputs;
         }
+        private void Set_NumberInputRegisters(byte numberOfInputValues)
+        {
+            _NumberInputRegisters = numberOfInputValues;
+        }
+        private void Set_NumberOfLinearInputs(byte numberOfLinearInputs)
+        {
+            _NumberOfLinearInputs = numberOfLinearInputs;
+        }
+        // custom user defined.
         private void Set_Ping(double value)
         {
             _Ping = value;

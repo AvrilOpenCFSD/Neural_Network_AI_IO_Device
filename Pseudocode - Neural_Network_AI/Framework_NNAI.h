@@ -1,15 +1,15 @@
 #pragma once
-namespace Avril_NNAI
+namespace OpenAvrilNNI
 {
-    class Framework_NNAI
+    class Framework_NNI
     {
     public:
-        Framework_NNAI();
-        virtual ~Framework_NNAI();
-        void Initialise_Program(Avril_NNAI::Framework_NNAI* obj);
+        Framework_NNI();
+        virtual ~Framework_NNI();
+        void Initialise_Program(OpenAvrilNNI::Framework_NNI* obj);
         class NeuralNetworks* Get_Neural_Networks();
 
     private:
-        static void Set_Neural_Networks(class Avril_NNAI::NeuralNetworks* server);
+        static void Set_Neural_Networks(class OpenAvrilNNI::NeuralNetworks* server);
     };
 };

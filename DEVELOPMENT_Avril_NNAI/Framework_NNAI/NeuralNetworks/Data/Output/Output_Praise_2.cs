@@ -1,5 +1,5 @@
 ﻿
-namespace Avril_NNAI
+namespace OpenAvrilNNI
 {
     public class Output_Praise_2
     {
@@ -19,12 +19,16 @@ namespace Avril_NNAI
             Capsule_Right_Y,
             Capsule_Right_Z
         }
-        
-// classes.
 
-// registers.
-        private byte _numberOfOutputValues;
-        private byte _NumberOfResetToConstantValues;
+        // classes.
+
+        // registers.
+        private byte _NumberOfBooleanOutputs;
+        private byte _NumberOfConstantOutputs;
+        private byte _NumberOfLinearOutputs;
+        private byte _NumberOutputRegisters;
+        // custom user defined.
+
         private double _direction_X;
         private double _direction_y;
         private double _direction_Z;
@@ -45,11 +49,14 @@ namespace Avril_NNAI
 // constructor.
         public Output_Praise_2()
         {
-            CreateGet_NumberOfResetToConstantValues(new byte());
-            Set_NumberOfResetToConstantValues(0);
+            Create_NumberOfBooleanOutputs();
+            Create_NumberOfLinearOutputs();
+            Create_NumberOfConstantOutputs();
+            Create_NumberOutputRegisters();
+            // custom user defined.
         }
 
-// destructor.
+        // destructor.
         ~Output_Praise_2()
         {
             
@@ -57,6 +64,23 @@ namespace Avril_NNAI
 
 // public.
     // get.
+        public byte Get_NumberOfBooleanOutputs()
+        {
+            return _NumberOfBooleanOutputs;
+        }
+        public byte Get_NumberOfConstantOutputs()
+        {
+            return _NumberOfConstantOutputs;
+        }
+        public byte Get_NumberOfLinearOutputs()
+        {
+            return _NumberOfLinearOutputs;
+        }
+        public byte Get_NumberOutputRegisters()
+        {
+            return _NumberOutputRegisters;
+        }
+        // custom user defined.
         public double Get_Item_On_List_Of_Praise_Output(byte index)
         {
             switch (index)
@@ -101,15 +125,6 @@ namespace Avril_NNAI
                     return 0;
             }
         }
-        public byte Get_NumberOfResetToConstantValues()
-        {
-            return _NumberOfResetToConstantValues;
-        }
-        public byte Get_NumberOfOutputValues()
-        {
-            return _numberOfOutputValues;
-        }
-        
     // set.
         public void Set_Item_On_List_Of_Praise_Output(byte index, double value)
         {
@@ -169,14 +184,27 @@ namespace Avril_NNAI
         }
 
 // private.
-        private void CreateGet_NumberOfResetToConstantValues(byte value)
+        private void Create_NumberOfBooleanOutputs()
         {
-            _NumberOfResetToConstantValues = value;
+            Set_NumberOfBooleanOutputs(new byte());
+            Set_NumberOfBooleanOutputs(0);
         }
-        private void Create_NumberOfOutputValues(byte numberOfOutputValues)
+        private void Create_NumberOfConstantOutputs()
         {
-            _numberOfOutputValues = numberOfOutputValues;
+            Set_NumberOfConstantOutputs(new byte());
+            Set_NumberOfConstantOutputs(0);
         }
+        private void Create_NumberOfLinearOutputs()
+        {
+            Set_NumberOfLinearOutputs(new byte());
+            Set_NumberOfLinearOutputs(0);
+        }
+        private void Create_NumberOutputRegisters()
+        {
+            Set_NumberOutputRegisters(new byte());
+            Set_NumberOutputRegisters(0);
+        }
+        // custom user defined.
         private void Create_Capsule_Position_X(double capsule_Position_X)
         {
             _Capsule_Position_X = capsule_Position_X;
@@ -277,14 +305,23 @@ namespace Avril_NNAI
         }
 
     // set.
-        private void Set_NumberOfResetToConstantValues(byte value)
+        private void Set_NumberOfBooleanOutputs(byte numberOfBinaryValues)
         {
-            _NumberOfResetToConstantValues = value;
+            _NumberOfBooleanOutputs = numberOfBinaryValues;
         }
-        private void Set_NumberOfOutputValues(byte numberOfOutputValues)
+        private void Set_NumberOfConstantOutputs(byte numberOfResetToConstantValues)
         {
-            _numberOfOutputValues = numberOfOutputValues;
+            _NumberOfConstantOutputs = numberOfResetToConstantValues;
         }
+        private void Set_NumberOfLinearOutputs(byte numberOfLinearValues)
+        {
+            _NumberOfLinearOutputs = numberOfLinearValues;
+        }
+        private void Set_NumberOutputRegisters(byte numberOfOutputValues)
+        {
+            _NumberOutputRegisters = numberOfOutputValues;
+        }
+        // custom user defined.
         private void Set_Capsule_Position_X(double value)
         {
             _Capsule_Position_X = value;

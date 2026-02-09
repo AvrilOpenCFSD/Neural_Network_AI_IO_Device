@@ -1,17 +1,17 @@
 #include "pch.h"
 #include "Execute.h"
 
-Avril_NNAI::Execute::Execute()
+OpenAvrilNNI::Execute::Execute()
 {
 
 }
 
-Avril_NNAI::Execute::~Execute()
+OpenAvrilNNI::Execute::~Execute()
 {
     //delete ;
 }
 
-void Avril_NNAI::Execute::Initialise_Control()
+void OpenAvrilNNI::Execute::Initialise_Control()
 {
 
 }

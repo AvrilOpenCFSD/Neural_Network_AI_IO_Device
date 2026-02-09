@@ -3,12 +3,12 @@
 
 enum class NATURE_OF_EQUATION : INT8 { NIL, LINEAR };
 
-Avril_NNAI::Global::Global()
+OpenAvrilNNI::Global::Global()
 {
 
 }
 
-Avril_NNAI::Global::~Global()
+OpenAvrilNNI::Global::~Global()
 {
 	//delete ;
 }

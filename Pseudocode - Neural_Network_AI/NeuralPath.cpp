@@ -2,30 +2,30 @@
 #include "NeuralPath.h"
 
 class Object* ptr_NatureOfInputEquation = NULL;
-class Avril_NNAI::Linear* ptr_Linear = NULL;
+class OpenAvrilNNI::Linear* ptr_Linear = NULL;
 
-Avril_NNAI::NeuralPath::NeuralPath()
+OpenAvrilNNI::NeuralPath::NeuralPath()
 {
-	ptr_Linear = new class Avril_NNAI::Linear();
+	ptr_Linear = new class OpenAvrilNNI::Linear();
 	while (ptr_Linear == NULL) {}
 }
 
-Avril_NNAI::NeuralPath::~NeuralPath()
+OpenAvrilNNI::NeuralPath::~NeuralPath()
 {
 	//delete ;
 }
 
-Object* Avril_NNAI::NeuralPath::Get_NatureOfThePath(Avril_NNAI::Framework_NNAI* obj)
+Object* OpenAvrilNNI::NeuralPath::Get_NatureOfThePath(OpenAvrilNNI::Framework_NNI* obj)
 {
 	return ptr_NatureOfInputEquation;
 }
 
-void Avril_NNAI::NeuralPath::Set_NatureOfThePath_NIL()
+void OpenAvrilNNI::NeuralPath::Set_NatureOfThePath_NIL()
 {
 	ptr_NatureOfInputEquation = (Object*)INT64(0);
 }
 
-void Avril_NNAI::NeuralPath::Set_NatureOfThePath_LINEAR(Avril_NNAI::Linear* natureOfInputEquation)
+void OpenAvrilNNI::NeuralPath::Set_NatureOfThePath_LINEAR(OpenAvrilNNI::Linear* natureOfInputEquation)
 {
 	ptr_NatureOfInputEquation = (Object*)natureOfInputEquation;
 }

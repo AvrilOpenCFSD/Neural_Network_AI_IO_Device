@@ -1,5 +1,5 @@
 ﻿
-namespace AvrilNNAI_OpenConcurrency_IO_Praise_Nth
+namespace AvrilNNI_OpenConcurrency_IO_Praise_Nth
 {
     public class Node_Control
     {

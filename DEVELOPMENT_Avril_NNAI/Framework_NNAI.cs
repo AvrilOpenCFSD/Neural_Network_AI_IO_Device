@@ -1,33 +1,33 @@
 ﻿
-namespace Avril_NNAI
+namespace OpenAvrilNNI
 {
-    public class Framework_NNAI
+    public class Framework_NNI
     {
 // classes.
-        private Avril_NNAI.NeuralNetworks _neuralNetwork;
+        private OpenAvrilNNI.NeuralNetworks _neuralNetwork;
 
 // registers.
 
 // constructor.
-        public Framework_NNAI()
+        public Framework_NNI()
         {
-            System.Console.WriteLine("entered Framework_NNAI.");
+            System.Console.WriteLine("entered Framework_NNI.");
             Create_NeuralNetworks();
         }
 
 // destructor.
-        ~Framework_NNAI()
+        ~Framework_NNI()
         {
-            //System.Console.WriteLine("exited Framework_NNAI.");
+            //System.Console.WriteLine("exited Framework_NNI.");
         }
 
 // public.
-        public void Initialise(Avril_NNAI.Framework_NNAI obj)
+        public void Initialise(OpenAvrilNNI.Framework_NNI obj)
         {
             obj.Get_Neural_Networks().Get_Execute().Create_And_Run_UI();
         }
     // get.
-        public Avril_NNAI.NeuralNetworks Get_Neural_Networks()
+        public OpenAvrilNNI.NeuralNetworks Get_Neural_Networks()
         {
             return _neuralNetwork;
         }
@@ -36,7 +36,7 @@ namespace Avril_NNAI
 // private.
         private void Create_NeuralNetworks()
         {
-            _neuralNetwork = new Avril_NNAI.NeuralNetworks();
+            _neuralNetwork = new OpenAvrilNNI.NeuralNetworks();
             while(Get_Neural_Networks() == null) { }
         }
     // get.

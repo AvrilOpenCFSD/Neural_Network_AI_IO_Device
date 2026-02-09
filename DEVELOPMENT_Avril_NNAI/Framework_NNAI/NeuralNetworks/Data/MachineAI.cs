@@ -1,14 +1,13 @@
 ﻿
-namespace Avril_NNAI
+namespace OpenAvrilNNI
 {
     public class MachineAI
     {
 // classes.
-        private Avril_NNAI.Constant[] _constants;
-        private Avril_NNAI.MetaData _metaData;
-        private Avril_NNAI.Constant _newConstant;
-        private Avril_NNAI.PraiseSet _newPraiseSet;
-        private Avril_NNAI.PraiseSet[] _praiseSet;
+        private Binary[] _List_Of_Binary_Paths;
+        private Constant[] _List_Of_Constant_Paths;
+        private Linear[] _List_Of_Linear_Paths;
+        private OpenAvrilNNI.MetaData _MetaData;
 
 // registers.
         private bool _isNewDataReady;
@@ -20,12 +19,11 @@ namespace Avril_NNAI
         {
             //System.Console.WriteLine("entered MachineAI.");
             Create_MetaData();
-            Create_New_PraiseSet();
-            Create_List_Of_PraiseSet((byte)(Get_MetaData().Get_NumberOfPraiseOutputValues() - Get_MetaData().Get_NumberOfResetToConstantValues_OUTPUT()));
-            Create_New_Constant();
-            Create_List_Of_Constants(Get_MetaData().Get_NumberOfResetToConstantValues_OUTPUT());
-            Create_List_Of_REGISTERED_Inputs(Get_MetaData().Get_NumberOfPraiseInputValues());
-            Create_List_Of_REGISTERED_Outputs(Get_MetaData().Get_NumberOfPraiseOutputValues());
+            Create_List_Of_REGISTERED_Inputs(Get_MetaData().Get_NumberInputRegisters());
+            Create_List_Of_Linear_Paths(Get_MetaData().Get_NumberOfLinearOutputs());
+            Create_List_Of_Binary_Paths(Get_MetaData().Get_NumberOfBooleanOutputs());
+            Create_List_Of_Constant_Paths(Get_MetaData().Get_NumberOfConstantOutputs());
+            Create_List_Of_REGISTERED_Outputs(Get_MetaData().Get_NumberOutputRegisters());
             Create_IsNewDataReady();
         }
 
@@ -35,13 +33,31 @@ namespace Avril_NNAI
         }
 
 // public.
-        public void Create_List_Of_Constants(byte numberOfResetToConstantValues)
+        public void Create_List_Of_Binary_Paths(byte numberOfBinaryValues)
         {
-            _constants = new Avril_NNAI.Constant[numberOfResetToConstantValues];
-            while (Get_List_Of_Constant() == null) { }
+            _List_Of_Binary_Paths = new Binary[numberOfBinaryValues];
+            while (Get_List_Of_Binary_Paths() == null) { }
+            for (byte index =0; index < numberOfBinaryValues; index++)
+            {
+                Set_Item_On_List_Of_Binary_Paths(index, new Binary());
+            }
+        }
+        public void Create_List_Of_Constant_Paths(byte numberOfResetToConstantValues)
+        {
+            _List_Of_Constant_Paths = new Constant[numberOfResetToConstantValues];
+            while (Get_List_Of_Constant_Paths() == null) { }
             for(byte index = 0; index < numberOfResetToConstantValues; index++)
             {
-                Set_Item_On_List_Of_Constant(index, Get_New_Constant());
+                Set_Item_On_List_Of_Constant_Paths(index, new Constant());
+            }
+        }
+        public void Create_List_Of_Linear_Paths(byte numberOfInputValuesForNode)
+        {
+            _List_Of_Linear_Paths = new Linear[numberOfInputValuesForNode];
+            while (Get_List_Of_Linear_Paths() == null) { }
+            for (byte index = 0; index < numberOfInputValuesForNode; index++)
+            {
+                Set_Item_On_List_Of_Linear_Paths(index, new Linear());
             }
         }
         public void Create_List_Of_REGISTERED_Inputs(byte numberOfInputValues)
@@ -60,59 +76,62 @@ namespace Avril_NNAI
                 Set_Item_On_List_Of_REGISTERED_Output(index, 0.0);
             }
         }
-        public void Create_List_Of_PraiseSet( byte numberOfPraiseTrees)
+        public bool Run_Neural_Network_Inteligence(OpenAvrilNNI.MachineAI objNNI)
         {
-            _praiseSet = new Avril_NNAI.PraiseSet[numberOfPraiseTrees];
-            while (Get_List_Of_PraiseSet() == null) { }
-            for (byte index = 0; index < numberOfPraiseTrees; index++)
+            if (objNNI.Get_IsNewDataReady() == false)
             {
-                Set_Item_On_List_Of_PraiseSets(index, Get_New_PraiseSet());
-            }
-        }
-        public bool Run_Neural_Network_Inteligence(Avril_NNAI.MachineAI objNNAI)
-        {
-            if (objNNAI.Get_IsNewDataReady() == false)
-            {
-                byte numberOfPraiseSets = (byte)(objNNAI.Get_MetaData().Get_NumberOfPraiseOutputValues() - objNNAI.Get_MetaData().Get_NumberOfResetToConstantValues_OUTPUT());
-                byte numberOfResetToConstant = objNNAI.Get_MetaData().Get_NumberOfResetToConstantValues_OUTPUT();
-                for (byte outputID = 0; outputID < numberOfPraiseSets; outputID++)
+                for (byte outputID = 0; outputID < objNNI.Get_MetaData().Get_NumberOfLinearOutputs(); outputID++)
                 {
-                    for (sbyte layerID = 4; layerID > -1; layerID--)
+                    for (Int16 layerID = 4; layerID > -1; layerID--)
                     {
                         byte hiddenLayerID = Convert.ToByte(layerID);
-                        for (ulong nodeID = 0; nodeID < objNNAI.Get_MetaData().Get_NumberOfNodesInHiddenLayer(hiddenLayerID); nodeID++)
+                        for (byte nodeID = 0; nodeID < objNNI.Get_MetaData().Get_NumberOfNodesInHiddenLayer(hiddenLayerID); nodeID++)
                         {
-                            ulong numberOfInputsForNode = new ulong();
+                            byte numberOfInputsForNode = new byte();
                             numberOfInputsForNode = 0;
                             if (layerID == (byte)4)
                             {
-                                numberOfInputsForNode = objNNAI.Get_MetaData().Get_NumberOfPraiseInputValues();
+                                numberOfInputsForNode = objNNI.Get_MetaData().Get_NumberInputRegisters();
                             }
                             else
                             {
-                                numberOfInputsForNode = objNNAI.Get_MetaData().Get_NumberOfNodesInHiddenLayer((byte)(layerID + (byte)1));
+                                numberOfInputsForNode = objNNI.Get_MetaData().Get_NumberOfNodesInHiddenLayer((byte)(layerID + (byte)1));
                             }
-                            objNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Get_Node(hiddenLayerID, nodeID).Run_Neural_Path_Calculation(objNNAI, outputID, hiddenLayerID, nodeID, numberOfInputsForNode);
+                            objNNI.Get_Item_On_List_Of_Linear_Paths(outputID).Get_PraiseSet().Get_Node(hiddenLayerID, nodeID).Run_All_Neural_Path_Calculation(objNNI, outputID, hiddenLayerID, nodeID, numberOfInputsForNode);
                         }
                     }
-                    objNNAI.Set_Item_On_List_Of_REGISTERED_Output(outputID, objNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Get_Node(0, 1).Get_REGISTERED_Output());
+                    objNNI.Set_Item_On_List_Of_REGISTERED_Output(outputID, objNNI.Get_Item_On_List_Of_Linear_Paths(outputID).Get_PraiseSet().Get_Node(0, 1).Get_REGISTERED_Output());
+                }
+                for (byte outputID = 0; outputID < objNNI.Get_MetaData().Get_NumberOfBooleanOutputs(); outputID++)
+                {
+
+                    objNNI.Set_Item_On_List_Of_REGISTERED_Output(outputID, 0/*ToDo*/);
+                }
+                for (byte outputID = 0; outputID < objNNI.Get_MetaData().Get_NumberOfConstantOutputs(); outputID++)
+                {
+
+                    objNNI.Set_Item_On_List_Of_REGISTERED_Output(outputID, 0/*ToDo*/);
                 }
             }
-            objNNAI.Set_IsNewDataReady(true);
-            return objNNAI.Get_IsNewDataReady();
+            objNNI.Set_IsNewDataReady(true);
+            return objNNI.Get_IsNewDataReady();
         }
     // get.
         public bool Get_IsNewDataReady()
         {
             return _isNewDataReady;
         }
-        public Avril_NNAI.Constant[] Get_List_Of_Constant()
+        public Binary[] Get_List_Of_Binary_Paths()
         {
-            return _constants;
+            return _List_Of_Binary_Paths;
         }
-        public Avril_NNAI.PraiseSet[] Get_List_Of_PraiseSet()
+        public Constant[] Get_List_Of_Constant_Paths()
         {
-            return _praiseSet;
+            return _List_Of_Constant_Paths;
+        }
+        public Linear[] Get_List_Of_Linear_Paths()
+        {
+            return _List_Of_Linear_Paths;
         }
         public double[] Get_List_Of_REGISTERED_Inputs()
         {
@@ -122,53 +141,53 @@ namespace Avril_NNAI
         {
             return _REGISTERED_Outputs;
         }
-
-        public Avril_NNAI.Constant Get_Item_On_List_Of_Constant(byte constantID)
+        public Binary Get_Item_On_List_Of_Binary_Paths(byte binaryID)
         {
-            return _constants[constantID];
+            return _List_Of_Binary_Paths[binaryID];
         }
-        public Avril_NNAI.PraiseSet Get_Item_On_List_Of_PraiseSets(byte praiseTreeID)
+        public Constant Get_Item_On_List_Of_Constant_Paths(byte constantID)
         {
-            return _praiseSet[praiseTreeID];
+            return _List_Of_Constant_Paths[constantID];
         }
-        public double Get_Item_On_List_Of_REGISTERED_Inputs(ulong registerID)
+        public Linear Get_Item_On_List_Of_Linear_Paths(byte praiseTreeID)
+        {
+            return _List_Of_Linear_Paths[praiseTreeID];
+        }
+        public double Get_Item_On_List_Of_REGISTERED_Inputs(byte registerID)
         {
             return _REGISTERED_Inputs[registerID];
         }
-        public double Get_Item_On_List_Of_REGISTERED_Outputs(ulong registerID)
+        public double Get_Item_On_List_Of_REGISTERED_Outputs(byte registerID)
         {
             return _REGISTERED_Outputs[registerID];
         }
-        public Avril_NNAI.MetaData Get_MetaData()
+        public OpenAvrilNNI.MetaData Get_MetaData()
         {
-            return _metaData;
+            return _MetaData;
         }
-        public Avril_NNAI.Constant Get_New_Constant()
-        {
-            return _newConstant;
-        }
-        public Avril_NNAI.PraiseSet Get_New_PraiseSet()
-        {
-            return _newPraiseSet;
-        }
+
     // set.
         public void Set_IsNewDataReady(bool value)
         {
             _isNewDataReady = value;
         }
-        public void Set_Item_On_List_Of_Constant(byte constantID, Avril_NNAI.Constant value)
+        public void Set_Item_On_List_Of_Binary_Paths(byte binaryID, Binary value)
         {
-            _constants[constantID] = value;
+            _List_Of_Binary_Paths[binaryID] = value;
         }
-        public void Set_Item_On_List_Of_PraiseSets(byte praiseTreeID, Avril_NNAI.PraiseSet value)
+        public void Set_Item_On_List_Of_Constant_Paths(byte constantID, Constant value)
         {
-            _praiseSet[praiseTreeID] = value;
+            _List_Of_Constant_Paths[constantID] = value;
         }
-        public void Set_Item_On_List_Of_REGISTERED_Input(ulong registerID, double value)
+        public void Set_Item_On_List_Of_Linear_Paths(byte praiseTreeID, Linear value)
+        {
+            _List_Of_Linear_Paths[praiseTreeID] = value;
+        }
+        public void Set_Item_On_List_Of_REGISTERED_Input(byte registerID, double value)
         {
             _REGISTERED_Inputs[registerID] = value;
         }
-        public void Set_Item_On_List_Of_REGISTERED_Output(ulong registerID, double value)
+        public void Set_Item_On_List_Of_REGISTERED_Output(byte registerID, double value)
         {
             _REGISTERED_Outputs[registerID] = value;
         }
@@ -182,32 +201,16 @@ namespace Avril_NNAI
         }
         private void Create_MetaData()
         {
-            Set_MetaData(new Avril_NNAI.MetaData());
+            Set_MetaData(new OpenAvrilNNI.MetaData());
             while (Get_MetaData() == null) { }
-        }
-        private void Create_New_Constant()
-        {
-            Set_New_Constant(new Avril_NNAI.Constant());
-            while (Get_New_Constant() == null) { }
-        }
-        private void Create_New_PraiseSet()
-        {
-            Set_New_PraiseSet(new Avril_NNAI.PraiseSet());
-            while (Get_New_PraiseSet() == null) { }
+            Get_MetaData().Set_NameOfNNI("OpenNNI_" + System.DateTime.Now.ToString("yyyy_MM_dd_HH_mm_ss"));
+            Get_MetaData().Set_PraiseID(byte.MaxValue);
         }
     // get.
     // set.
-        private void Set_New_Constant(Avril_NNAI.Constant value)
+        private void Set_MetaData(OpenAvrilNNI.MetaData value)
         {
-            _newConstant = value;
-        }
-        private void Set_New_PraiseSet(Avril_NNAI.PraiseSet value)
-        {
-            _newPraiseSet = value;
-        }
-        private void Set_MetaData(Avril_NNAI.MetaData value)
-        {
-            _metaData = value;
+            _MetaData = value;
         }
     }
 }

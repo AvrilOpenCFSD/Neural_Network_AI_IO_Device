@@ -1,7 +1,5 @@
 ﻿
-using System;
-
-namespace Avril_NNAI
+namespace OpenAvrilNNI
 {
     public class Output_Praise_1
     {
@@ -20,11 +18,15 @@ namespace Avril_NNAI
             Capsule_Right_Y,
             Capsule_Right_Z,
         }
-// classes.
+        // classes.
 
-// registers.
-        private byte _NumberOfOutputValues;
-        private byte _NumberOfResetToConstantValues;
+        // registers.
+        private byte _NumberOfBooleanOutputs;
+        private byte _NumberOfConstantOutputs;
+        private byte _NumberOfLinearOutputs;
+        private byte _NumberOutputRegisters;
+        // custom user defined.
+
         private double _Mouse_Screen_X;
         private double _Mouse_Screen_Y;
         private double _Capsule_Fowards_X;
@@ -40,11 +42,11 @@ namespace Avril_NNAI
 // constructor.
         public Output_Praise_1()
         {
-            Create_NumberOfOutputValues(new byte());
-            Set_NumberOfOutputValues(11);
-
-            CreateGet_NumberOfResetToConstantValues(new byte());
-            Set_NumberOfResetToConstantValues(5);
+            Create_NumberOfBooleanOutputs();
+            Create_NumberOfLinearOutputs();
+            Create_NumberOfConstantOutputs();
+            Create_NumberOutputRegisters();
+            // custom user defined.
 
             Create_Mouse_Screen_X_CONSTANT(new double());
             Set_Mouse_Screen_X_CONSTANT();
@@ -81,6 +83,23 @@ namespace Avril_NNAI
 
 // public.
     // get.
+        public byte Get_NumberOfBooleanOutputs()
+        {
+            return _NumberOfBooleanOutputs;
+        }
+        public byte Get_NumberOfConstantOutputs()
+        {
+            return _NumberOfConstantOutputs;
+        }
+        public byte Get_NumberOfLinearOutputs()
+        {
+            return _NumberOfLinearOutputs;
+        }
+        public byte Get_NumberOutputRegisters()
+        {
+            return _NumberOutputRegisters;
+        }
+        // custom user defined.
         public double Get_Item_On_List_Of_Praise_Output(byte inputID)
         {
             switch (inputID)
@@ -122,15 +141,6 @@ namespace Avril_NNAI
                     return 0;
             }
         }
-        public byte Get_NumberOfResetToConstantValues()
-        {
-            return _NumberOfResetToConstantValues;
-        }
-        public byte Get_NumberOfOutputValues()
-        {
-            return _NumberOfOutputValues;
-        }
-
     // set.
         public void Set_Item_On_List_Of_Praise_Output(byte inputID, double value)
         {
@@ -185,15 +195,28 @@ namespace Avril_NNAI
             }
         }
 
-// private.
-        private void CreateGet_NumberOfResetToConstantValues(byte value)
+    // private.
+        private void Create_NumberOfBooleanOutputs()
         {
-            _NumberOfResetToConstantValues = value;
+            Set_NumberOfBooleanOutputs(new byte());
+            Set_NumberOfBooleanOutputs(0);
         }
-        private void Create_NumberOfOutputValues(byte numberOfOutputValues)
+        private void Create_NumberOfConstantOutputs()
         {
-            _NumberOfOutputValues = numberOfOutputValues;
+            Set_NumberOfConstantOutputs(new byte());
+            Set_NumberOfConstantOutputs(0);
         }
+        private void Create_NumberOfLinearOutputs()
+        {
+            Set_NumberOfLinearOutputs(new byte());
+            Set_NumberOfLinearOutputs(0);
+        }
+        private void Create_NumberOutputRegisters()
+        {
+            Set_NumberOutputRegisters(new byte());
+            Set_NumberOutputRegisters(0);
+        }
+        // custom user defined.
         private void Create_Mouse_Screen_X_CONSTANT(double mouseX)
         {
             _Mouse_Screen_X = mouseX;
@@ -284,8 +307,25 @@ namespace Avril_NNAI
         {
             return 0.0;
         }
-        
+
     // set.
+        private void Set_NumberOfBooleanOutputs(byte numberOfBinaryValues)
+        {
+            _NumberOfBooleanOutputs = numberOfBinaryValues;
+        }
+        private void Set_NumberOfConstantOutputs(byte numberOfResetToConstantValues)
+        {
+            _NumberOfConstantOutputs = numberOfResetToConstantValues;
+        }
+        private void Set_NumberOfLinearOutputs(byte numberOfLinearValues)
+        {
+            _NumberOfLinearOutputs = numberOfLinearValues;
+        }
+        private void Set_NumberOutputRegisters(byte numberOfOutputValues)
+        {
+            _NumberOutputRegisters = numberOfOutputValues;
+        }
+        // custom user defined.
         private void Set_Capsule_Fowards_X(double capsualeFowardsX)
         {
             _Capsule_Fowards_X = capsualeFowardsX;
@@ -329,14 +369,6 @@ namespace Avril_NNAI
         private void Set_Mouse_Screen_Y_CONSTANT()
         {
             _Mouse_Screen_Y = 0.0;
-        }
-        private void Set_NumberOfResetToConstantValues(byte value)
-        {
-            _NumberOfResetToConstantValues = value;
-        }
-        private void Set_NumberOfOutputValues(byte numberOfOutputValues)
-        {
-            _NumberOfOutputValues = numberOfOutputValues;
         }
     }
 }
