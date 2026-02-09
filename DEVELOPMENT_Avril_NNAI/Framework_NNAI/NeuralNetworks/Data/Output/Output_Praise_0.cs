@@ -83,7 +83,7 @@ namespace OpenAvrilNNI
         private void Create_NumberOfBooleanOutputs()
         {
             Set_NumberOfBooleanOutputs(new byte());
-            Set_NumberOfBooleanOutputs(1);
+            Set_NumberOfBooleanOutputs(0);
         }
         private void Create_NumberOfConstantOutputs()
         {
@@ -98,7 +98,7 @@ namespace OpenAvrilNNI
         private void Create_NumberOutputRegisters()
         {
             Set_NumberOutputRegisters(new byte());
-            Set_NumberOutputRegisters(1);
+            Set_NumberOutputRegisters(0);
         }
         // custom user defined.
 

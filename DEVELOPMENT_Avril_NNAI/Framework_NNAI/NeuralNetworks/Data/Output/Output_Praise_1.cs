@@ -45,11 +45,11 @@ namespace OpenAvrilNNI
             Create_NumberOfBooleanOutputs();
             Set_NumberOfBooleanOutputs(0);
             Create_NumberOfLinearOutputs();
-            Set_NumberOfLinearOutputs(5);
+            Set_NumberOfLinearOutputs(6);
             Create_NumberOfConstantOutputs();
             Set_NumberOfConstantOutputs(5);
             Create_NumberOutputRegisters();
-            Set_NumberOfLinearOutputs(11);
+            Set_NumberOutputRegisters(11);
             // custom user defined.
 
             Create_Mouse_Screen_X_CONSTANT(new double());

@@ -33,9 +33,9 @@ namespace OpenAvrilNNI
             Create_NumberOfLinearInputs();
             Set_NumberOfLinearInputs(9);
             Create_NumberOfBooleanInputs();
-            Set_NumberInputRegisters(0);
+            Set_NumberOfBooleanInputs(0);
             Create_NumberOfConstantInputs();
-            Set_NumberInputRegisters(3);
+            Set_NumberOfConstantInputs(3);
             // custom user defined.
             Create_Mouse_Screen_X();
             Create_Mouse_Screen_Y();

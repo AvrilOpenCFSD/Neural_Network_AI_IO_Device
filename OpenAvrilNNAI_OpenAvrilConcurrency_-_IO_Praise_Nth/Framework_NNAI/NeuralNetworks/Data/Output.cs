@@ -38,7 +38,7 @@ namespace OpenAvrilNNAI_OpenAvrilConcurrency_IO_Praise_Nth
 
 // public.
     // get.
-        public Object Get_ItemOnListOfOutputSubsets(byte praiseID)
+        public Object Get_Item_On_List_Of_OutputSubsets(byte praiseID)
         {
             return _ListOfOutputSubsets[praiseID];
         }

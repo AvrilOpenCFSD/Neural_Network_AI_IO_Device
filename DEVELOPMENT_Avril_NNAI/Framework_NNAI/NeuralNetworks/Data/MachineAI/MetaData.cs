@@ -116,7 +116,7 @@ namespace OpenAvrilNNI
         }
         public void Set_NumberOfBooleanOutputs(byte numberOfBinaryValues)
         {
-            _NumberOfBooleanInputs = numberOfBinaryValues;
+            _NumberOfBooleanOutputs = numberOfBinaryValues;
         }
         public void Set_NumberOfConstantInputs(byte numberOfResetToConstantValues)
         {
@@ -124,7 +124,7 @@ namespace OpenAvrilNNI
         }
         public void Set_NumberOfConstantOutputs(byte numberOfResetToConstantValues)
         {
-            _NumberOfConstantInputs = numberOfResetToConstantValues;
+            _NumberOfConstantOutputs = numberOfResetToConstantValues;
         }
         public void Set_NumberInputRegisters(byte numberOfInputValues)
         {
@@ -136,7 +136,7 @@ namespace OpenAvrilNNI
         }
         public void Set_NumberOfLinearOutputs(byte numberOfLinearValues)
         {
-            _NumberOfLinearInputs = numberOfLinearValues;
+            _NumberOfLinearOutputs = numberOfLinearValues;
         }
         public void Set_NumberOfNodesInHiddenLayer(byte layerID, byte numberOfNodes)
         {
@@ -144,7 +144,7 @@ namespace OpenAvrilNNI
         }
         public void Set_NumberOutputRegisters(byte numberOfInputValues)
         {
-            _NumberInputRegisters = numberOfInputValues;
+            _NumberOutputRegisters = numberOfInputValues;
         }
 
 // private.
