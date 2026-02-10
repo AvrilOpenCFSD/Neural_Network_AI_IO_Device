@@ -1,4 +1,4 @@
-﻿namespace OpenAvrilNNAI_OpenAvrilConcurrency_IO_Praise_Nth
+﻿namespace OpenAvrilNNI_OpenAvrilConcurrency_IO_Praise_1
 {
     public class PraiseSet
     {
@@ -31,7 +31,7 @@
         }
 
 // public.
-        public void Create_Tree_Of_Nodes(OpenAvrilNNAI_OpenAvrilConcurrency_IO_Praise_Nth.MachineAI objNNI, byte outputID)
+        public void Create_Tree_Of_Nodes(OpenAvrilNNI_OpenAvrilConcurrency_IO_Praise_1.MachineAI objNNI, byte outputID)
         {
             objNNI.Get_Item_On_List_Of_Linear_Paths(outputID).Get_PraiseSet().Create_List_Of_Layer4_Nodes(objNNI.Get_MetaData().Get_NumberOfNodesInHiddenLayer(4));
             objNNI.Get_Item_On_List_Of_Linear_Paths(outputID).Get_PraiseSet().Create_List_Of_Layer3_Nodes(objNNI.Get_MetaData().Get_NumberOfNodesInHiddenLayer(3));

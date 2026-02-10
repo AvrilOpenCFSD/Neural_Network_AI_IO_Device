@@ -1,5 +1,5 @@
 ﻿
-namespace OpenAvrilNNAI_OpenAvrilConcurrency_IO_Praise_Nth
+namespace OpenAvrilNNI_OpenAvrilConcurrency_IO_Praise_1
 {
     public class NeuralPath
     {
@@ -68,7 +68,7 @@ namespace OpenAvrilNNAI_OpenAvrilConcurrency_IO_Praise_Nth
             Random random = new Random();
             return random.NextDouble() * (maximum - minimum) + minimum;
         }
-        public void Generate_REGISTERED_Inputs_List(OpenAvrilNNAI_OpenAvrilConcurrency_IO_Praise_Nth.Framework_NNI obj, OpenAvrilNNAI_OpenAvrilConcurrency_IO_Praise_Nth.MachineAI objNNI)
+        public void Generate_REGISTERED_Inputs_List(OpenAvrilNNI_OpenAvrilConcurrency_IO_Praise_1.Framework_NNI obj, OpenAvrilNNI_OpenAvrilConcurrency_IO_Praise_1.MachineAI objNNI)
         {
             objNNI.Create_List_Of_REGISTERED_Inputs(objNNI.Get_MetaData().Get_NumberInputRegisters());
             for (byte index = 0; index < objNNI.Get_MetaData().Get_NumberInputRegisters(); index++)
@@ -76,7 +76,7 @@ namespace OpenAvrilNNAI_OpenAvrilConcurrency_IO_Praise_Nth
                 objNNI.Set_Item_On_List_Of_REGISTERED_Input(index, 0.0);
             }
         }
-        public void Generate_REGISTERED_Outputs_List(OpenAvrilNNAI_OpenAvrilConcurrency_IO_Praise_Nth.Framework_NNI obj, OpenAvrilNNAI_OpenAvrilConcurrency_IO_Praise_Nth.MachineAI objNNI)
+        public void Generate_REGISTERED_Outputs_List(OpenAvrilNNI_OpenAvrilConcurrency_IO_Praise_1.Framework_NNI obj, OpenAvrilNNI_OpenAvrilConcurrency_IO_Praise_1.MachineAI objNNI)
         {
             objNNI.Create_List_Of_REGISTERED_Outputs(objNNI.Get_MetaData().Get_NumberOutputRegisters());
             for (byte index = 0; index < objNNI.Get_MetaData().Get_NumberOutputRegisters(); index++)
@@ -85,35 +85,35 @@ namespace OpenAvrilNNAI_OpenAvrilConcurrency_IO_Praise_Nth
             }
         }
     // get.
-        public OpenAvrilNNAI_OpenAvrilConcurrency_IO_Praise_Nth.Binary Get_New_Boolean()
+        public OpenAvrilNNI_OpenAvrilConcurrency_IO_Praise_1.Binary Get_New_Boolean()
         {
             return _New_Boolean;
         }
-        public OpenAvrilNNAI_OpenAvrilConcurrency_IO_Praise_Nth.Constant Get_New_Constant()
+        public OpenAvrilNNI_OpenAvrilConcurrency_IO_Praise_1.Constant Get_New_Constant()
         {
             return _New_Constant;
         }
-        public OpenAvrilNNAI_OpenAvrilConcurrency_IO_Praise_Nth.Linear Get_New_Linear()
+        public OpenAvrilNNI_OpenAvrilConcurrency_IO_Praise_1.Linear Get_New_Linear()
         {
             return _New_Linear;
         }
-        public OpenAvrilNNAI_OpenAvrilConcurrency_IO_Praise_Nth.Linear_NeuralPath Get_New_Linear_NeuralPath()
+        public OpenAvrilNNI_OpenAvrilConcurrency_IO_Praise_1.Linear_NeuralPath Get_New_Linear_NeuralPath()
         {
             return _New_Linear_NeuralPath;
         }
-        public OpenAvrilNNAI_OpenAvrilConcurrency_IO_Praise_Nth.Node Get_New_Node()
+        public OpenAvrilNNI_OpenAvrilConcurrency_IO_Praise_1.Node Get_New_Node()
         {
             return _New_Node;
         }
     // set.
-        public void Set_Constant_From_Output_Subset(OpenAvrilNNAI_OpenAvrilConcurrency_IO_Praise_Nth.Framework_NNI obj, OpenAvrilNNAI_OpenAvrilConcurrency_IO_Praise_Nth.MachineAI objNNI, byte outputID)
+        public void Set_Constant_From_Output_Subset(OpenAvrilNNI_OpenAvrilConcurrency_IO_Praise_1.Framework_NNI obj, OpenAvrilNNI_OpenAvrilConcurrency_IO_Praise_1.MachineAI objNNI, byte outputID)
         {
             for (byte index = 0; index < objNNI.Get_MetaData().Get_NumberOutputRegisters(); index++)
             {
                 //Todo
             }
         }
-        public void Set_Linear_NeuralPath_For_Input(OpenAvrilNNAI_OpenAvrilConcurrency_IO_Praise_Nth.Framework_NNI obj, OpenAvrilNNAI_OpenAvrilConcurrency_IO_Praise_Nth.MachineAI objNNI, byte outputID, byte layerID, byte nodeID)
+        public void Set_Linear_NeuralPath_For_Input(OpenAvrilNNI_OpenAvrilConcurrency_IO_Praise_1.Framework_NNI obj, OpenAvrilNNI_OpenAvrilConcurrency_IO_Praise_1.MachineAI objNNI, byte outputID, byte layerID, byte nodeID)
         {
             System.Console.WriteLine("entered Create_Nodes.");
             byte numberOfInputsForNode = new byte();
@@ -143,74 +143,74 @@ namespace OpenAvrilNNAI_OpenAvrilConcurrency_IO_Praise_Nth
 // private.
         private void Create_New_Boolean()
         {
-            Set_New_Boolean(new OpenAvrilNNAI_OpenAvrilConcurrency_IO_Praise_Nth.Binary());
+            Set_New_Boolean(new OpenAvrilNNI_OpenAvrilConcurrency_IO_Praise_1.Binary());
             while (Get_New_Boolean() == null) { }
         }
         private void Create_New_Constant()
         {
-            Set_New_Constant(new OpenAvrilNNAI_OpenAvrilConcurrency_IO_Praise_Nth.Constant());
+            Set_New_Constant(new OpenAvrilNNI_OpenAvrilConcurrency_IO_Praise_1.Constant());
             while (Get_New_Constant() == null) { }
         }
         private void Create_New_Linear()
         {
-            Set_New_Linear(new OpenAvrilNNAI_OpenAvrilConcurrency_IO_Praise_Nth.Linear());
+            Set_New_Linear(new OpenAvrilNNI_OpenAvrilConcurrency_IO_Praise_1.Linear());
             while (Get_New_Linear() == null) { }
         }
         private void Create_New_Linear_NeuralPath()
         {
-            Set_New_Linear_NeuralPath(new OpenAvrilNNAI_OpenAvrilConcurrency_IO_Praise_Nth.Linear_NeuralPath());
+            Set_New_Linear_NeuralPath(new OpenAvrilNNI_OpenAvrilConcurrency_IO_Praise_1.Linear_NeuralPath());
             while (Get_New_Linear_NeuralPath() == null) { }
         }
         private void Create_New_Node()
         {
-            Set_New_Node(new OpenAvrilNNAI_OpenAvrilConcurrency_IO_Praise_Nth.Node());
+            Set_New_Node(new OpenAvrilNNI_OpenAvrilConcurrency_IO_Praise_1.Node());
             while (Get_New_Node() == null) { }
         }
         // get.
         // set.
-        private void Set_New_Boolean(OpenAvrilNNAI_OpenAvrilConcurrency_IO_Praise_Nth.Binary newValue)
+        private void Set_New_Boolean(OpenAvrilNNI_OpenAvrilConcurrency_IO_Praise_1.Binary newValue)
         {
             _New_Boolean = newValue;
         }
-        private void Set_New_Constant(OpenAvrilNNAI_OpenAvrilConcurrency_IO_Praise_Nth.Constant newValue)
+        private void Set_New_Constant(OpenAvrilNNI_OpenAvrilConcurrency_IO_Praise_1.Constant newValue)
         {
             _New_Constant = newValue;
         }
-        private void Set_New_Linear(OpenAvrilNNAI_OpenAvrilConcurrency_IO_Praise_Nth.Linear newValue)
+        private void Set_New_Linear(OpenAvrilNNI_OpenAvrilConcurrency_IO_Praise_1.Linear newValue)
         {
             _New_Linear = newValue;
         }
-        private void Set_New_Linear_NeuralPath(OpenAvrilNNAI_OpenAvrilConcurrency_IO_Praise_Nth.Linear_NeuralPath newValue)
+        private void Set_New_Linear_NeuralPath(OpenAvrilNNI_OpenAvrilConcurrency_IO_Praise_1.Linear_NeuralPath newValue)
         {
             _New_Linear_NeuralPath = newValue;
         }
-        private void Set_New_Node(OpenAvrilNNAI_OpenAvrilConcurrency_IO_Praise_Nth.Node newValue)
+        private void Set_New_Node(OpenAvrilNNI_OpenAvrilConcurrency_IO_Praise_1.Node newValue)
         {
             _New_Node = newValue;
         }
-        private void Set_NumberOfNodesInHiddenLayer(OpenAvrilNNAI_OpenAvrilConcurrency_IO_Praise_Nth.MachineAI objNNI, byte layerID)
+        private void Set_NumberOfNodesInHiddenLayer(OpenAvrilNNI_OpenAvrilConcurrency_IO_Praise_1.MachineAI objNNI, byte layerID)
         {
             byte numberOfNodesInLayer = new byte();
             numberOfNodesInLayer = 0;
             switch (layerID)
             {
-                case (byte)OpenAvrilNNAI_OpenAvrilConcurrency_IO_Praise_Nth.Global.NodeLayer.Layer_4:
+                case (byte)OpenAvrilNNI_OpenAvrilConcurrency_IO_Praise_1.Global.NodeLayer.Layer_4:
                     numberOfNodesInLayer = (byte)Math.Round((double)objNNI.Get_MetaData().Get_NumberInputRegisters() * (double)0.8);
                     break;
 
-                case (byte)OpenAvrilNNAI_OpenAvrilConcurrency_IO_Praise_Nth.Global.NodeLayer.Layer_3:
+                case (byte)OpenAvrilNNI_OpenAvrilConcurrency_IO_Praise_1.Global.NodeLayer.Layer_3:
                     numberOfNodesInLayer = (byte)Math.Round((double)objNNI.Get_MetaData().Get_NumberInputRegisters() * (double)0.6);
                     break;
 
-                case (byte)OpenAvrilNNAI_OpenAvrilConcurrency_IO_Praise_Nth.Global.NodeLayer.Layer_2:
+                case (byte)OpenAvrilNNI_OpenAvrilConcurrency_IO_Praise_1.Global.NodeLayer.Layer_2:
                     numberOfNodesInLayer = (byte)Math.Round((double)objNNI.Get_MetaData().Get_NumberInputRegisters() * (double)0.4);
                     break;
 
-                case (byte)OpenAvrilNNAI_OpenAvrilConcurrency_IO_Praise_Nth.Global.NodeLayer.Layer_1:
+                case (byte)OpenAvrilNNI_OpenAvrilConcurrency_IO_Praise_1.Global.NodeLayer.Layer_1:
                     numberOfNodesInLayer = (byte)Math.Round((double)objNNI.Get_MetaData().Get_NumberInputRegisters() * (double)0.2);
                     break;
 
-                case (byte)OpenAvrilNNAI_OpenAvrilConcurrency_IO_Praise_Nth.Global.NodeLayer.Layer_0:
+                case (byte)OpenAvrilNNI_OpenAvrilConcurrency_IO_Praise_1.Global.NodeLayer.Layer_0:
                     numberOfNodesInLayer = (byte)1;
                     break;
             }

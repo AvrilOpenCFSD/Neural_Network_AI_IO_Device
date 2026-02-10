@@ -1,7 +1,7 @@
 ﻿
 using System.ComponentModel;
 
-namespace OpenAvrilNNAI_OpenAvrilConcurrency_IO_Praise_Nth
+namespace OpenAvrilNNI_OpenAvrilConcurrency_IO_Praise_1
 {
     public static class MyEnumExtensions
     {

@@ -1,6 +1,6 @@
 ﻿
 
-namespace OpenAvrilNNAI_OpenAvrilConcurrency_IO_Praise_Nth
+namespace OpenAvrilNNI_OpenAvrilConcurrency_IO_Praise_1
 {
     public class Aglorithms
     {
@@ -23,7 +23,7 @@ namespace OpenAvrilNNAI_OpenAvrilConcurrency_IO_Praise_Nth
         }
 
 // public.
-        public MachineAI Create_Instance_Of_MachineAI(OpenAvrilNNAI_OpenAvrilConcurrency_IO_Praise_Nth.Framework_NNI obj, string nameOfNNI, byte praiseID)
+        public MachineAI Create_Instance_Of_MachineAI(OpenAvrilNNI_OpenAvrilConcurrency_IO_Praise_1.Framework_NNI obj, string nameOfNNI, byte praiseID)
         {
             System.Console.WriteLine("entering Create_Instance_Of_MachineAI.");
             MachineAI objNNI = obj.Get_Neural_Networks().Get_Data().Get_NewMachineAI();
@@ -81,11 +81,8 @@ namespace OpenAvrilNNAI_OpenAvrilConcurrency_IO_Praise_Nth
             {
 
             }
+            this.Load_Instance_Of_MachineAI_To_File(obj, objNNI);
             return objNNI;
-        }
-        public void Save_Instance_Of_MachineAI_To_File(Framework_NNI obj, MachineAI objNNI)
-        {
-            obj.Get_Neural_Networks().Get_Execute().Get_FileReadWrite().WriteValuesToFile(obj, objNNI, objNNI.Get_MetaData().Get_NameOfNNI());
         }
     // get.
         public NeuralPath Get_NeuralPath()
@@ -100,36 +97,40 @@ namespace OpenAvrilNNAI_OpenAvrilConcurrency_IO_Praise_Nth
             _NeuralPath = new NeuralPath();
             while (Get_NeuralPath() == null) { }
         }
-    // get.
-    // set.
-    /*
-        private void Set_IO_Defaults(MachineAI objNNI, byte praiseID)
+        private void Load_Instance_Of_MachineAI_To_File(Framework_NNI obj, MachineAI objNNI)
         {
-            switch (praiseID)
+            obj.Get_Neural_Networks().Get_Execute().Get_FileReadWrite().ReadValuesFromFile(obj, objNNI.Get_MetaData().Get_NameOfNNI());
+        }
+        // get.
+        // set.
+        /*
+            private void Set_IO_Defaults(MachineAI objNNI, byte praiseID)
             {
-                case (byte)Global.PraiseID.Praise_0:
+                switch (praiseID)
+                {
+                    case (byte)Global.PraiseID.Praise_0:
 
-                    break;
+                        break;
 
-                case (byte)Global.PraiseID.Praise_1:
-                    objNNI.Set_Item_On_List_Of_REGISTERED_Input((byte)Global.PRAISE_1.Mouse_Screen_X, 0.0);
-                    objNNI.Set_Item_On_List_Of_REGISTERED_Input((byte)Global.PRAISE_1.Mouse_Screen_Y, 0.0);
-                    objNNI.Set_Item_On_List_Of_REGISTERED_Input((byte)Global.PRAISE_1.Capsule_Fowards_X, 1.0);
-                    objNNI.Set_Item_On_List_Of_REGISTERED_Input((byte)Global.PRAISE_1.Capsule_Fowards_Y, 0.0);
-                    objNNI.Set_Item_On_List_Of_REGISTERED_Input((byte)Global.PRAISE_1.Capsule_Fowards_Z, 0.0);
-                    objNNI.Set_Item_On_List_Of_REGISTERED_Input((byte)Global.PRAISE_1.Capsule_Up_X, 0.0);
-                    objNNI.Set_Item_On_List_Of_REGISTERED_Input((byte)Global.PRAISE_1.Capsule_Up_Y, 1.0);
-                    objNNI.Set_Item_On_List_Of_REGISTERED_Input((byte)Global.PRAISE_1.Capsule_Up_Z, 0.0);
-                    objNNI.Set_Item_On_List_Of_REGISTERED_Input((byte)Global.PRAISE_1.Capsule_Right_X, 0.0);
-                    objNNI.Set_Item_On_List_Of_REGISTERED_Input((byte)Global.PRAISE_1.Capsule_Right_Y, 0.0);
-                    objNNI.Set_Item_On_List_Of_REGISTERED_Input((byte)Global.PRAISE_1.Capsule_Right_Z, 1.0);
-                    break;
+                    case (byte)Global.PraiseID.Praise_1:
+                        objNNI.Set_Item_On_List_Of_REGISTERED_Input((byte)Global.PRAISE_1.Mouse_Screen_X, 0.0);
+                        objNNI.Set_Item_On_List_Of_REGISTERED_Input((byte)Global.PRAISE_1.Mouse_Screen_Y, 0.0);
+                        objNNI.Set_Item_On_List_Of_REGISTERED_Input((byte)Global.PRAISE_1.Capsule_Fowards_X, 1.0);
+                        objNNI.Set_Item_On_List_Of_REGISTERED_Input((byte)Global.PRAISE_1.Capsule_Fowards_Y, 0.0);
+                        objNNI.Set_Item_On_List_Of_REGISTERED_Input((byte)Global.PRAISE_1.Capsule_Fowards_Z, 0.0);
+                        objNNI.Set_Item_On_List_Of_REGISTERED_Input((byte)Global.PRAISE_1.Capsule_Up_X, 0.0);
+                        objNNI.Set_Item_On_List_Of_REGISTERED_Input((byte)Global.PRAISE_1.Capsule_Up_Y, 1.0);
+                        objNNI.Set_Item_On_List_Of_REGISTERED_Input((byte)Global.PRAISE_1.Capsule_Up_Z, 0.0);
+                        objNNI.Set_Item_On_List_Of_REGISTERED_Input((byte)Global.PRAISE_1.Capsule_Right_X, 0.0);
+                        objNNI.Set_Item_On_List_Of_REGISTERED_Input((byte)Global.PRAISE_1.Capsule_Right_Y, 0.0);
+                        objNNI.Set_Item_On_List_Of_REGISTERED_Input((byte)Global.PRAISE_1.Capsule_Right_Z, 1.0);
+                        break;
 
 
-                case (byte)Global.PraiseID.Praise_2:
+                    case (byte)Global.PraiseID.Praise_2:
 
-                    break;
-            }
-        }*/
+                        break;
+                }
+            }*/
     }
 }
