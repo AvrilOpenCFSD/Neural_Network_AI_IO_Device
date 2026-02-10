@@ -1,14 +1,7 @@
-# AVRIL - Neural Network Artificial Intelligence.
+# AVRIL - Neural Network Intelligence.
 ## FOLDERS
-### Pseudocode - Neural_Network_AI.
-#### C++ : Console
-#### Using Windows 11 Home.
-Edition: Windows 11 Home OEM System Builder
-Version: 24H2
-#### Using Microsoft Visual Studio Professional 2022.
-Version 17.13.4.
 
-### #DEVELOPMENT_Avril_NNAI.
+### #DEVELOPMENT_Avril_NNI.
 #### C# : Console
 #### Using Windows 11 Home.
 Edition: Windows 11 Home OEM System Builder
@@ -25,7 +18,7 @@ Version 17.13.4.
 *					|
 *                   |
 *                   |
-*   		Framework_NNAI
+*   		Framework_NNI
 *					|
 *					|________________
 *					|               |
@@ -53,7 +46,7 @@ Version 17.13.4.
 */
 ````
 
-### AvrilNNAI_OpenConcurrency_IO_Praise_Nth
+### OpenAvrilNNI_OpenConcurrency_IO_Praise_Nth
 #### C# : Dynamic Link Library
 #### Using Windows 11 Home.
 Edition: Windows 11 Home OEM System Builder
@@ -61,7 +54,7 @@ Version: 24H2
 #### Using Microsoft Visual Studio Professional 2022.
 Version 17.13.4.
 
-### TESTBENCH_Avril_nnai
+### TESTBENCH_OpenAvrilNNI
 #### C# : Console.
 #### Using Windows 11 Home.
 Edition: Windows 11 Home OEM System Builder
@@ -76,5 +69,5 @@ Version 17.13.4.
 
 ## Development History.
 ### FOLDER: Pseudocode - Neural_Network_AI
- - https://github.com/AvrilOpenCFSD/Neural_Network_AI_IO_Device/tree/master/Neural_Network_AI
+ - (private) https://github.com/AvrilOpenCFSD/Pseudocode---Neural_Network_AI
 
