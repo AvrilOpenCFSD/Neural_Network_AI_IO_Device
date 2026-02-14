@@ -119,7 +119,7 @@ namespace OpenAvrilNNI
 
         public OpenAvrilNNI.MachineAI ReadValuesFromFile(OpenAvrilNNI.Framework_NNI obj, string fileName)
         {
-            OpenAvrilNNI.MachineAI objNNI = obj.Get_NeuralNetwork().Get_Data().Get_New_MachineAI();
+            OpenAvrilNNI.MachineAI objNNI = obj.Get_NeuralNetwork().Get_Data().Get_Item_On_list_Of_MachineAI(0);
             string pathName = new string("..\\..\\..\\..\\nnai_extension_files\\" + fileName + ".nni");
             if (File.Exists(pathName))
             {

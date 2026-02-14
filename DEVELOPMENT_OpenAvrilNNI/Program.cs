@@ -55,12 +55,13 @@ namespace OpenAvrilNNI
         static void Main()
         {
             System.Console.WriteLine("started program entry.");
-            var obj = IO.Create_OpenAvrilNNI_OpenAvrilConcurrency_Neural_Network();
-            var objNNI_DEFAULT = obj.Get_NeuralNetwork().Get_Data().Get_New_MachineAI();
-            obj.Get_NeuralNetwork().Get_Aglorithms().Get_NeuralPath().Gernerate_Lists_From_MetaData_For_MachineAI(obj, objNNI_DEFAULT, objNNI_DEFAULT.Get_MetaData());
+            var obj = IO.Create_OpenAvrilNNI_OpenAvrilConcurrency_NNI();
+          
             System.Console.WriteLine("created DEFAULT datafile .nni (class MachineAI).");
 
-    // SIMULATION - output testbench.
+            // SIMULATION - output testbench.
+            var objNNI_DEFAULT = obj.Get_NeuralNetwork().Get_Data().Get_Item_On_list_Of_MachineAI(0);
+
             System.Console.WriteLine("started SIMULATION - output default data file.");
             for (byte linearOutputID = 0; linearOutputID < objNNI_DEFAULT.Get_MetaData().Get_NumberOfLinearOutputs(); linearOutputID++)
             {
@@ -86,7 +87,7 @@ namespace OpenAvrilNNI
             }
             System.Console.WriteLine("ending SIMULATION - output default data file.");
     // end SIMULATION - output testbench.
-
+/*
             MachineAI objNNI = IO.Initialise_instance_Of_MachineAI(obj);
 
     // SIMULATION - output testbench.
@@ -115,7 +116,7 @@ namespace OpenAvrilNNI
             }
             System.Console.WriteLine("ending SIMULATION - output default data file.");
     // end SIMULATION - output testbench.
-
+*/
             //obj.Get_NeuralNetwork().Get_Data().Preserve_New_Neural_Network(objNNI);
             //obj.Initialise(obj, objNNI.Get_MetaData());
             //ToDO: train network

@@ -23,14 +23,13 @@ namespace OpenAvrilNNI
         }
 
 // public.
-        public MachineAI Initialise_instance_Of_MachineAI(Framework_NNI obj, string nameOfNNI, byte praiseID)
+        public void Initialise_instance_Of_MachineAI(Framework_NNI obj, MachineAI objNNI, string nameOfNNI, byte praiseID)
         {
             System.Console.WriteLine("entering Initialise_instance_Of_MachineAI.");
-            MachineAI objNNI = obj.Get_NeuralNetwork().Get_Data().Get_New_MachineAI();
             obj.Get_NeuralNetwork().Get_Aglorithms().Get_NeuralPath().Generate_MetaData_For_MachineAI(obj, objNNI, praiseID);
-			objNNI.Get_MetaData().Set_NameOfNNI(nameOfNNI);
+            objNNI.Get_MetaData().Set_NameOfNNI(nameOfNNI);
 			obj.Get_NeuralNetwork().Get_Aglorithms().Get_NeuralPath().Gernerate_Lists_From_MetaData_For_MachineAI(obj, objNNI, objNNI.Get_MetaData());
-			return objNNI;
+            System.Console.WriteLine("exiting Initialise_instance_Of_MachineAI.");
         }
         public void Save_Instance_Of_instance_Of_MachineAI_To_File(Framework_NNI obj, MachineAI objNNI)
         {

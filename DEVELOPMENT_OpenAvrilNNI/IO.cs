@@ -9,13 +9,11 @@ namespace OpenAvrilNNI_OpenAvrilConcurrency_IO
 
 // registers.
         static private Framework_NNI _Framework_NNI;
-        static private MachineAI _instance_Of_MachineAI;
 
 // constructor.
         public IO()
         {
             Create_Framework_NNI();
-            Create_instance_Of_MachineAI();
         }
 
 // destructor.
@@ -25,17 +23,13 @@ namespace OpenAvrilNNI_OpenAvrilConcurrency_IO
         }
 
 // public.
-        static public Framework_NNI Create_OpenAvrilNNI_OpenAvrilConcurrency_Neural_Network()
+        static public Framework_NNI Create_OpenAvrilNNI_OpenAvrilConcurrency_NNI()
         {
             Set_Framework_NNI(new Framework_NNI());
             while (Get_Framework_NNI() == null) { }
+            Get_Framework_NNI().Initialise_Framework_NNI(Get_Framework_NNI());
             return Get_Framework_NNI();
 
-        }
-        static public MachineAI Initialise_instance_Of_MachineAI(Framework_NNI obj)
-        {
-            Set_instance_Of_MachineAI(obj.Get_NeuralNetwork().Get_Aglorithms().Initialise_instance_Of_MachineAI(obj, "OpenAvrilNNI_OpenAvrilConcurrency_IO_Praise_1", (byte)1));
-            return Get_instance_Of_MachineAI();
         }
         static public bool Run_Neural_Network_Inteligence(MachineAI objNNI)
         {
@@ -57,31 +51,18 @@ namespace OpenAvrilNNI_OpenAvrilConcurrency_IO
 // private.
         static private void Create_Framework_NNI()
         {
-            _Framework_NNI = new Framework_NNI();
+            Set_Framework_NNI(new Framework_NNI());
             while (Get_Framework_NNI() == null) { }
-        }
-        static private void Create_instance_Of_MachineAI()
-        {
-            _instance_Of_MachineAI = new MachineAI();
-            while (Get_instance_Of_MachineAI() == null) { }
         }
     // get.
         static private Framework_NNI Get_Framework_NNI()
         {
             return _Framework_NNI;
         }
-        static private MachineAI Get_instance_Of_MachineAI()
-        {
-            return _instance_Of_MachineAI;
-        }
     // set.
         static private void Set_Framework_NNI(Framework_NNI newFramework)
         {
             _Framework_NNI = newFramework;
-        }
-        static private void Set_instance_Of_MachineAI(MachineAI newMachineAI)
-        {
-            _instance_Of_MachineAI = newMachineAI;
         }
     }
 }
